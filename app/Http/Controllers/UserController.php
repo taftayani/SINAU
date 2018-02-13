@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Store;
 
 class UserController extends Controller
 {
@@ -78,18 +80,17 @@ class UserController extends Controller
     {
         //
         $id=$request->id;
-        // $this->validate($request, [
-        //   'username' => 'required|unique:users',
-        //   'password' => 'required',
-        //   'foto' => 'required|mimes:jpeg,png,bmp',
-        // ]);
-        // User::where('id',$id)->update([
-        //   'nama_depan'=>$request->nama_depan,
-        //   'nama_belakang'=>$request->nama_belakang,
-        //   'username'=>$request->username,
-        //   'password'=>$request->password,
-        //   'foto'=>$request->foto,
-        // ]);
+        $this->validate($request, [
+          'nama_depan' => 'required|string|max:255',
+          'nama_belakang' => 'required|string|max:255',
+          'username' => 'required|string|max:255|unique:users',
+          'password' => 'required|string|min:6|confirmed',
+
+        ]);
+
+        // $path = $request->file('photo')->store('users');
+        // return $path;
+
         $user->update($request->all());
         return redirect(route('layouts.profile'));
     }

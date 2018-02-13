@@ -42,20 +42,39 @@
         <div class="input-field col s6">
           <input placeholder="Nama depan" id="first_name" name="nama_depan" type="text" class="validate" value="{{ Auth::user()->nama_depan }}">
         </div>
+        @if ($errors->has('nama_depan'))
+          <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('nama_depan')  }}</p>
+        @endif
         <div class="input-field col s6">
           <input id="last_name" name="nama_belakang" placeholder="nama belakang" type="text" class="validate" value="{{ Auth::user()->nama_belakang }}">
         </div>
+        @if ($errors->has('nama_belakang'))
+          <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('nama_belakang')  }}</p>
+        @endif
       </div>
       <div class="row">
         <div class="input-field col s12">
           <input placeholder="username" id="username" name="username" type="text" class="validate" value="{{ Auth::user()->username }}">
         </div>
       </div>
+      @if ($errors->has('username'))
+        <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('username')  }}</p>
+      @endif
       <div class="row">
-        <div class="input-field col s12">
-          <input id="password" placeholder="password"  name="password" type="password" class="validate">
+        <div class="input-field col s6">
+          <input id="password" placeholder="password"  name="password" type="password" class="validate" value="{{ Auth::user()->nama_belakang }}">
+          @if ($errors->has('password'))
+            <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
+          @endif
+        </div>
+        <div class="input-field col s6">
+        <input id="repassword" name="password_confirmation" type="password" class="validate" placeholder="re-password">
+        @if ($errors->has('password_confirmed'))
+          <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password_confirmed') }}</p>
+        @endif
         </div>
       </div>
+
       <div class="file-field input-field">
       <div class="btn">
         <span>Photo</span>
@@ -64,6 +83,9 @@
       <div class="file-path-wrapper">
         <input class="file-path validate" type="text" name="foto">
       </div>
+      @if ($errors->has('foto'))
+        <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('foto')  }}</p>
+      @endif
     <button type="submit" name="button" class="btn grey darken-3" id="button" >Edit <i class="material-icons">create</i></button>
     </div>
     </form>

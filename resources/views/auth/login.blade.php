@@ -49,7 +49,7 @@
               </div>
             </div>
                 <button type="submit" name="button" class="btn">MASUK</button>
-                <a href="{{ route('password.request') }}">Lupa Password ?</a>
+                <a href="">Lupa Password ?</a>
           </form>
       </div>
 
