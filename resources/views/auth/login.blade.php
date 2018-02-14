@@ -7,7 +7,6 @@
   }
 </style>
 <title>Login Murid</title>
-  <div class="kontainer">
     <div class="container">
       <div class="row">
         <div class="col s6"><img class="responsive-img" src="/img/student_4_.ico"></div>
@@ -18,16 +17,13 @@
             <div class="row">
               <div class="input-field col s12">
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
+                  <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
 
-                    <div class="col-md-6">
-                        <input id="email" type="email" class="form-control" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
-
-                        @if ($errors->has('email'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('email') }}</strong>
-                            </span>
-                        @endif
-                    </div>
+                  @if ($errors->has('email'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('email') }}</strong>
+                      </span>
+                  @endif
                 </div>
               </div>
             </div>
@@ -49,11 +45,12 @@
               </div>
             </div>
                 <button type="submit" name="button" class="btn">MASUK</button>
-                <a href="">Lupa Password ?</a>
+                <a href="{{ route('password.request') }}">Lupa Password ?</a>
           </form>
       </div>
 
     </div>
 
   </div>
+
 @endsection

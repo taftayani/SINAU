@@ -32,7 +32,7 @@
                    {{-- <li><a href="{{ route('login') }}">Login</a></li>
                    <li><a href="{{ route('register') }}">Register</a></li> --}}
                  @else
-                   <li> <a href="">profile</a> </li>
+                   <li> <a href="{{ route('layouts.profile') }}">profile</a> </li>
                    <li> <a href="#">Sinau book</a> </li>
                    <li> <a href="#">Sinau offline</a> </li>
                    <li> <a href="#">Sinau online</a> </li>

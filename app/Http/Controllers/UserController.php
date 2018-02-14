@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
-use Illuminate\Http\File;
-use Illuminate\Support\Facades\Store;
 
 class UserController extends Controller
 {
