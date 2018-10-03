@@ -23,3 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user','UserController@edit')->name('user');
 Route::put('edit/{user}','UserController@update')->name('edit');
 Route::get('profile','UserController@profile')->name('layouts.profile');
+Route::get('beranda','UserController@dashboard')->name('beranda');
+Route::get('sinau.offline','Pruduct@index')->name('sinau_offline');
+
+//guru
+Route::get('teacher.daftar','TeachController@index')->name('guru');

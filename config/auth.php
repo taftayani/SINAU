@@ -45,6 +45,16 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        'teach' => [
+          'drivers' => 'session',
+          'provider' => 'teaches',
+        ],
+        'teach-api' => [
+            'driver' => 'token',
+            'provider' => 'teaches',
+        ],
+
     ],
 
     /*
@@ -69,6 +79,11 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
+        'teaches' => [
+            'driver' => 'eloquent',
+            'model' => App\teach::class,
+        ],
+
 
         // 'users' => [
         //     'driver' => 'database',

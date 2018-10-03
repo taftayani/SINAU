@@ -1,34 +1,31 @@
-<style media="screen">
-  nav a{
-    font-family: Copperplate Gothic;
-  }
-</style>
-  <ul id="dropdown1" class="dropdown-content">
-    <li><a href="{{ route('login') }}">Masuk Sebagai Murid</a></li>
-    <li><a href="#!">Masuk Sebagai Guru</a></li>
-    </ul>
-    <ul id="dropdown2" class="dropdown-content">
-      <li><a href="{{ route('register') }}">Daftar Sebagai Murid</a></li>
-      <li><a href="#!">Daftar Sebagai Guru</a></li>
-    </ul>
+
+    {{-- <ul id="dropdown2" class="dropdown-content">
+      <li><a href="">Daftar Sebagai Murid</a></li>
+      <li><a href="{{ route('guru') }}">Daftar Sebagai Guru</a></li>
+    </ul> --}}
+<div class="navbar-fixed">
 <nav>
-    <div class="nav-wrapper  teal darken-1">
-      <div class="H1">
-      <a href="{{ route('survey.index') }}" class="brand-logo" >SINAU YO!</a>
+    <div class="nav-wrapper nav-header">
+      <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo"> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Daftar<i class="material-icons right">arrow_drop_down</i></a></li>
-        <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Masuk<i class="material-icons right">arrow_drop_down</i></a></li>
+      <ul class="center hide-on-med-and-down navbar-section-first">
+        <li><a href="#home">Tentang Kami</a></li>
+        <li><a href="#Produk">Produk Kami</a></li>
+        <li><a href="#Feedback">Forum</a></li>
       </ul>
+      <ul class="right hide-on-med-and-down navbar-section-second">
+          <li><a class="login-btn" href="{{ route('login') }}" >Masuk</a></li>  
+          <li><a class="" href="{{ route('register') }}">Daftar</a></li>
+      </ul>
+    </nav>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="">Daftar Sebagai Guru</a></li>
-        <li><a href="{{ route('register') }}">Daftar Sebagai Murid</a></li>
-        <li><a href="">Masuk Sebagai Guru</a></li>
-        <li><a href="{{ route('login') }}">Masuk Sebagai Murid</a></li>
+        <li><a href="{{ route('register') }}">Daftar</a></li>
+        <li><a href="{{ route('login') }}">Masuk</a></li>
+        <li><a href="">Tentang Kami</a></li>
+        <li><a href="">Produk Kami</a></li>
+        <li><a href="">Forum</a></li>
       </ul>
     </div>
-    </div>
-  </nav>
 
   @push('js')
   <script type="text/javascript">

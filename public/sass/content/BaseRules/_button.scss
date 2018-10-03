@@ -1,0 +1,40 @@
+$font-roboto:'Roboto Slab', serif;
+.btn-nav{
+    border-right: 1px solid white;
+    padding-right: 30px;
+}
+.btn-feedback{
+    background-color: #404F76;
+    width: 300px;
+    height: 50px;
+    border-radius: 50px;
+    font-family: $font-roboto;
+    line-height: 0.06em;
+}
+.btn-register{
+    background-color: #404F76;
+    width: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
+    margin-left: 150px;
+    border-radius: 11.5px;
+    font-family: $font-roboto;
+    letter-spacing: 0.06em;
+}
+.btn-login{
+    background-color: #404F76;
+    width: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
+    margin-left: 270px;
+    margin-bottom: 20px;
+    border-radius: 11.5px;
+    font-family: $font-roboto;
+    letter-spacing: 0.06em;
+}

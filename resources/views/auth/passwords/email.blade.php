@@ -1,4 +1,4 @@
-@extends('content.apps')
+@extends('content.master2')
 
 @section('content')
 <div class="container">

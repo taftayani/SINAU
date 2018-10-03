@@ -1,0 +1,56 @@
+.img-login{
+   @extend .img-content-login;
+}
+.content-login{
+    @extend .login-section;
+}
+.form-login{
+    @extend .form-section;
+}
+.header-login{
+    @extend .heading-green-third;
+}
+.paragraph-login {
+    @extend .paragraph-first;
+}
+.btn-login{
+    @extend .btn-login;
+}
+.login{
+    #email{
+        @extend .form-reg;
+    }
+    #password{
+        @extend .form-reg;
+    }
+}
+.link-forgot-password{
+    @extend .link-forgot-password;  
+}
+.paragraph-register{
+    @extend .sectin-login;
+}
+
+@media only screen and (max-width:1000px){
+   .form-login{
+       padding-left: 0px;
+       padding-right: 0px;
+   }
+   .login{
+        #email{
+            margin-left: 0px;
+        }
+        #password{
+            margin-left: 0px;
+        }
+    }
+    .btn-login{
+        margin-left: 0px;
+    }
+    .link-forgot-password{
+        margin-left: 0px;
+    }
+    .paragraph-register{
+        margin-left: 0px;
+    }
+}

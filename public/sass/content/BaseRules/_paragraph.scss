@@ -1,0 +1,40 @@
+$font-roboto:'Roboto Slab', serif;
+.paragraph-content{
+    font-family: $font-roboto;
+    color: white;
+    font-weight: 200;
+    font-size: 30px;
+    letter-spacing: 0.06em;
+}
+.pargraph-little{
+    font-family: $font-roboto;
+    color: #828282;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.06em;
+}
+
+.paragraph-second{
+    font-family: $font-roboto;
+    color: #404F76;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+    text-align: justify;
+}
+.paragraph-register{
+    font-family: $font-roboto;
+    color: #586360;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    text-align: justify;
+}
+.paragraph-first{
+    font-family: $font-roboto;
+    color: #12BF95;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 7%;
+}

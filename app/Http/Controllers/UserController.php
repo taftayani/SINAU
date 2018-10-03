@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\User;
 use Illuminate\Http\Request;
+// use Storage;
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+// use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -37,7 +41,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      //
     }
 
     /**
@@ -77,19 +81,25 @@ class UserController extends Controller
     public function update(Request $request,User $user)
     {
         //
-        $id=$request->id;
+
         $this->validate($request, [
-          'nama_depan' => 'required|string|max:255',
-          'nama_belakang' => 'required|string|max:255',
-          'username' => 'required|string|max:255|unique:users',
+          'nama_depan' => 'string|max:255',
+          'nama_belakang' => 'string|max:255',
+          'username' => 'string|max:255',
           'password' => 'required|string|min:6|confirmed',
+          'foto' => 'max:2000',
 
         ]);
+        $path = Storage::disk('public')->put('images/'.$_FILES['foto']['name'],
+        file_get_contents($_FILES['foto']['tmp_name']));
+        $user->update([
+          'nama_depan'=>$request->nama_depan,
+          'nama_belakang'=>$request->nama_belakang,
+          'username'=>$request->username,
+          'password'=>bcrypt($request->password),
+          'foto'=> 'storage/images/'.$_FILES['foto']['name'],
+      ]);
 
-        // $path = $request->file('photo')->store('users');
-        // return $path;
-
-        $user->update($request->all());
         return redirect(route('layouts.profile'));
     }
 
@@ -106,5 +116,10 @@ class UserController extends Controller
     public function profile()
     {
       return view('layouts.profile');
+    }
+
+    public function dashboard()
+    {
+      return view('layouts.beranda');
     }
 }

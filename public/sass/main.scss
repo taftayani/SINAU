@@ -1,0 +1,32 @@
+//Base Rules
+    @import 'content/BaseRules/images';
+    @import 'content/BaseRules/button';
+    @import 'content/BaseRules/heading';
+    @import 'content/BaseRules/paragraph';
+    @import 'content/BaseRules/form';
+    @import 'content/BaseRules/link';
+//Base Rules
+
+//Module 
+    @import 'content/Module/HeaderModule';
+    @import 'content/Module/HomeModule';
+    @import 'content/Module/FooterModule';
+    @import 'content/Module/RegisterModule';
+    @import 'content/Module/LoginModule';
+//Module
+
+//Layout
+    @import 'content/Layout/FirstLayout';
+    @import 'content/Layout/SecondLayout';
+    @import 'content/Layout/ThirdLayout';
+    @import 'content/Layout/FourthLayout';
+    @import 'content/Layout/FifthLayout';
+//Layout
+
+//Processing Dekstop 
+    @import 'pages/headerProcess';
+    @import 'pages/footerProcess';
+    @import 'pages/homeProcess';
+    @import 'pages/registerProcess';
+    @import 'pages/loginProcess';
+//Processing Desktop

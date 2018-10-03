@@ -1,0 +1,30 @@
+.nav-header{
+    @extend .background-nav;
+    .logo{
+        @extend .img-logo-sec;
+    }
+    .navbar-section-first{
+        @extend .navbar-section-first-content;
+    }
+    .navbar-section-second{
+        @extend .navbar-section-second-content;
+    }
+    .login-btn{
+        @extend .btn-nav;
+    }
+}
+.transparent-header{
+    @extend .heeader-background-ts;
+}
+.log-user-header{
+    @extend .navbar-section-loguser;
+}
+.profile-img{
+    @extend .profile-content;
+}
+
+@media only screen and (max-width:1000px){
+    .log-user-header{
+       display: none;
+    }
+}

@@ -1,0 +1,57 @@
+$font-roboto:'Roboto Slab', serif;
+
+.heading-content{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 70px;
+    color: white;
+    font-weight: 400;
+}
+.heading-content-second{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 35px;
+    color: white;
+    font-weight:normal;
+}
+.heading-big{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 55px;
+    color: #67759B;
+    font-weight:normal;
+}
+.heading-green{
+    color: #12BF95;
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: normal;
+}
+.heading-green-third{
+    color: #12BF95;
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: normal;
+}
+.heading-green-second{
+    color: #12BF95;
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 100px;
+    margin-top: -20px;
+}
+.heading-product{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 40px;
+    color: #00cc99;
+    font-weight: 400;
+    line-height: 40px;
+}
