@@ -1,0 +1,27 @@
+#layout-confirm{
+ @extend .bg-profile-teach;
+}
+#column-data{
+    @extend .card-data-content;
+}
+.heading-confirm{
+    @extend .heading-content-third;
+}
+.list-heading-data{
+    @extend .heading-content-fourth;
+}
+.photo-profile-edit-teach-second{
+    @extend .img-profile-big-second;
+}
+#column-img-confirm{
+    @extend .column-section-img;
+}
+#column-subject{
+    @extend .card-schedule;
+}
+#rows-data{
+    @extend .rows-list;
+}
+.paragraph-confirm{
+    @extend .paragraph-second;
+}

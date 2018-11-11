@@ -27,4 +27,16 @@ Route::get('beranda','UserController@dashboard')->name('beranda');
 Route::get('sinau.offline','Pruduct@index')->name('sinau_offline');
 
 //guru
-Route::get('teacher.daftar','TeachController@index')->name('guru');
+Route::get('guru','TeacherController@index')->name('guru');
+Route::get('profileGuru','TeacherController@profile')->name('Data_Guru');
+Route::get('PilihGuru','TeacherController@ChooseTeacher')->name('Pilih_guru');
+Route::get('Konfirmasi','TeacherController@Confirm')->name('confirm');
+Route::post('InputDataGuru','TeacherController@create')->name('input_guru');
+Route::post('inputMataPelajar','MataPelajaranController@InputValid')->name('input_matpel_valid');
+Route::post('inputJadwalMengajar','ShceduleController@InputValidShcedule')->name('input_schedule_valid');
+Route::post('inputMatPel','MataPelajaranController@input')->name('input_matpel');
+Route::post('inputMatPel','MataPelajaranController@input')->name('input_matpel');
+Route::get('EditDataGuru','TeacherController@edit')->name('shown_teacher');
+Route::put('UbahDataTeacher/{EditDataGuru}','TeacherController@update')->name('edit_teacher');
+Route::post('inputJadwal','ShceduleController@create')->name('input_schedule');
+Route::get('LihatDaftarGuru','TeacherController@TeacherView')->name('name_teacher');

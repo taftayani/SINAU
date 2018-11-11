@@ -54,6 +54,10 @@ class RegisterController extends Controller
             'username' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'phone' => 'required|max:100',
+            'birthday' => 'required',
+            'address' => 'required|string|max:255',
+            'gender' => 'required',
         ]);
           return view('layouts.home');
     }
@@ -71,6 +75,10 @@ class RegisterController extends Controller
             'nama_belakang' => $data['nama_belakang'],
             'username' => $data['username'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
+            'birthday' => $data['birthday'],
+            'address' => $data['address'],
+            'gender' => $data['gender'],
             'password' =>bcrypt($data['password']),
         ]);
     }

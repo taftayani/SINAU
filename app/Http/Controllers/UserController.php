@@ -86,7 +86,7 @@ class UserController extends Controller
           'nama_depan' => 'string|max:255',
           'nama_belakang' => 'string|max:255',
           'username' => 'string|max:255',
-          'password' => 'required|string|min:6|confirmed',
+          'password' => 'string|min:6|confirmed',
           'foto' => 'max:2000',
 
         ]);

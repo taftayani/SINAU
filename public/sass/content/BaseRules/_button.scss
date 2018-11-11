@@ -19,7 +19,7 @@ $font-roboto:'Roboto Slab', serif;
     height: 50px;
     color: white;
     font-weight: 700;
-    margin-left: 150px;
+    margin-left: 200px;
     border-radius: 11.5px;
     font-family: $font-roboto;
     letter-spacing: 0.06em;
@@ -37,4 +37,46 @@ $font-roboto:'Roboto Slab', serif;
     border-radius: 11.5px;
     font-family: $font-roboto;
     letter-spacing: 0.06em;
+}
+.btn-fitur-content{
+    background-color: #45E0C0;
+    width: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 20px;
+    border-radius: 11.5px;
+    font-family: $font-roboto;
+    letter-spacing: 0.06em;
+}
+.btn-order-section{
+    background-color: #45E0C0;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 11.5px;
+    font-family: $font-roboto;
+    letter-spacing: 0.06em;
+}
+.btn-red-content{
+    background-color: #F06491;
+    width: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 11.5px;
+    font-family: $font-roboto;
+}
+.btn-red-content:active{
+    background-color: #F06491;
 }

@@ -1,0 +1,69 @@
+.img-parralax{
+   @extend .login-home;
+}
+.rows-login-home{
+    @extend .rows-home-login;
+}
+.heading-profile{
+    @extend .heading-content-white;
+}
+.heading-second-profile{
+    @extend .heading-white;
+}
+.photo-profile{
+    @extend .img-profile;
+}
+.paragraph-profile{
+    @extend .paragraph-profile;
+}
+.rows-second-profile{
+    @extend .second-profile-login;
+}
+.header-profile-second{
+    @extend .heading-green;
+}
+.link-profile{
+    @extend .link-edit-profile;
+}
+.link-column-profile{
+    @extend .column-link-edit-profile;
+}
+.img-profile-teach{
+    @extend .img-teach;
+}
+.header-teach{
+    @extend .heading-black;
+}
+.paragraph-title-educate{
+    @extend .heading-black-second;
+}
+#column-profile-teach{
+    @extend .column-profile-choose-teacher;
+}
+.rows-third-profile{
+    @extend .third-layout-login;
+}
+#img-study{
+    @extend .column-study-teach;
+}
+#img-book{
+    @extend .column-study-book;
+}
+.rows-column-fitur{
+    @extend .rows-product-second;
+}
+.header-fitur{
+    @extend .heading-content-second;
+}
+.rows-teach{
+    @extend .rows-teach-content;
+}
+.header-second-fitur{
+    @extend .heading-white;
+}
+.column-devider-fitur{
+    @extend .devider-content;
+}
+.btn-fitur{
+    @extend .btn-fitur-content;
+}

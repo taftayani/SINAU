@@ -1,0 +1,61 @@
+.header-subject{
+    @extend .heading-content-third;
+}
+.list-subject{
+    @extend .heading-green-fourth;
+}
+#list-subject{
+    @extend .heading-green-fourth;
+
+}
+.div-list-subject{
+    @extend .list-content;
+}
+.rows-subject{
+    @extend .rows-bar-subject;
+}
+#column-subject{
+    @extend .column-subject-content;
+}
+.header-list-schedule{
+    @extend .heading-green-first;
+}
+.list-schedule{
+    @extend .list-first;
+}
+.bg-profile-off{
+    @extend .bg-profile-off-content;
+}
+#modal-teacher{
+    @extend .modal-content-section;
+}
+.header-list-address{
+    @extend .heading-content-second;
+}
+.header-name{
+    @extend .heading-content-grey-first;
+}
+.header-contact{
+    @extend .heading-content-grey-second;
+}
+.paragraph-biodata{
+    @extend .paragraph-second;
+}
+#rows-btn-pesan{
+    @extend .rows-btn-content;
+}
+.btn-order{
+    @extend .btn-order-section;
+}
+.link-choose-teacher{
+    @extend .link-choose-teacher-section;
+}
+.layouts-choose{
+    @extend .layouts-first-choose;
+}
+.btn-order-return{
+    @extend .btn-red-content;
+}
+.btn-order-next{
+    @extend .btn-order-section;
+}

@@ -5,6 +5,7 @@
     @import 'content/BaseRules/paragraph';
     @import 'content/BaseRules/form';
     @import 'content/BaseRules/link';
+    @import 'content/BaseRules/list';
 //Base Rules
 
 //Module 
@@ -13,6 +14,7 @@
     @import 'content/Module/FooterModule';
     @import 'content/Module/RegisterModule';
     @import 'content/Module/LoginModule';
+    @import 'content/Module/SinauOffModule';
 //Module
 
 //Layout
@@ -30,3 +32,9 @@
     @import 'pages/registerProcess';
     @import 'pages/loginProcess';
 //Processing Desktop
+
+//Processing login user
+    @import 'pages/LoginUser/homeProcess';
+    @import 'pages/LoginUser/sinauoffteachProcess';
+    @import 'pages/LoginUser/profileteachProcess';
+    @import 'pages/LoginUser/confirmProcess';

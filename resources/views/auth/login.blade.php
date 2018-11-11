@@ -38,7 +38,7 @@
           </form>
           <a href="{{ route('password.request') }}" class="link-forgot-password">Lupa Password ?</a>
           <div class="paragraph-register">
-            <h5 class="paragraph-reg">Belum Punya Akun ? <a href="{{ route('login') }}" class="link-register">Daftar</a></h5>
+            <h5 class="paragraph-reg">Belum Punya Akun ? <a href="{{ route('register') }}" class="link-register">Daftar</a></h5>
           </div>
       </div>
 

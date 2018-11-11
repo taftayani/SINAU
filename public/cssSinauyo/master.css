@@ -3,6 +3,27 @@
   width: 80%;
   padding-left: 10px; }
 
+.img-profile, .photo-profile {
+  width: 150px;
+  height: 150px; }
+
+.img-teach, .img-profile-teach {
+  width: 110px;
+  height: 110px; }
+
+.img-profile-big, .photo-profile-edit-teach {
+  width: 412px;
+  height: 432px; }
+
+.img-profile-big-second, .photo-profile-edit-teach-second {
+  width: 300px;
+  height: 300px; }
+
+.img-profile-big-second:hover, .photo-profile-edit-teach-second:hover {
+  background-color: #F9F9F9;
+  opacity: 0.5;
+  transition: 0.5s; }
+
 .btn-nav, .nav-header .login-btn {
   border-right: 1px solid white;
   padding-right: 30px; }
@@ -23,7 +44,7 @@
   height: 50px;
   color: white;
   font-weight: 700;
-  margin-left: 150px;
+  margin-left: 200px;
   border-radius: 11.5px;
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.06em; }
@@ -42,6 +63,48 @@
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.06em; }
 
+.btn-fitur-content, .btn-fitur {
+  background-color: #45E0C0;
+  width: auto;
+  padding-left: 100px;
+  padding-right: 100px;
+  height: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+  margin-bottom: 20px;
+  border-radius: 11.5px;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.06em; }
+
+.btn-order-section, .btn-order, .btn-order-next {
+  background-color: #45E0C0;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 11.5px;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.06em; }
+
+.btn-red-content, .btn-order-return {
+  background-color: #F06491;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 50px;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 11.5px;
+  font-family: "Roboto Slab", serif; }
+
+.btn-red-content:active, .btn-order-return:active {
+  background-color: #F06491; }
+
 .heading-content, .first-section .first-header {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
@@ -49,12 +112,40 @@
   color: white;
   font-weight: 400; }
 
-.heading-content-second, .first-section .second-header {
+.heading-content-second, .first-section .second-header, .header-fitur, .header-list-address {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 35px;
   color: white;
   font-weight: normal; }
+
+.heading-content-white, .heading-profile {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 40px;
+  color: white;
+  font-weight: 700; }
+
+.heading-black, .header-teach {
+  font-family: "Roboto Slab", serif;
+  line-height: 30px;
+  font-size: 18px;
+  color: black;
+  font-weight: normal; }
+
+.heading-black-second, .paragraph-title-educate {
+  font-family: "Roboto Slab", serif;
+  line-height: 30px;
+  font-size: 13px;
+  color: black;
+  font-weight: normal; }
+
+.heading-white, .heading-second-profile, .header-second-fitur {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 20px;
+  color: white;
+  font-weight: 300; }
 
 .heading-big, .second-layout .first-header, .fifth-layout .header-first {
   font-family: "Roboto Slab", serif;
@@ -63,7 +154,7 @@
   color: #67759B;
   font-weight: normal; }
 
-.heading-green, .header-register {
+.heading-green, .header-register, .header-profile-second {
   color: #12BF95;
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
@@ -79,6 +170,14 @@
   font-weight: 700;
   line-height: normal; }
 
+.heading-green-first, .header-list-schedule {
+  color: #12BF95;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal; }
+
 .heading-green-second, .header-register-second {
   color: #12BF95;
   font-family: "Roboto Slab", serif;
@@ -89,6 +188,14 @@
   margin-bottom: 100px;
   margin-top: -20px; }
 
+.heading-green-fourth, .list-subject, #list-subject {
+  color: #12BF95;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: normal; }
+
 .heading-product, .third-layout .first-header {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
@@ -96,6 +203,42 @@
   color: #00cc99;
   font-weight: 400;
   line-height: 40px; }
+
+.heading-content-third, .header-subject, .heading-teacher-form, .heading-confirm {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 24px;
+  color: #4E4F51;
+  font-weight: 700;
+  letter-spacing: 7%;
+  line-height: 32px; }
+
+.heading-content-fourth, .heading-term, .list-heading-data {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 18px;
+  color: #4E4F51;
+  font-weight: 700;
+  letter-spacing: 7%;
+  line-height: 32px; }
+
+.heading-content-grey-first, .header-name {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 30px;
+  color: #555555;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  line-height: 32px; }
+
+.heading-content-grey-second, .header-contact {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+  color: #555555;
+  font-weight: 300;
+  letter-spacing: 0.07em;
+  line-height: 32px; }
 
 .paragraph-content, .first-section .first-paragraph {
   font-family: "Roboto Slab", serif;
@@ -111,7 +254,7 @@
   font-size: 20px;
   letter-spacing: 0.06em; }
 
-.paragraph-second, .third-layout .paragraph-first, .third-layout .paragraph-login {
+.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm {
   font-family: "Roboto Slab", serif;
   color: #404F76;
   font-weight: 300;
@@ -127,6 +270,15 @@
   letter-spacing: 0.02em;
   text-align: justify; }
 
+.paragraph-profile {
+  font-family: "Roboto Slab", serif;
+  color: #696969;
+  font-weight: 300;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  text-align: justify;
+  margin-top: 30px; }
+
 .paragraph-first, .paragraph-login {
   font-family: "Roboto Slab", serif;
   color: #12BF95;
@@ -134,6 +286,14 @@
   font-size: 24px;
   line-height: 32px;
   letter-spacing: 7%; }
+
+.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm {
+  font-family: "Roboto Slab", serif;
+  color: #4E4F51;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 32px;
+  letter-spacing: 0.07em; }
 
 .form-reg, input[type="text"], .text-long, .login #email, .login #password {
   width: 100%;
@@ -152,6 +312,14 @@
   font-family: "Roboto Slab", serif;
   color: #12BF95; }
 
+.link-edit-profile, .link-profile {
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+  line-height: 40px;
+  text-align: center;
+  font-weight: 400;
+  color: #12BF95; }
+
 .link-forgot-password {
   font-family: "Roboto Slab", serif;
   color: #404F76;
@@ -159,6 +327,33 @@
   font-size: 12px;
   margin-left: 350px;
   letter-spacing: 0.02em; }
+
+.link-choose-teacher-section, .link-choose-teacher {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: 0.02em; }
+
+.list-first, .list-schedule {
+  font-family: "Roboto Slab", serif;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: #12BF95; }
+
+.list-term-content, .list-term {
+  font-family: "Roboto Slab", serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  font-size: 14px;
+  line-height: 50px;
+  letter-spacing: 0.02em;
+  color: black; }
 
 .navbar-section-first-content, .nav-header .navbar-section-first {
   margin-left: 250px;
@@ -187,7 +382,7 @@
   padding-top: 30px; }
 
 .navbar-section-loguser, .log-user-header {
-  margin-left: 300px;
+  margin-left: -900px;
   padding-top: 20px;
   font-family: "Roboto Slab", serif;
   font-size: 18px;
@@ -211,6 +406,57 @@
 .rows-product, .third-layout .content-group-product {
   padding-top: 150px; }
 
+.rows-product-second, .rows-column-fitur {
+  padding-left: 100px; }
+
+.rows-home-login, .rows-login-home {
+  margin-left: 50px; }
+
+.column-img-profile {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-right: 20px;
+  border-radius: 11px;
+  border: 3px solid #D8D8D8; }
+
+.column-link-edit-profile, .link-column-profile {
+  background-color: rgba(18, 191, 149, 0.2);
+  margin-top: 20px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  width: auto;
+  height: auto;
+  text-align: center; }
+
+.column-profile-choose-teacher, #column-profile-teach {
+  background-color: white;
+  padding-left: 23px;
+  padding-top: 10px;
+  padding-bottom: 23px;
+  padding-right: 23px; }
+
+.column-profile-choose-teacher:hover, #column-profile-teach:hover {
+  background-color: #F0F0F0;
+  border-radius: 5px; }
+
+.column-study-teach, #img-study {
+  background-image: url("../img/Background/teach.png");
+  background-size: cover;
+  background-position: center;
+  margin-right: 100px; }
+
+.column-study-book, #img-book {
+  background-image: url("../img/Background/book.png");
+  background-size: cover;
+  background-position: center;
+  margin-right: 50px; }
+
+.rows-teach-content, .rows-teach {
+  border: 2px solid white; }
+
+.devider-content, .column-devider-fitur {
+  border-right: 2px solid white; }
+
 .layout-footer, .footer-sec {
   background-color: #2E3B60; }
 
@@ -228,7 +474,11 @@
   padding-left: 10px; }
 
 .content-paragraph, .login-paragraph {
-  margin-left: 200px; }
+  margin-left: 80px; }
+
+.sectin-register, .paragraph-register, .paragraph-reg {
+  margin-left: 140px;
+  margin-top: 20px; }
 
 .login-section, .content-login {
   width: auto;
@@ -237,19 +487,67 @@
   padding-bottom: 200px;
   opacity: 70%;
   padding-left: 150px;
-  padding-right: 150px;
-  box-shadow: 1px 2px 2px 2px solid grey; }
+  padding-right: 150px; }
 
 .form-section, .form-login {
-  padding-top: 30px;
+  padding-top: 104px;
   padding-bottom: 100px;
   padding-left: 100px;
-  padding-right: 100px;
-  background-color: rgba(255, 255, 255, 0.95); }
+  padding-right: 100px; }
 
-.sectin-login, .paragraph-register, .paragraph-reg {
-  margin-left: 140px;
+.sectin-login {
+  margin-left: 28px;
   margin-top: 20px; }
+
+.rows-bar-subject, .rows-subject {
+  padding-left: 100px; }
+
+.column-subject-content, #column-subject {
+  border-radius: 5px;
+  background-color: #F9F9F9;
+  margin-right: 20px;
+  padding-left: 20px; }
+
+.modal-content-section, #modal-teacher {
+  background-color: #F9F9F9; }
+
+.rows-btn-content, #rows-btn-pesan {
+  float: right; }
+
+.list-content, .div-list-subject {
+  margin-bottom: 100px;
+  border-radius: 5px;
+  background-color: #F9F9F9;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px; }
+
+.card-data-content, #column-data {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  padding-left: 30px;
+  border-top: 7px solid #45E0C0;
+  background-color: #F9F9F9; }
+
+.column-section-img, #column-img-confirm {
+  background-color: #F9F9F9;
+  border-radius: 3px;
+  width: auto;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: 81px; }
+
+.card-schedule, #column-subject {
+  background-color: white; }
+
+.rows-list, #rows-data {
+  margin-bottom: 50px; }
+
+.column-img-section, #column-img-edit-teach {
+  margin-right: 70px; }
 
 .layout-first, .first-section {
   background-image: url("../img/Background/ruler.png");
@@ -264,11 +562,38 @@
   height: auto;
   background-size: cover; }
 
+.login-home, .img-parralax {
+  background-size: cover;
+  background-color: #12BF95;
+  height: 190px;
+  padding-top: 26px;
+  margin-bottom: 200px;
+  border-bottom: 1px solid #E1E1E1; }
+
+.bg-profile-teach, .bg-profile-teacher, #layout-confirm {
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px; }
+
+.bg-profile-off-content, .bg-profile-off {
+  background-color: #F3F3F3; }
+
+.layouts-first-choose, .layouts-choose {
+  padding-top: 100px;
+  padding-bottom: 200px;
+  background-color: #E5E5E5;
+  padding-right: 30px; }
+
 .second-layout-home, .second-layout {
   padding-top: 100px;
   padding-bottom: 150px;
   animation-direction: reverse;
   animation-delay: 0.8s; }
+
+.second-profile-login, .rows-second-profile {
+  border-top: 3px solid #E1E1E1;
+  border-bottom: 3px solid #E1E1E1;
+  padding-left: 30px; }
 
 .third-layout-home, .third-layout {
   background-color: #EAEAEA;
@@ -278,6 +603,10 @@
   padding-top: 25px;
   padding-bottom: 100px;
   transition: width 3s; }
+
+.third-layout-login, .rows-third-profile {
+  padding-left: 30px;
+  padding-bottom: 100px; }
 
 .layout-home, .video-ces {
   padding-top: 150px;
@@ -301,14 +630,21 @@
   .login-paragraph {
     margin-left: 27px; } }
 @media only screen and (max-width: 1000px) {
+  .img-login {
+    background-image: url("../img/Background/mobilelogin.png");
+    background-position: center;
+    background-size: cover; }
+
   .form-login {
     padding-left: 0px;
     padding-right: 0px; }
 
   .login #email {
-    margin-left: 0px; }
+    margin-left: 0px;
+    margin-right: 0px; }
   .login #password {
-    margin-left: 0px; }
+    margin-left: 0px;
+    margin-right: 0px; }
 
   .btn-login {
     margin-left: 0px; }

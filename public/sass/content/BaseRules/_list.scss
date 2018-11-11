@@ -1,0 +1,22 @@
+$font-roboto:'Roboto Slab', serif;
+
+.list-first{
+ font-family: $font-roboto;
+ font-style: normal;
+ font-weight: normal;
+ line-height: normal;
+ font-size: 18px;
+ text-align: center;
+ letter-spacing: 0.07em;
+ color: #12BF95;
+}
+.list-term-content{
+    font-family: $font-roboto;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    font-size: 14px;
+    line-height: 50px;
+    letter-spacing: 0.02em;
+     color: black;
+}

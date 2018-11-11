@@ -3,3 +3,24 @@
     width: 80%;
     padding-left: 10px;
 }
+.img-profile{
+    width: 150px;
+    height: 150px;
+}
+.img-teach{
+    width: 110px;
+    height: 110px;
+}
+.img-profile-big{
+    width: 412px;
+    height: 432px;
+}
+.img-profile-big-second{
+    width: 300px;
+    height: 300px;
+}
+.img-profile-big-second:hover{
+    background-color: #F9F9F9;
+    opacity: 0.5;
+    transition: 0.5s;
+}

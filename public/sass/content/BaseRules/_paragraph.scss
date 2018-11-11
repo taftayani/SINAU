@@ -30,6 +30,15 @@ $font-roboto:'Roboto Slab', serif;
     letter-spacing: 0.02em;
     text-align: justify;
 }
+.paragraph-profile{
+    font-family: $font-roboto;
+    color: #696969;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    text-align: justify;
+    margin-top: 30px;
+}
 .paragraph-first{
     font-family: $font-roboto;
     color: #12BF95;
@@ -37,4 +46,12 @@ $font-roboto:'Roboto Slab', serif;
     font-size: 24px;
     line-height: 32px;
     letter-spacing: 7%;
+}
+.paragraph-second{
+    font-family: $font-roboto;
+    color: #4E4F51;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0.07em;
 }

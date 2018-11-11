@@ -2,7 +2,15 @@ $font-roboto:'Roboto Slab', serif;
 .link-register-section{
     font-family: $font-roboto;
     color: #12BF95;
-}  
+} 
+.link-edit-profile{
+    font-family: $font-roboto;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: 400;
+    color: #12BF95;
+} 
 .link-forgot-password{
     font-family: $font-roboto;
     color: #404F76;
@@ -11,3 +19,10 @@ $font-roboto:'Roboto Slab', serif;
     margin-left: 350px;
     letter-spacing: 0.02em;
 } 
+.link-choose-teacher-section{
+    font-family: $font-roboto;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+    letter-spacing: 0.02em;
+}

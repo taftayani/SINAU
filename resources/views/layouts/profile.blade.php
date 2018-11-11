@@ -65,7 +65,7 @@
       @endif
       <div class="row">
         <div class="input-field col s6">
-          <input id="password" placeholder="password"  name="password" type="password" class="validate">
+          <input id="password" placeholder="password"  name="password" type="password" class="validate" >
           @if ($errors->has('password'))
             <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
           @endif
@@ -84,7 +84,7 @@
         <input type="file" name="foto" multiple>
       </div>
       <div class="file-path-wrapper">
-        <input class="file-path validate">
+        <input class="file-path validate"  value="{{ Auth::user()->foto }}">
       </div>
       @if ($errors->has('foto'))
         <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('foto')  }}</p>

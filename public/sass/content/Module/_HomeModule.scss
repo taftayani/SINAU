@@ -10,3 +10,54 @@
 .rows-product{
     padding-top: 150px;
 }
+.rows-product-second{
+   padding-left: 100px;
+}
+.rows-home-login{
+    margin-left: 50px;
+}
+.column-img-profile{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 11px;
+    border: 3px solid #D8D8D8; 
+}
+.column-link-edit-profile{
+    background-color: rgba(18, 191, 149, 0.2);
+    margin-top: 20px;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+.column-profile-choose-teacher{
+    background-color: white;
+    padding-left: 23px;
+    padding-top: 10px;
+    padding-bottom: 23px;
+    padding-right: 23px;
+}
+.column-profile-choose-teacher:hover{
+    background-color: #F0F0F0;
+    border-radius: 5px;
+}
+.column-study-teach{
+    background-image: url("../img/Background/teach.png");
+    background-size: cover;
+    background-position: center;
+    margin-right: 100px;
+}
+.column-study-book{
+    background-image: url("../img/Background/book.png");
+    background-size: cover;
+    background-position: center;
+    margin-right: 50px;
+}
+.rows-teach-content{
+    border: 2px solid white;
+}
+.devider-content{
+    border-right: 2px solid white;
+}

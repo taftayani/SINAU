@@ -1,5 +1,4 @@
 .layout-first{
-    // background-color: #EAEAEA;
     background-image: url("../img/Background/ruler.png");
     height: 800px;
     background-size: cover;
@@ -11,4 +10,26 @@
     padding-bottom: 120px;
     height: auto;
     background-size: cover;
+}
+.login-home{
+    background-size: cover;
+    background-color: #12BF95;
+    height: 190px;
+    padding-top: 26px;
+    margin-bottom: 200px;
+    border-bottom: 1px solid #E1E1E1;
+}
+.bg-profile-teach{
+    background-color: white;
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.bg-profile-off-content{
+    background-color: #F3F3F3;
+}
+.layouts-first-choose{
+    padding-top: 100px;
+    padding-bottom: 200px;
+    background-color: #E5E5E5;
+    padding-right: 30px;
 }

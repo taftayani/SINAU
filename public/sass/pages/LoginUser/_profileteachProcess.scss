@@ -1,0 +1,12 @@
+.bg-profile-teacher{
+    @extend .bg-profile-teach;
+}
+.photo-profile-edit-teach{
+    @extend .img-profile-big;
+}
+.heading-teacher-form{
+    @extend .heading-content-third;
+}
+#column-img-edit-teach{
+    @extend .column-img-section;
+}

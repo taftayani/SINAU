@@ -114,8 +114,7 @@
             @if($errors->has('email'))
               <p class="red-text"><i class="material-icons">create</i></p>
             @endif
-
-
+            
           </div>
         </div>
         <div class="tanggapan">

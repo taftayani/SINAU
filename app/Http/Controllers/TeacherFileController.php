@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\teach;
+use App\TeacherFile;
 use Illuminate\Http\Request;
 
-class TeachController extends Controller
+class TeacherFileController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TeachController extends Controller
      */
     public function index()
     {
-       return view('auth.teacherRegis');
+        //
     }
 
     /**
@@ -41,10 +41,10 @@ class TeachController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\teach  $teach
+     * @param  \App\TeacherFile  $teacherFile
      * @return \Illuminate\Http\Response
      */
-    public function show(teach $teach)
+    public function show(TeacherFile $teacherFile)
     {
         //
     }
@@ -52,10 +52,10 @@ class TeachController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\teach  $teach
+     * @param  \App\TeacherFile  $teacherFile
      * @return \Illuminate\Http\Response
      */
-    public function edit(teach $teach)
+    public function edit(TeacherFile $teacherFile)
     {
         //
     }
@@ -64,10 +64,10 @@ class TeachController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\teach  $teach
+     * @param  \App\TeacherFile  $teacherFile
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, teach $teach)
+    public function update(Request $request, TeacherFile $teacherFile)
     {
         //
     }
@@ -75,10 +75,10 @@ class TeachController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\teach  $teach
+     * @param  \App\TeacherFile  $teacherFile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(teach $teach)
+    public function destroy(TeacherFile $teacherFile)
     {
         //
     }

@@ -22,6 +22,15 @@
 .profile-img{
     @extend .profile-content;
 }
+.heading-term{
+    @extend .heading-content-fourth;
+}
+.paragraph-term{
+    @extend .paragraph-second;
+}
+.list-term{
+    @extend .list-term-content;
+}
 
 @media only screen and (max-width:1000px){
     .log-user-header{

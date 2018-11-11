@@ -14,6 +14,34 @@ $font-roboto:'Roboto Slab', serif;
     color: white;
     font-weight:normal;
 }
+.heading-content-white{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 40px;
+    color: white;
+    font-weight:700;
+}
+.heading-black{
+    font-family: $font-roboto;
+    line-height: 30px;
+    font-size: 18px;
+    color: black;
+    font-weight:normal;
+}
+.heading-black-second{
+    font-family: $font-roboto;
+    line-height: 30px;
+    font-size: 13px;
+    color: black;
+    font-weight:normal;
+}
+.heading-white{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    color: white;
+    font-weight:300;
+}
 .heading-big{
     font-family: $font-roboto;
     letter-spacing: 0.04em;
@@ -37,6 +65,14 @@ $font-roboto:'Roboto Slab', serif;
     font-weight: 700;
     line-height: normal;
 }
+.heading-green-first{
+    color: #12BF95;
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+}
 .heading-green-second{
     color: #12BF95;
     font-family: $font-roboto;
@@ -47,6 +83,15 @@ $font-roboto:'Roboto Slab', serif;
     margin-bottom: 100px;
     margin-top: -20px;
 }
+.heading-green-fourth{
+    color: #12BF95;
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+    
+}
 .heading-product{
     font-family: $font-roboto;
     letter-spacing: 0.04em;
@@ -54,4 +99,44 @@ $font-roboto:'Roboto Slab', serif;
     color: #00cc99;
     font-weight: 400;
     line-height: 40px;
+}
+.heading-content-third{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 24px;
+    color: #4E4F51;
+    font-weight: 700;
+    letter-spacing: 7%;
+    line-height: 32px;
+    
+}
+.heading-content-fourth{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 18px;
+    color: #4E4F51;
+    font-weight: 700;
+    letter-spacing: 7%;
+    line-height: 32px;
+    
+}
+.heading-content-grey-first{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 30px;
+    color: #555555;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    line-height: 32px;
+    
+}
+.heading-content-grey-second{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 14px;
+    color: #555555;
+    font-weight: 300;
+    letter-spacing: 0.07em;
+    line-height: 32px;
+    
 }

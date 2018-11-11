@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nama_depan', 'nama_belakang', 'email','username','password','foto'
+        'nama_depan', 'nama_belakang', 'email','username','password','foto','phone','address','birthday','gender'
     ];
 
     /**
@@ -26,4 +26,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function Teacher()
+    {
+        return $this->hasOne('App\Teacher');
+    }
+        // public function SeeTeacher()
+        // {
+        //     return $this->hasMany('App\Teacher');
+        // }
 }

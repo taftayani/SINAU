@@ -39,6 +39,7 @@
 
                 </div>
               </div>
+
               <div class="row">
                 <div class="input-field col xl5 s12 m5 text-long">
                   <input id="email" name="email" type="email" class="validate text-long" value="{{ old('email') }}">
@@ -60,6 +61,47 @@
                     <label for="password">Username</label>
                   </div>
               </div>
+
+              <div class="row">
+                  <div class="input-field col xl5 s12 m5 text-long">
+                    <input id="email" name="phone" type="number" class="validate text-long" value="{{ old('phone') }}">
+  
+                    @if ($errors->has('phone'))
+                      <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('phone')  }}</p>
+                    @endif
+  
+                    <label for="password">No Telp</label>
+                  </div>
+  
+                  <div class="input-field col xl5 s12 m5 text-long">
+                      <input id="email" name="birthday" type="date" class="validate text-long" value="{{ old('birthday') }}">
+    
+                      @if ($errors->has('birthday'))
+                        <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('birthday')  }}</p>
+                      @endif
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col xl5 s12 m5 text-long">
+                      <input id="email" name="address" type="text" class="validate text-long" value="{{ old('address') }}">
+    
+                      @if ($errors->has('address'))
+                        <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('address')  }}</p>
+                      @endif
+    
+                      <label for="password">Alamat Tinggal Anda</label>
+                    </div>
+    
+                    <div class="input-field col xl5 s12 m5 text-long">
+                        <select name="gender">
+                            <option value="Pendidikan" disabled selected>Jenis Kelamin</option>
+                            <option value="Male" name="gender">Laki-Laki</option>
+                            <option value="Female" name="gender">Perempuan</option>
+                        </select>
+                  </div>
+                 </div>
+
               <div class="row">
                 <div class="input-field col xl5 s12 m5 text-long">
                   <input id="email" name="password" type="password" class="validate text-long">
