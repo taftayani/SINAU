@@ -41,11 +41,7 @@ class ConfirmController extends Controller
 
 
     public function StatusConfirm(Request $request,Confirm $Pesanles){
-        
-        $teacher=Teacher::where('user_id',Auth::user()->id)->first();
-        // $confirmStatus=Confirm::where('teacher_id',$teacher->id)->get();
-        $confirm=Confirm::where('teacher_id',Auth::user()->id)->get();
-        
+                
         $Pesanles-> Status = $request->Status;
         $Pesanles->save();
         Session::flash('status','data berhasil');

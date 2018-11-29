@@ -50,5 +50,5 @@ Route::post('PesanLes','ConfirmController@konfirmasi')->name('order_les');
 Route::put('KonfirmasiPesanan/{Pesanles}','ConfirmController@StatusConfirm')->name('konfirmasi');
 Route::get('FAQ','SurveyController@FAQ')->name('faq');
 Route::get('Faq','UserController@faq')->name('faq_log');
-Route::post('VerifikasiAkunGuru','HomeController@Verifikasi')->name('verifikasi_data');
+Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
 

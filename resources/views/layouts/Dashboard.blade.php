@@ -58,11 +58,9 @@
                             <td>{{$teachers->ktp}}</td>
                             <td>{{$teachers->pendidikan}}</td>
                             <td>
-                                <form action="{{route('verifikasi_data')}}" method="post" enctype="multipart/form-data">
+                                <form action="{{route('verifikasi_data',['teacher'=>$teachers->id])}}" method="post" enctype="multipart/form-data">
                                     {{ csrf_field() }}
-                                    @if (isset($teachers->SeeTeacher))
-                                <input type="hidden" name="teacher_id" value="{{$teachers->id}}">
-                                    @endif  
+                                    {{ method_field('put') }}
                                     <button type="submit" name="verifikasi" value="Akun Sudah Diverifikasi">Verifikasi Akun</button>
                                 </form>
                             </td>

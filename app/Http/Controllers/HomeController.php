@@ -46,19 +46,20 @@ class HomeController extends Controller
       );
     }
 
-    public function Verifikasi(Request $request,Teacher $guru)
+    public function Verifikasi(Request $request,Teacher $teacher)
     {
     // $guru=Teacher::all();
-    $guru = Teacher::where('verifikasi', 'Belum Verifikasi')->get();
-   //  $verified = verifikasi::find($guru);
-    
-//    $tes-> verifikasi= $request->verifikasi;
-//    $tes-> save();
-    return $guru;
-     Verifikasi::create([
-        'teacher_id' => $guru,
-        'verifikasi' => $request->verifikasi,
-     ]);
+    // $teacher = Teacher::where('user_id', Auth::user()->id )->get();
+    // $verified = Teacher::find($guru);
+//    $guru-> user_id= Auth::user()->id;
+//    $guru-> verifikasi = $request->verifikasi;
+//    $guru-> save();
+    $teacher->verifikasi = 'Akun Sudah Diverifikasi';
+    $teacher->save();
+    //  Verifikasi::create([
+    //     'teacher_id' => $guru,
+    //     'verifikasi' => $request->verifikasi,
+    //  ]);
     //  return $req;
     return redirect(route('home'));
 
