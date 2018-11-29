@@ -1,4 +1,12 @@
 <div class="container-fluid rows-subject">
+    @if (session('subject'))
+        <div class="row">
+                <div class="col l12 green white-text">
+                        {{ session('subject') }}
+                </div>
+        </div>
+    @endif
+
     <div class="row">
         <div>
             <h1 class="header-subject"><a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
@@ -10,6 +18,7 @@
                   <form action="{{route('input_matpel_valid')}}" method="post">
                     {{ csrf_field() }}
                     <input type="hidden" name="teacher_id">
+                    <input type="hidden" name="teacher_nama_depan">
                         <div class="container">
                             <div class="row">
                                 <div>
@@ -71,9 +80,11 @@
                             </div>
 
                         </div>
-                        <div class="modal-footer">
-                                <button type="submit"> Masukan</button>
-                        </div>
+                        @if (Auth::user()->Teacher)
+                            <div class="modal-footer">
+                                    <button type="submit"> Masukan</button>
+                            </div>
+                        @endif
                     </form>
                   </div>
                   

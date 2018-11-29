@@ -12,8 +12,12 @@
   height: 110px; }
 
 .img-profile-big, .photo-profile-edit-teach {
-  width: 412px;
-  height: 432px; }
+  width: 300px;
+  height: 300px;
+  opacity: 1; }
+
+.img-profile-big:hover, .photo-profile-edit-teach:hover {
+  opacity: 0.2; }
 
 .img-profile-big-second, .photo-profile-edit-teach-second {
   width: 300px;
@@ -77,7 +81,7 @@
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.06em; }
 
-.btn-order-section, .btn-order, .btn-order-next {
+.btn-order-section, .btn-order, .btn-order-next, .btn-validasi-guru, .butoon-success {
   background-color: #45E0C0;
   width: auto;
   padding-left: 20px;
@@ -90,7 +94,7 @@
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.06em; }
 
-.btn-red-content, .btn-order-return {
+.btn-red-content, .btn-order-return, .butoon-failed {
   background-color: #F06491;
   width: auto;
   padding-left: 20px;
@@ -102,8 +106,25 @@
   border-radius: 11.5px;
   font-family: "Roboto Slab", serif; }
 
-.btn-red-content:active, .btn-order-return:active {
+.btn-red-content:active, .btn-order-return:active, .butoon-failed:active {
   background-color: #F06491; }
+
+.btn-red-content-second, .btn-delete {
+  background-color: #F06491;
+  width: auto;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  height: auto;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  border-radius: 11.5px;
+  font-family: "Roboto Slab", serif; }
+
+.btn-red-content-second:hover, .btn-delete:hover {
+  background-color: #FF665D; }
 
 .heading-content, .first-section .first-header {
   font-family: "Roboto Slab", serif;
@@ -147,6 +168,13 @@
   color: white;
   font-weight: 300; }
 
+.heading-white-second, .footer-sec .heading-footer {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 25px;
+  color: white;
+  font-weight: 700; }
+
 .heading-big, .second-layout .first-header, .fifth-layout .header-first {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
@@ -170,8 +198,16 @@
   font-weight: 700;
   line-height: normal; }
 
-.heading-green-first, .header-list-schedule {
+.heading-green-first, .header-list-schedule, .heading-status-success {
   color: #12BF95;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: normal; }
+
+.heading-red-first, .heading-status-dangerous {
+  color: #F06491;
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 24px;
@@ -213,12 +249,39 @@
   letter-spacing: 7%;
   line-height: 32px; }
 
+.heading-content-third-black, #layout-faq .heading-faq {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 40px;
+  color: #4E4F51;
+  font-weight: 700;
+  letter-spacing: 7%;
+  line-height: 32px; }
+
 .heading-content-fourth, .heading-term, .list-heading-data {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 18px;
   color: #4E4F51;
   font-weight: 700;
+  letter-spacing: 7%;
+  line-height: 32px; }
+
+.heading-content-fourth-black, #layout-faq .heading-question {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+  color: #4E4F51;
+  font-weight: 700;
+  letter-spacing: 7%;
+  line-height: 32px; }
+
+.heading-content-fifth-black, #layout-faq .hedaing-answer {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+  color: #4E4F51;
+  font-weight: 300;
   letter-spacing: 7%;
   line-height: 32px; }
 
@@ -231,7 +294,7 @@
   letter-spacing: 0.07em;
   line-height: 32px; }
 
-.heading-content-grey-second, .header-contact {
+.heading-content-grey-second, #layout-faq .paragraph-faq, .header-contact {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 14px;
@@ -287,6 +350,30 @@
   line-height: 32px;
   letter-spacing: 7%; }
 
+.paragraph-first-green, .paragraph-success {
+  font-family: "Roboto Slab", serif;
+  color: #12BF95;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 7%; }
+
+.paragraph-first-red, .paragraph-danger {
+  font-family: "Roboto Slab", serif;
+  color: #F06491;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 7%; }
+
+.paragraph-first-purple, .paragraph-unknown {
+  font-family: "Roboto Slab", serif;
+  color: #404F76;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 32px;
+  letter-spacing: 7%; }
+
 .paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm {
   font-family: "Roboto Slab", serif;
   color: #4E4F51;
@@ -335,6 +422,63 @@
   font-size: 20px;
   letter-spacing: 0.02em; }
 
+.link-footer-content, .footer-sec .link-footer {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-weight: 300;
+  font-size: 14px;
+  letter-spacing: 0.04em; }
+
+.link-footer-content:hover, .footer-sec .link-footer:hover {
+  font-size: 20px;
+  transition: 0.8s; }
+
+.link-see-teacher, .link-fitur {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 0.04em; }
+
+.link-home-teach, .link-teach {
+  font-family: "Roboto Slab", serif;
+  color: #BF3C12;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: 0.04em;
+  position: static; }
+
+.info, .red-info {
+  color: #F06491;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.06em;
+  font-weight: 700; }
+
+.info-green, .green-info {
+  color: #404F76;
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.06em;
+  font-weight: 300; }
+
+.link-home-teach:hover, .link-teach:hover {
+  color: #057258;
+  font-size: 40px;
+  transition: 0.2s; }
+
+.link-beranda-teach-section, .link-beranda-teach {
+  color: #4E4F51;
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 0.04em; }
+
+.link-beranda-teach-section:hover, .link-beranda-teach:hover {
+  transition: 0.2s;
+  padding-top: 10px;
+  font-size: 20px;
+  padding-bottom: 10px;
+  padding-right: 20px; }
+
 .list-first, .list-schedule {
   font-family: "Roboto Slab", serif;
   font-style: normal;
@@ -355,7 +499,7 @@
   letter-spacing: 0.02em;
   color: black; }
 
-.navbar-section-first-content, .nav-header .navbar-section-first {
+.navbar-section-first-content, .nav-header #navbar-section-first {
   margin-left: 250px;
   font-family: "Roboto Slab", serif;
   font-size: 18px;
@@ -382,7 +526,7 @@
   padding-top: 30px; }
 
 .navbar-section-loguser, .log-user-header {
-  margin-left: -900px;
+  margin-left: -1000px;
   padding-top: 20px;
   font-family: "Roboto Slab", serif;
   font-size: 18px;
@@ -490,9 +634,9 @@
   padding-right: 150px; }
 
 .form-section, .form-login {
-  padding-top: 104px;
+  padding-top: 9vw;
   padding-bottom: 100px;
-  padding-left: 100px;
+  padding-left: 10vw;
   padding-right: 100px; }
 
 .sectin-login {
@@ -536,9 +680,7 @@
   width: auto;
   padding-top: 10px;
   padding-bottom: 40px;
-  padding-right: 30px;
-  padding-left: 30px;
-  margin-right: 81px; }
+  margin-right: 40px; }
 
 .card-schedule, #column-subject {
   background-color: white; }
@@ -549,6 +691,33 @@
 .column-img-section, #column-img-edit-teach {
   margin-right: 70px; }
 
+.column-img-section:hover, #column-img-edit-teach:hover {
+  background-image: url("../../img/background/setting2.png");
+  transition: 0.3s;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 4; }
+
+.tab-screen, #tab-teacher {
+  overflow-y: scroll;
+  height: auto;
+  background-color: white;
+  margin-top: 30px; }
+
+.tab-layout, #tab-choose-section {
+  background-color: white;
+  height: 90vw;
+  padding-top: 40px; }
+
+.section-profile-teacher, #section-profile {
+  padding-top: 100px;
+  padding-left: 100px; }
+
+.card-matpel, #list-matpel {
+  background-color: white;
+  margin-right: 30px; }
+
 .layout-first, .first-section {
   background-image: url("../img/Background/ruler.png");
   height: 800px;
@@ -557,8 +726,8 @@
 
 .img-content-login, .img-login {
   background-image: url("../img/Background/login.png");
-  padding-top: 100px;
-  padding-bottom: 120px;
+  padding-top: 9vw;
+  padding-bottom: 10vw;
   height: auto;
   background-size: cover; }
 
@@ -570,10 +739,8 @@
   margin-bottom: 200px;
   border-bottom: 1px solid #E1E1E1; }
 
-.bg-profile-teach, .bg-profile-teacher, #layout-confirm {
-  background-color: white;
-  padding-top: 100px;
-  padding-bottom: 100px; }
+.bg-profile-teach, #layout-faq, .bg-profile-teacher, #layout-confirm {
+  background-color: #F3F3F3; }
 
 .bg-profile-off-content, .bg-profile-off {
   background-color: #F3F3F3; }

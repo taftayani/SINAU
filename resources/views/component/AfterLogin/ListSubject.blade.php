@@ -5,10 +5,15 @@
             </div>
         </div>
         <div class="row">
-            @foreach (Auth::user()->Teacher->Subject as $subjects)
-            <div class="col xl2">
-                    <h6 class="list-subject">{{$subjects->mata_pelajaran}}</h6>
-            </div>
-        @endforeach
+            @if (Auth::user()->Teacher->Subject)
+                @foreach (Auth::user()->Teacher->Subject as $subjects)
+                    <div class="col xl2">
+                            <h6 class="list-subject">{{$subjects->mata_pelajaran}}</h6>
+                    </div>
+                 @endforeach
+
+                @else 
+            @endif
+           
         </div>
 </div>

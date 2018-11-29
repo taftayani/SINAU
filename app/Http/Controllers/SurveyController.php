@@ -12,7 +12,10 @@ class SurveyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
+    public function FAQ()
+    {
+        return view('layouts.FAQ');
+    }
     public function index()
     {
       return view('layouts.home');

@@ -1,14 +1,6 @@
-@extends('content.master2')
+@if (Auth::user()->role == 'admin')
+    @include('layouts.Dashboard')
+@else
+    @include('layouts.User')
+@endif
 
-@section('content')
-    @include('component.AfterLogin.ProfileHome')
-    {{-- @include('component.AfterLogin.ListTeacher') --}}
-    @include('component.AfterLogin.Fitur')
-@endsection
-@push('js')
-    <script type="text/javascript">
-    $(document).ready(function(){
-    $('.parallax').parallax();
-  });
-    </script>
-@endpush

@@ -50,6 +50,21 @@
     }
 }
 
+#layout-faq{
+    @extend .bg-profile-teach;
+    .heading-faq{
+        @extend .heading-content-third-black;
+    }
+    .paragraph-faq{
+        @extend .heading-content-grey-second;
+    }
+    .heading-question{
+        @extend .heading-content-fourth-black;
+    }
+    .hedaing-answer{
+        @extend .heading-content-fifth-black;
+    }
+}
 @media only screen and (max-width:1000px){
     .first-section{
         display: none;

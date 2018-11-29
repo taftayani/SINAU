@@ -1,3 +1,9 @@
 .footer-sec{
     @extend .layout-footer;
+    .link-footer{
+        @extend .link-footer-content;
+    }
+    .heading-footer{
+        @extend .heading-white-second;
+    }
 }

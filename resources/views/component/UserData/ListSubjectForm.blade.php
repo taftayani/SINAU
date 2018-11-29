@@ -1,4 +1,4 @@
-<div class="container-fluid rows-subject">
+<div class="container-fluid rows-subject" id="Subject">
         <div class="row">
             <div>
                 <h1 class="header-subject"><a class="waves-effect waves-light btn modal-trigger" href="#modal1"><i class="material-icons">add</i></a>
@@ -84,13 +84,15 @@
         </div>
         <div class="row">
          
-                
-           
-         
                 @foreach (Auth::user()->Teacher->Subject as $subjects)
-                    <div class="col xl2">
-                            <h6 class="list-subject">{{$subjects->mata_pelajaran}}</h6>  
-                    </div>
+        <form action="{{route('subject.delete', ['Matpel'=>$subjects->id])}}" method="post">
+            {{ csrf_field()}}
+            {{ method_field('delete') }}
+                        <div class="col xl3" id="list-matpel">       
+                            <h6 class="list-subject"><button type="submit" name="delete" class="btn-delete"> <i class="tiny material-icons">cancel</i></button> {{$subjects->mata_pelajaran}}  </h6>  
+                        </div>
+                 
+                   </form>
                 @endforeach
         </div>      
            

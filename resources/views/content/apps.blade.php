@@ -33,6 +33,16 @@
             $('select').material_select();
           });
       </script>
+      <script>
+        $(document).ready(function(){
+        $('ul.tabs').tes();
+      });
+      </script>
+      <script>
+            $(document).ready(function(){
+          $('ul.tabs').tabs('select_tab', 'tab_id');
+        });
+        </script>
       @stack('js')
     </body>
   </html>

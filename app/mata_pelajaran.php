@@ -12,6 +12,6 @@ class mata_pelajaran extends Model
 
       public function SeeTeacher()
     {
-        return $this->belongsTo('App\Teacher');
+        return $this->belongsTo('App\Teacher','teacher_id','id');
     }
 }

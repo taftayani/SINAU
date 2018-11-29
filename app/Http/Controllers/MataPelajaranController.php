@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\mata_pelajaran;
 use App\Teacher;
 use Auth;
+use Session;
 
 class MataPelajaranController extends Controller
 {
@@ -21,10 +22,11 @@ class MataPelajaranController extends Controller
         foreach ($req->mata_pelajaran as $mata_pilihan) {
             mata_pelajaran::create([
                 'teacher_id' => $teacher->id,
-                'teacher_nama_depan' => $teacher->nama_depan,
+                'teacher_nama_depan' => $teacher->user_nama_depan,
                'mata_pelajaran'=> $mata_pilihan,
               ]);
         }
+        Session::flash('subject','data berhasil, isi jadwal');
           return view('layouts.profileTeacher',[
               'teacher' => $teacher
           ]);
@@ -36,13 +38,21 @@ class MataPelajaranController extends Controller
         foreach ($req->mata_pelajaran as $mata_pilihan) {
             mata_pelajaran::create([
                 'teacher_id' => $teacher->id,
-                'teacher_nama_depan' => $teacher->nama_depan,
+                'teacher_nama_depan' => $teacher->user_nama_depan,
                'mata_pelajaran'=> $mata_pilihan,
               ]);
         }
-          return view('layouts.sinauOffTeacher',[
-              'teacher' => $teacher
-          ]);
+        return redirect (route('shown_teacher'));
+    }
+
+   
+    public function destroy($subject)
+    {     
+        $teacher=Teacher::where('user_id', Auth::user()->id)->first();
+        $subject = mata_pelajaran::find($subject);
+        
+        $subject->delete();   
+        return redirect (route('shown_teacher'));
     }
 
 }

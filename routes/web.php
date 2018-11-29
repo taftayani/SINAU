@@ -26,11 +26,12 @@ Route::get('profile','UserController@profile')->name('layouts.profile');
 Route::get('beranda','UserController@dashboard')->name('beranda');
 Route::get('sinau.offline','Pruduct@index')->name('sinau_offline');
 
+
 //guru
-Route::get('guru','TeacherController@index')->name('guru');
-Route::get('profileGuru','TeacherController@profile')->name('Data_Guru');
-Route::get('PilihGuru','TeacherController@ChooseTeacher')->name('Pilih_guru');
-Route::get('Konfirmasi','TeacherController@Confirm')->name('confirm');
+Route::get('pengajar','TeacherController@index')->name('guru');
+Route::get('profilePengajar','TeacherController@profile')->name('Data_Guru');
+Route::get('PilihGuru/{teacher}','TeacherController@ChooseTeacher')->name('Pilih_guru');
+Route::get('Konfirmasi/{teacher}','TeacherController@Confirm')->name('confirm');
 Route::post('InputDataGuru','TeacherController@create')->name('input_guru');
 Route::post('inputMataPelajar','MataPelajaranController@InputValid')->name('input_matpel_valid');
 Route::post('inputJadwalMengajar','ShceduleController@InputValidShcedule')->name('input_schedule_valid');
@@ -40,3 +41,14 @@ Route::get('EditDataGuru','TeacherController@edit')->name('shown_teacher');
 Route::put('UbahDataTeacher/{EditDataGuru}','TeacherController@update')->name('edit_teacher');
 Route::post('inputJadwal','ShceduleController@create')->name('input_schedule');
 Route::get('LihatDaftarGuru','TeacherController@TeacherView')->name('name_teacher');
+Route::delete('hapusSubject/{Matpel}','MataPelajaranController@destroy')->name('subject.delete');
+Route::delete('hapusShcedule/{Jadwal}','ShceduleController@destroy')->name('shcedule.delete');
+
+
+//confirm
+Route::post('PesanLes','ConfirmController@konfirmasi')->name('order_les');
+Route::put('KonfirmasiPesanan/{Pesanles}','ConfirmController@StatusConfirm')->name('konfirmasi');
+Route::get('FAQ','SurveyController@FAQ')->name('faq');
+Route::get('Faq','UserController@faq')->name('faq_log');
+Route::post('VerifikasiAkunGuru','HomeController@Verifikasi')->name('verifikasi_data');
+

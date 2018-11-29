@@ -31,8 +31,13 @@ class User extends Authenticatable
     {
         return $this->hasOne('App\Teacher');
     }
-        // public function SeeTeacher()
-        // {
-        //     return $this->hasMany('App\Teacher');
-        // }
+        public function Subject()
+        {
+            return $this->hasOne('App\mata_pelajaran');
+        }
+        
+    public function Confirm()
+    {
+        return $this->hasOne('App\Confirm');
+    }
 }

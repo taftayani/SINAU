@@ -62,7 +62,6 @@
                  
                  
                    </ul>
-                 <li> <a href="{{ route('layouts.profile') }}">Rp.120.215</a> </li>
                  <li><a class="dropdown-button" href="#!" data-activates="dropdown2">
                     <img src="../img/Logo/avatar.png" alt=""class="profile-img">
                   <i class="material-icons right">arrow_drop_down</i></a></li>
@@ -81,7 +80,7 @@
       </nav>
 
       @yield('content')
-      @include('content.footer')
+      @include('content.footerLogin')
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="{{asset('https://code.jquery.com/jquery-3.2.1.min.js')}}"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
@@ -114,6 +113,16 @@
 
               $('#modal2').modal('close');
       </script>
+         <script>
+            $(document).ready(function(){
+            $('ul.tabs').tes();
+          });
+          </script>
+          <script>
+                $(document).ready(function(){
+              $('ul.tabs').tes('select_tab', 'tab_id');
+            });
+            </script>
       @stack('js')
     </body>
   </html>

@@ -1,5 +1,12 @@
 <div class="container">
-        <div class="row ">
+        @if (session('message'))
+                <div class="row">
+                        <div class="col l12 green white-text">
+                                {{ session('message') }}
+                        </div>
+                </div>
+            @endif
+        <div class="row">
                 
                 <div class="col xl5" id="column-img-edit-teach">
                   <img src="{{Auth::user()->foto}}" class="photo-profile-edit-teach">
@@ -32,18 +39,28 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <textarea id="textarea1" class="materialize-textarea" data-length="120" name="resume"></textarea>
-                                                        <label for="textarea1">Status/Resume</label>
+                                                        <label for="textarea1">Berikan Alasan Anda Ingin Membagi ilmu</label>
                                                 </div>          
                                          </div>
                                 </div>
                       
-                                <button type="submit" name="button">Masukan</button>
-                        <a href="{{route('guru')}}">Beranda</a>
+                                <button type="submit" name="button" class="btn-validasi-guru">Masukan</button>
+                                @if (Auth::user()->Teacher)
+                                        <a href="{{route('guru')}}" class="center link-teach">Beranda Guru</a> 
+                                        <p class="green-info">!! Selamat Anda Sudah Terdaftar Menjadi Pengajar, berikutnya
+                                                admin akan memvalidasi anda dengan menghubungi anda. Dan anda akan 
+                                                diberikan status sudah terverifikasi, sehingga anda dapat mengajar. <b>Silahkan Ke 
+                                                halaman Beranda Guru</b> !!</p>                                       
+                                        @else
+                                        <a href="#info" class="center link-teach" disable>Beranda Guru</a>
+                                        <p class="red-info" id="info">!! Mohon Maaf Anda Belum Mengisikan Data guru, Silahkan Isi data diatas dan ikuti langkahnya !!</p>
+                                @endif
+                                
                         </form>
                 </div>
 
-                @if (Session::has('message'))
+                {{-- @if (Session::has('message'))
         <p class="black">{{Session::get('message')}}</p>
-                @endif
+                @endif --}}
             </div>
 </div>

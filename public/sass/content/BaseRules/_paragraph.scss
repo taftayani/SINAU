@@ -47,6 +47,30 @@ $font-roboto:'Roboto Slab', serif;
     line-height: 32px;
     letter-spacing: 7%;
 }
+.paragraph-first-green{
+    font-family: $font-roboto;
+    color: #12BF95;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 7%;
+}
+.paragraph-first-red{
+    font-family: $font-roboto;
+    color: #F06491;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 7%;
+}
+.paragraph-first-purple{
+    font-family: $font-roboto;
+    color: #404F76;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 7%;
+}
 .paragraph-second{
     font-family: $font-roboto;
     color: #4E4F51;

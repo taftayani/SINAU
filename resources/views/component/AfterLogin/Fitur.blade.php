@@ -20,7 +20,7 @@
             </div>
 
             <div class="row center">
-            <button class="btn-fitur"> <a href="{{route('name_teacher')}}">Lihat Pengajar</a> </button>
+            <button class="btn-fitur"> <a href="{{route('name_teacher')}}" class="link-fitur">Lihat Pengajar</a> </button>
             </div>
 
         </div>
@@ -38,7 +38,7 @@
           </div>
 
           <div class="row center">
-              <button class="btn-fitur">Lihat Buku</button>
+              <button class="btn-fitur"><a href="" class="link-fitur">Lihat Buku</a></button>
           </div>
 
       </div>

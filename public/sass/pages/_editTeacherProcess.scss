@@ -1,0 +1,21 @@
+#tab-teacher{
+    @extend .tab-screen;
+}
+#tab-choose-section{
+    @extend .tab-layout;
+}
+#section-profile{
+    @extend .section-profile-teacher;
+}
+.link-beranda-teach{
+    @extend .link-beranda-teach-section;
+}
+.butoon-success{
+    @extend .btn-order-section;
+}
+.butoon-failed{
+    @extend .btn-red-content;
+}
+.btn-delete{
+    @extend .btn-red-content-second;
+}

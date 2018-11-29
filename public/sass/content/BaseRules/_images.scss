@@ -12,8 +12,12 @@
     height: 110px;
 }
 .img-profile-big{
-    width: 412px;
-    height: 432px;
+    width: 300px;
+    height: 300px;
+    opacity: 1;
+}
+.img-profile-big:hover{
+    opacity: 0.2;
 }
 .img-profile-big-second{
     width: 300px;

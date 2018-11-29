@@ -10,3 +10,18 @@
 #column-img-edit-teach{
     @extend .column-img-section;
 }
+.btn-validasi-guru{
+    @extend .btn-order-section;
+}
+.link-teach{
+    @extend .link-home-teach;
+}
+.red-info{
+    @extend .info;
+}
+.green-info{
+    @extend .info-green;
+}
+#list-matpel{
+    @extend .card-matpel;
+}

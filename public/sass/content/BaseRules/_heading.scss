@@ -42,6 +42,13 @@ $font-roboto:'Roboto Slab', serif;
     color: white;
     font-weight:300;
 }
+.heading-white-second{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 25px;
+    color: white;
+    font-weight:700;
+}
 .heading-big{
     font-family: $font-roboto;
     letter-spacing: 0.04em;
@@ -67,6 +74,15 @@ $font-roboto:'Roboto Slab', serif;
 }
 .heading-green-first{
     color: #12BF95;
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.heading-red-first{
+    color: #F06491;
     font-family: $font-roboto;
     letter-spacing: 0.04em;
     font-size: 24px;
@@ -110,12 +126,42 @@ $font-roboto:'Roboto Slab', serif;
     line-height: 32px;
     
 }
+.heading-content-third-black{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 40px;
+    color: #4E4F51;
+    font-weight: 700;
+    letter-spacing: 7%;
+    line-height: 32px;
+    
+}
 .heading-content-fourth{
     font-family: $font-roboto;
     letter-spacing: 0.04em;
     font-size: 18px;
     color: #4E4F51;
     font-weight: 700;
+    letter-spacing: 7%;
+    line-height: 32px;
+    
+}
+.heading-content-fourth-black{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 14px;
+    color: #4E4F51;
+    font-weight: 700;
+    letter-spacing: 7%;
+    line-height: 32px;
+    
+}
+.heading-content-fifth-black{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 14px;
+    color: #4E4F51;
+    font-weight: 300;
     letter-spacing: 7%;
     line-height: 32px;
     

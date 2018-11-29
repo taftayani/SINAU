@@ -1,4 +1,11 @@
 <div class="container-fluid rows-subject">
+        @if (session('shcedule'))
+        <div class="row">
+                <div class="col l12 green white-text">
+                        {{ session('shcedule') }}
+                </div>
+        </div>
+    @endif
     <div class="row">
             <div>
                     <h1 class="header-subject"><a href=""><a class="waves-effect waves-light btn modal-trigger" href="#schedule"><i class="material-icons">add</i></a>

@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use App\Confirm;
 use Illuminate\Http\Request;
 // use Storage;
 use Illuminate\Http\File;
+
+use Auth;
 use Illuminate\Support\Facades\Storage;
 // use Illuminate\Support\Facades\Storage;
 
@@ -92,12 +95,15 @@ class UserController extends Controller
         ]);
         $path = Storage::disk('public')->put('images/'.$_FILES['foto']['name'],
         file_get_contents($_FILES['foto']['tmp_name']));
+
+        // $path = Storage::disk('public')->put('avatars', $request->foto);
         $user->update([
           'nama_depan'=>$request->nama_depan,
           'nama_belakang'=>$request->nama_belakang,
           'username'=>$request->username,
           'password'=>bcrypt($request->password),
           'foto'=> 'storage/images/'.$_FILES['foto']['name'],
+        //   'foto' => $path
       ]);
 
         return redirect(route('layouts.profile'));
@@ -120,6 +126,17 @@ class UserController extends Controller
 
     public function dashboard()
     {
-      return view('layouts.beranda');
+      $confirm=Confirm::where('user_id',Auth::user()->id)->get();
+
+      return view('layouts.beranda',[
+          'confirm'=>$confirm
+      ]
+    
+    );
+    }
+
+    public function faq()
+    {
+       return view('layouts.FAQAfterLogin');
     }
 }

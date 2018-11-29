@@ -26,3 +26,63 @@ $font-roboto:'Roboto Slab', serif;
     font-size: 20px;
     letter-spacing: 0.02em;
 }
+.link-footer-content{
+    font-family: $font-roboto;
+    color: white;
+    font-weight: 300;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+.link-footer-content:hover{
+    font-size: 20px;
+    transition: 0.8s;
+}
+.link-see-teacher{
+    font-family: $font-roboto;
+    color: white;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0.04em;
+   
+}
+.link-home-teach{
+    font-family: $font-roboto;
+    color: #BF3C12;
+    font-weight: 400;
+    font-size: 30px;
+    letter-spacing: 0.04em;
+    position: static;
+}
+.info{
+   color: #F06491;
+   font-family: $font-roboto;
+   letter-spacing: 0.06em;
+   font-weight: 700;
+}
+.info-green{
+    color: #404F76;
+   font-family: $font-roboto;
+   letter-spacing: 0.06em;
+   font-weight: 300;
+}
+.link-home-teach:hover{
+    color: #057258;
+    font-size: 40px;
+    transition: 0.2s;
+}
+.link-beranda-teach-section{
+    color: #4E4F51;
+    font-family: $font-roboto;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+}
+.link-beranda-teach-section:hover{
+    // background-color: #C4C4C4;
+    transition: 0.2s;
+    padding-top: 10px;
+    font-size: 20px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    
+}

@@ -9,7 +9,7 @@
     <div class="nav-wrapper nav-header">
       <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo"> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-      <ul class="center hide-on-med-and-down navbar-section-first">
+      <ul class="center hide-on-med-and-down" id="navbar-section-first">
         <li><a href="#home">Tentang Kami</a></li>
         <li><a href="#Produk">Produk Kami</a></li>
         <li><a href="#Feedback">Forum</a></li>

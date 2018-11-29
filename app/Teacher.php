@@ -11,15 +11,12 @@ class Teacher extends Model
         'npwp',
         'pendidikan',
         'resume',
-        'user_nama_depan',
-        'user_nama_belakang',
-        'user_foto',
         'user_id',
       ];
 
       public function Subject()
     {
-        return $this->hasMany('App\mata_pelajaran');
+        return $this->hasMany('App\mata_pelajaran','teacher_id','id');
     }
 
     public function Schedule()
@@ -27,8 +24,16 @@ class Teacher extends Model
         return $this->hasMany('App\Shcedule');
     }
 
+    public function Confirm()
+    {
+        return $this->hasOne('App\Confirm');
+    }
     public function SeeTeacher()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id', 'id');
+    }
+    public function Verified()
+    {
+        return $this->hasOne('App\verifikasi');
     }
 }

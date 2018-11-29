@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Teacher;
 use App\User;
+use App\Shcedule;
 use App\mata_pelajaran;
+use App\Confirm;
 use Illuminate\Http\Request;
 use Auth;
+use Session;
 
 class TeacherController extends Controller
 {
@@ -19,7 +22,8 @@ class TeacherController extends Controller
     {
         $teacher=Teacher::all();
         $teacher_see=Teacher::where('user_id', Auth::user()->id)->first();
-        $subject=mata_pelajaran::where('teacher_id',$teacher_see->id)->get();
+        // $subject=mata_pelajaran::where('teacher_nama_depan', $teacher_see->user_nama_depan)->get();
+        $subject=mata_pelajaran::all(); 
         return view('layouts.LihatGuru',[
             'teacher' => $teacher
         ],[
@@ -29,20 +33,38 @@ class TeacherController extends Controller
 
   
     public function index()
-    {
+    {  
         $teacher=Teacher::where('user_id', Auth::user()->id)->first();
+        $confirm=Confirm::where('teacher_id', $teacher->id)->get();
         return view('layouts.sinauOffTeacher',[
             'teacher' => $teacher
-        ]);
+        ],[
+            'confirm' => $confirm
+        ]
+    );
     }  
-    public function ChooseTeacher()
+    public function ChooseTeacher(Teacher $teacher, mata_pelajaran $subject)
     {
-        return view('layouts.orderTeacher');
+        // return $teacher;
+        // $teacher=Teacher::all();
+        // $subject=mata_pelajaran::all(); 
+        
+        return view('layouts.orderTeacher',[
+            'teacher' => $teacher,
+            'subject' => $subject
+        ]);
     } 
 
-    public function Confirm()
+    public function Confirm(Teacher $teacher, mata_pelajaran $subject)
     {
-        return view('layouts.confirmTeacher');
+        
+        return view('layouts.confirmTeacher',[
+            'teacher' => $teacher
+        ],[
+            'subject' => $subject
+        ]
+
+        );
     }
     public function profile()
     {
@@ -75,10 +97,11 @@ class TeacherController extends Controller
             'pendidikan' => $req->pendidikan,
             'resume' => $req->resume
           ]);
+          Session::flash('message','data berhasil');
           return view('layouts.profileTeacher',[
             'teacher' => $teacher
-        ])->with('message','data berhasil');
-        Session::flash('message','data berhasil');
+        ]);
+        // ->with('message','data berhasil');
     }
 
     /**
@@ -135,7 +158,7 @@ class TeacherController extends Controller
     public function update(Request $request, Teacher $teacher)
     {
         $teacher=Teacher::where('user_id', Auth::user()->id)->first();
-
+        // $subject=mata_pelajaran::where('id',$id)->first();
         $this->validate($request, [
             'ktp' => 'max:255',
             'npwp' => 'max:255',
@@ -146,19 +169,17 @@ class TeacherController extends Controller
         // 
             
             $teacher-> user_id = Auth::user()->id;
-            $teacher-> user_nama_depan = Auth::user()->nama_depan;
-            $teacher-> user_nama_belakang = Auth::user()->nama_belakang;
-            $teacher-> user_foto = Auth::user()->foto;
             $teacher-> ktp = $request->ktp;
             $teacher-> npwp  =  $request->npwp;
             $teacher-> pendidikan = $request->pendidikan;
             $teacher-> resume = $request->resume;
-       
             $teacher->save();
         
-        return view('layouts.sinauoffTeacher',[
-            'teacher' => $teacher
-        ]);
+        // return view('layouts.EditDataTeacher',[
+        //     'teacher' => $teacher,
+        //     'subject' => $subject
+        // ]);
+        return redirect (route('shown_teacher'));
         // return $teacher;
     }
 

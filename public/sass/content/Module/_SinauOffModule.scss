@@ -35,9 +35,7 @@
     width: auto;
     padding-top: 10px;
     padding-bottom: 40px;
-    padding-right: 30px;
-    padding-left: 30px;
-    margin-right: 81px;
+    margin-right: 40px;
 }
 .card-schedule{
     background-color: white
@@ -47,4 +45,33 @@
 }
 .column-img-section{
     margin-right: 70px;
+
+}
+.column-img-section:hover{
+    background-image:url('../../img/background/setting2.png');
+    transition: 0.3s;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 4;
+}
+.tab-screen{
+    overflow-y: scroll;
+    height: auto;
+    background-color: white;
+    margin-top: 30px;
+   
+}
+.tab-layout{
+    background-color: white;
+    height: 90vw;
+    padding-top: 40px;
+}
+.section-profile-teacher{
+    padding-top: 100px;
+    padding-left: 100px;
+}
+.card-matpel{
+    background-color: white;
+    margin-right: 30px;
 }

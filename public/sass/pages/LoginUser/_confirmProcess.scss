@@ -25,3 +25,19 @@
 .paragraph-confirm{
     @extend .paragraph-second;
 }
+
+.heading-status-success{
+    @extend .heading-green-first;
+}
+.heading-status-dangerous{
+    @extend .heading-red-first;
+}
+.paragraph-success{
+    @extend .paragraph-first-green;
+}
+.paragraph-danger{
+    @extend .paragraph-first-red;
+}
+.paragraph-unknown{
+    @extend .paragraph-first-purple;
+}

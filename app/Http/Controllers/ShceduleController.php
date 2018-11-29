@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Shcedule;
 use App\Teacher;
 use Auth;
+use Session;
+
 use Illuminate\Http\Request;
 
 class ShceduleController extends Controller
@@ -38,7 +40,7 @@ class ShceduleController extends Controller
                     'time_les' => $req->time_les,
                 ]);
         //   }
-          return view('layouts.sinauoffTeacher',[
+          return view('layouts.EditDataTeacher',[
             'teacher' => $teacher
         ]);
 
@@ -57,7 +59,7 @@ class ShceduleController extends Controller
                     'day' => $req->day,
                     'time_les' => $req->time_les,
                 ]);
- 
+                Session::flash('shcedule','data berhasil, silahkan ke beranda ngajar');        
           return view('layouts.profileTeacher',[
             'teacher' => $teacher
         ]);
@@ -113,8 +115,11 @@ class ShceduleController extends Controller
      * @param  \App\Shcedule  $shcedule
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Shcedule $shcedule)
+    public function destroy($shcedule)
     {
-        //
+        $shcedule = Shcedule::find($shcedule);
+
+        $shcedule->delete();
+        return redirect(route('shown_teacher'));
     }
 }

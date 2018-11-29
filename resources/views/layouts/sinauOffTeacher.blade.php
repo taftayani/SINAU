@@ -1,4 +1,4 @@
-@extends('content.master2')
+@extends('content.masterTeacher')
 @section('content')
    <div class="container-fluid bg-profile-off">
         @include('component.AfterLogin.PhotoProfileTeacher')

@@ -3,7 +3,7 @@
        <div class="container rows-login-home">
           <div class="row ">
               <div class="col xl2" id="column-img">
-                <img src="{{Auth::user()->foto}}" class="photo-profile">
+                <img src="{{$teacher->SeeTeacher->foto}}" class="photo-profile">
                 <div class="link-column-profile"><a href="{{route ('shown_teacher') }}" class="link-profile">Data Anda Mengajar</a></div>
               </div>
               <div class="col xl8 column-paragraph">

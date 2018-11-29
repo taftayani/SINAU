@@ -1,8 +1,28 @@
-@extends('content.master2')
+@extends('content.masterTeacher')
 @section('content')
    <div class="container-fluid bg-profile-teacher">
-            @include('component.UserData.EditTeacher');
-            @include('component.UserData.ListSubjectForm');
-            @include('component.UserData.ListScheduleForm');
+            <div class="row">
+                  <div class="col s3 center" id="tab-choose-section">
+                     <a href="{{route('guru')}}" class="link-beranda-teach"> <i class="medium material-icons">home</i> Kembali Ke Beranda</a>
+
+                     <ul class="tabs" id="tab-teacher">
+                           <li class="col l12 tab"><a href="#EditDataTeacher">Data Pengajar</a></li>
+                           <li class="col l12 tab"><a href="#Subject">Materi Pengajaran</a></li>
+                           <li class="col l12 tab"><a href="#Shcedule">Jadwal Pengajaran</a></li>
+                        </ul>
+                  </div>
+                  {{-- <ul id="slide-out" class="side-nav">
+                    <div class="col s12 center">
+                          
+                        </div>
+                   </ul> --}}
+                   {{-- <a href="#" data-activates="slide-out" class="button-collapse show-on-large"><i class="material-icons">menu</i></a> --}}
+                     
+                  <div class="col s8" id="section-profile">
+                        @include('component.UserData.EditTeacher')
+                        @include('component.UserData.ListSubjectForm')
+                        @include('component.UserData.ListScheduleForm')
+                  </div>
+           </div>
    </div>
 @endsection

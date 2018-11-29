@@ -1,4 +1,4 @@
-<div class="container-fluid rows-subject">
+<div class="container-fluid rows-subject" id="Shcedule">
         <div class="row">
                 <div>
                         <h1 class="header-subject"><a href=""><a class="waves-effect waves-light btn modal-trigger" href="#schedule"><i class="material-icons">add</i></a>
@@ -41,12 +41,19 @@
         </div>
         <div class="row">
             @foreach (Auth::user()->Teacher->Schedule as $Schedules)
-            <div class="col xl1 " id="column-subject"> 
-                <h6 class="center header-list-schedule">{{$Schedules->day}}</h6>
-                    <ul class="list-schedule">
-                        <li>{{$Schedules->time_les}}</li>
-                    </ul>
-                </div>
+            <form action="{{route('shcedule.delete',['jadwal'=>$Schedules->id])}}" method="post">
+                {{ csrf_field() }}
+                {{ method_field('delete')}}
+                    <div class="col xl4 " id="column-subject">         
+                    <h6 class="center header-list-schedule"> <button type="submit" name="delete"  class="btn-delete"> 
+                        <i class=" tiny material-icons">cancel</i>
+                            </button> {{$Schedules->day}}
+                        </h6>
+                        <ul class="list-schedule">
+                            <li>{{$Schedules->time_les}}</li>
+                        </ul>
+                    </div>
+            </form>
             @endforeach
         </div>
     </div>

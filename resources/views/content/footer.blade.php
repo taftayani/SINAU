@@ -1,14 +1,10 @@
-<style media="screen">
-  a{
-    margin-left: 10px;
-  }
-</style>
+
 <footer class="page-footer footer-sec">
         <div class="container">
           <div class="row">
             <div class="col l12 s12 center">
-                <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo">
-              <p class="white-text">SINAU OFFNE - FAQ - SINAU ONNE - PERATURAN</p>
+                <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo"></a>
+                <p><a href="">SINAU OFFLINE</a>  - <a href="{{route('faq')}}"> FAQ </a>  - <a href="">SINAU ONNLINE</a> - <a href="">PERATURAN</a></p>
             </div>
             <div class="col l12 s12 center">
                 <h5 class="white-text">Ikuti Kami di</h5>
