@@ -9,6 +9,7 @@ use App\Teacher;
 use App\User;
 use App\Verifikasi;
 use App\mata_pelajaran;
+use App\Stat;
 use Session;
 
 class HomeController extends Controller
@@ -28,39 +29,31 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(){   
+    public function index(Confirm $tes){   
 
         $confirm=Confirm::where('user_id',Auth::user()->id)->get();
+        $stat=Stat::where('confirm_id',$tes->id)->get();
         // return Auth::user();
         $teacher=Teacher::all();
         $matpel=mata_pelajaran::all();
         $confirmSee=Confirm::all();
         $user=User::all();
+        // $stat=Stat::all();
         return view('layouts.beranda',[
             'user'=> $user,
             'teacher'=> $teacher,
             'matpel'=> $matpel,
-            'confirmSee'=> $confirmSee,
-            'confirm' => $confirm
+            'confirmSee' => $confirmSee,
+            'confirm' => $confirm,
+            'stat' => $stat,
         ]
       );
     }
 
     public function Verifikasi(Request $request,Teacher $teacher)
     {
-    // $guru=Teacher::all();
-    // $teacher = Teacher::where('user_id', Auth::user()->id )->get();
-    // $verified = Teacher::find($guru);
-//    $guru-> user_id= Auth::user()->id;
-//    $guru-> verifikasi = $request->verifikasi;
-//    $guru-> save();
     $teacher->verifikasi = 'Akun Sudah Diverifikasi';
     $teacher->save();
-    //  Verifikasi::create([
-    //     'teacher_id' => $guru,
-    //     'verifikasi' => $request->verifikasi,
-    //  ]);
-    //  return $req;
     return redirect(route('home'));
 
    }

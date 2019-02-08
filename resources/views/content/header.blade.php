@@ -1,11 +1,6 @@
 
-    {{-- <ul id="dropdown2" class="dropdown-content">
-      <li><a href="">Daftar Sebagai Murid</a></li>
-      <li><a href="{{ route('guru') }}">Daftar Sebagai Guru</a></li>
-    </ul> --}}
-
 <div class="navbar-fixed">
-    <nav>
+<nav>
     <div class="nav-wrapper nav-header">
       <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo"> </a>
       <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -28,7 +23,7 @@
         <li><a href="">Forum</a></li>
       </ul>
 
-    </nav>
+  </nav>
     
 
  

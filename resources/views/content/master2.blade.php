@@ -39,34 +39,43 @@
           </li>
       </ul>
 
+      <div class="navbar-fixed">
       <nav class=" nav-header">
           <div class="nav-wrapper">
-           <a href="{{ route('beranda') }}" class="brand-logo"><img src="../img/Logo/logo.png" alt=""class="logo"></a>
-           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-               <ul class="right hide-on-med-and-down">
-              @guest
-                <ul class="right hide-on-med-and-down">
-                  <li><a class="" href="{{ route('login') }}" >Masuk</a></li>
-                  <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Daftar<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                  <li><a href="">Daftar Sebagai Guru</a></li>
-                  <li><a href="{{ route('register') }}">Daftar Sebagai Murid</a></li>
-                  <li><a href="{{ route('login') }}">Masuk</a></li>
-                </ul>
-              @else
-                  <ul class="log-user-header">
-                    <li><a href="">SINAU OFFLINE</a></li>
-                    <li><a href="">SINAU BOOK</a></li>
-                    @include('component.AfterLogin.PopUpTerm')
-                 
-                 
-                   </ul>
-                 <li><a class="dropdown-button" href="#!" data-activates="dropdown2">
-                    <img src="../img/Logo/avatar.png" alt=""class="profile-img">
-                  <i class="material-icons right">arrow_drop_down</i></a></li>
-               </ul>
-
+              <a href="{{ route('beranda') }}" class="brand-logo"><img src="../img/Logo/logo.png" alt=""class="logo"></a>
+              <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                  @guest
+                    <ul class="right hide-on-med-and-down">
+                      <li><a class="" href="{{ route('login') }}" >Masuk</a></li>
+                      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Daftar<i class="material-icons right">arrow_drop_down</i></a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                      <li><a href="">Daftar Sebagai Guru</a></li>
+                      <li><a href="{{ route('register') }}">Daftar Sebagai Murid</a></li>
+                      <li><a href="{{ route('login') }}">Masuk</a></li>
+                    </ul>
+                  @else
+          
+                      <ul class="log-user-header">
+                        <li><a href="#Produk">SINAU OFFLINE</a></li>
+                        <li><a href="#Packet">Paket Belajar</a></li>
+                        <li>   
+                          @if (Auth::user()->Teacher)
+                            <a href="{{route('guru')}}" class="modal-trigger">Menjadi Pengajar ?</a> 
+                         @else
+                             <a href="#modal2" class="modal-trigger">Menjadi Pengajar ?</a> 
+                        @endif </li>        
+                    
+                      </ul>
+                      <ul class="right hide-on-med-and-down">
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">
+                            <img src="{{Auth::user()->foto}}" class="profile-img">
+                          <i class="material-icons right">arrow_drop_down</i></a></li>
+                      </ul>
+                  </div>
+            </div>
+            @include('component.AfterLogin.PopUpTerm')
                <ul class="side-nav" id="mobile-demo">
                  <li> <a href="{{ route('layouts.profile') }}">profile</a> </li>
                  <li>   <a href="{{ route('logout') }}"
@@ -76,7 +85,6 @@
                     </a></li>
                </ul>
               @endguest
-          </div>
       </nav>
 
       @yield('content')

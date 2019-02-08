@@ -22,7 +22,6 @@ class MataPelajaranController extends Controller
         foreach ($req->mata_pelajaran as $mata_pilihan) {
             mata_pelajaran::create([
                 'teacher_id' => $teacher->id,
-                'teacher_nama_depan' => $teacher->user_nama_depan,
                'mata_pelajaran'=> $mata_pilihan,
               ]);
         }
@@ -38,7 +37,6 @@ class MataPelajaranController extends Controller
         foreach ($req->mata_pelajaran as $mata_pilihan) {
             mata_pelajaran::create([
                 'teacher_id' => $teacher->id,
-                'teacher_nama_depan' => $teacher->user_nama_depan,
                'mata_pelajaran'=> $mata_pilihan,
               ]);
         }

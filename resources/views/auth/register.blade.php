@@ -52,17 +52,16 @@
                 </div>
 
                 <div class="input-field col xl5 s12 m5 text-long">
-                    <input id="email" name="username" type="text" class="validate text-long" value="{{ old('username') }}">
-  
-                    @if ($errors->has('username'))
-                      <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('username')  }}</p>
+                    <input id="email" name="password" type="password" class="validate text-long">
+                    @if ($errors->has('password'))
+                      <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
                     @endif
   
-                    <label for="password">Username</label>
+                    <label for="password">password</label>
                   </div>
               </div>
 
-              <div class="row">
+              {{-- <div class="row">
                   <div class="input-field col xl5 s12 m5 text-long">
                     <input id="email" name="phone" type="number" class="validate text-long" value="{{ old('phone') }}">
   
@@ -80,9 +79,9 @@
                         <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('birthday')  }}</p>
                       @endif
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="row">
+                {{-- <div class="row">
                     <div class="input-field col xl5 s12 m5 text-long">
                       <input id="email" name="address" type="text" class="validate text-long" value="{{ old('address') }}">
     
@@ -100,17 +99,10 @@
                             <option value="Female" name="gender">Perempuan</option>
                         </select>
                   </div>
-                 </div>
+                 </div> --}}
 
-              <div class="row">
-                <div class="input-field col xl5 s12 m5 text-long">
-                  <input id="email" name="password" type="password" class="validate text-long">
-                  @if ($errors->has('password'))
-                    <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
-                  @endif
-
-                  <label for="password">password</label>
-                </div>
+              {{-- <div class="row">
+              
                 <div class="input-field col xl5 s12 m5 text-long">
                   <input id="email" name="password_confirmation" type="password" class="validate text-long">
                   @if ($errors->has('password_confirmed'))
@@ -119,7 +111,7 @@
                   <label for="password">Re-password</label>
 
                 </div>
-              </div>
+              </div> --}}
               <button type="submit" name="button" class="button-reg center">Daftar</button>
           </form>
         </div>

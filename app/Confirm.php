@@ -16,7 +16,9 @@ class Confirm extends Model
         'packet',
         'student',
         'address_les',
-        'Status'
+        'Status',
+        'date_les',
+        'mention'
     ];
 
     public function UserOrder()
@@ -37,5 +39,13 @@ class Confirm extends Model
     public function ShceduleOrder()
     {
         return $this->belongsTo('App\Shcedule','shcedule_id','id');
+    }
+    public function Stat()
+    {
+        return $this->hasOne('App\Stat');
+    }
+    public function SeeStat()
+    {
+        return $this->hasMany('App\Stat');
     }
 }

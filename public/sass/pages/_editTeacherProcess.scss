@@ -19,3 +19,18 @@
 .btn-delete{
     @extend .btn-red-content-second;
 }
+.img-file{
+    @extend .img-file-content;
+}
+.heading-file{
+    @extend .heading-black-third;
+}
+.btn-file{
+    @extend .btn-file-content;
+}
+.paragraph-file{
+    @extend .paragraph-second;
+}
+.img-sertif{
+    @extend .img-teach;
+}

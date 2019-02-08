@@ -2,7 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\TeacherFile;
+use App\teacher_file;
+use App\Teacher;
+use App\User;
+use Illuminate\Http\File;
+use App\Http\Requests\UploadRequest;
+use Illuminate\Support\Facades\Storage;
+use Auth;
 use Illuminate\Http\Request;
 
 class TeacherFileController extends Controller
@@ -22,9 +28,11 @@ class TeacherFileController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $req)
+    {   
+       
+      
+       
     }
 
     /**
@@ -35,7 +43,20 @@ class TeacherFileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,[
+            'file' => 'required|max:2000'
+        ]);
+        $path = Storage::disk('public')->put('Files/'.$_FILES['file']['name'],
+        file_get_contents($_FILES['file']['tmp_name']));
+
+        $teacher=Teacher::where('user_id',Auth::user()->id)->first();
+        // $files=teacher_file::create();
+        teacher_file::create([
+            'teacher_id' => $teacher->id,
+            'file' => 'storage/Files/'.$_FILES['file']['name']
+        ]);
+        // return $request;
+        return redirect (route('shown_teacher'));
     }
 
     /**
@@ -78,8 +99,11 @@ class TeacherFileController extends Controller
      * @param  \App\TeacherFile  $teacherFile
      * @return \Illuminate\Http\Response
      */
-    public function destroy(TeacherFile $teacherFile)
+    public function destroy($teacherFile)
     {
-        //
+        $file = teacher_file::find($teacherFile);
+        
+        $file->delete();   
+        return redirect (route('shown_teacher'));
     }
 }

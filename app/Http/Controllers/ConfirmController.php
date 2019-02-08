@@ -8,6 +8,11 @@ use App\User;
 use App\Teacher;
 use App\mata_pelajaran;
 use App\Shcedule;
+use App\Stat;
+
+use Illuminate\Http\File;
+use App\Http\Requests\UploadRequest;
+use Illuminate\Support\Facades\Storage;
 
 use Session;
 use Auth;
@@ -20,20 +25,18 @@ class ConfirmController extends Controller
         $subject=mata_pelajaran::where('teacher_id',$req->teacher_id)->get();
         $shcedule=Shcedule::where('teacher_id',$req->teacher_id)->get();
         // return $req;
-        foreach($req->shcedule_id as $les){
+        // foreach($req->shcedule_id as $les){
             Confirm::create([
                 'user_id' =>  Auth::user()->id,
                 'teacher_id' => $req->teacher_id,
                 'subject_id' => $req->subject_id,
-                'shcedule_id' => $les,
-                // 'materi' => $req->materi,
-                // 'day_les' => $les,
+                'shcedule_id' => $req->shcedule_id,
                 'student' => $req->student,
                 'packet' => $req->packet,
                 'address_les' => $req->address_les,
               ]);
           
-        }
+        // }
         $confirm=Confirm::where('user_id',Auth::user()->id)->get();
           Session::flash('message','data berhasil');
           return redirect(route('home'));
@@ -48,5 +51,50 @@ class ConfirmController extends Controller
         return redirect(route('guru'));
     }
 
+    public function MoveStatus(Confirm $confirm, Stat $stat)
+    {
+        $stat=Stat::where('confirm_id',$confirm->id)->get();
+        return view('layouts.KeteranganLes',[
+            'confirm' => $confirm,
+            'stat'   => $stat
+        ]);
+    }
+
+    public function UpdateStatus(Request $request, Confirm $confirm)
+    {
+        $confirm-> date_les =$request->date_les;
+        $confirm-> mention=$request->mention;
+        $confirm-> save();
+
+        return $request;
+    }
+
+    public function Payment(Confirm $confirm)
+    {
+        // $confirm=Confirm::where('user_id',Auth::user()->id)->get();
+        return view('layouts.Payment',[
+            'confirm' => $confirm
+        ]);
+    }
+
+    public function PaymentReceipt(Request $request, Confirm $confirm)
+    {
+        $path = Storage::disk('public')->put('Pembayaran/'.$_FILES['pay']['name'],
+        file_get_contents($_FILES['pay']['tmp_name']));
+        
+        $confirm-> pay=  'storage/Pembayaran/'.$_FILES['pay']['name'];
+        $confirm-> save();
+
+        return redirect(route('payment',['confirm'=>$confirm->id]));
+    }
+
+    public function PaymentInvoice(Request $request, Confirm $confirm)
+    {
+
+        $confirm-> stat_pay=$request->stat_pay;
+        $confirm-> save();
+
+        return redirect(route('home'));
+    }
     
 }

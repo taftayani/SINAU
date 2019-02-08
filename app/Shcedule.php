@@ -14,4 +14,9 @@ class Shcedule extends Model
       {
          return $this->hasOne('App\Confirm');
       }
+
+      public function SeeConfirm()
+      {
+         return $this->hasOne('App\Confirm');
+      }
 }

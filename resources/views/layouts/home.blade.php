@@ -1,17 +1,14 @@
 @extends('content.apps')
 @section('content')
 @include('content.header')
-    <div class="container-fluid first-section" >
-    <div class="carousel carousel-slider center" data-indicators="true">
-         <div class="carousel-item white-text" href="#one!">
+  <div class="container-fluid first-section" >
+    <div class="" data-indicators="true">
+         <div class="">
             <b><h1 class="first-header">Selamat Datang</h1>
              <h2 class="first-paragraph">"MARI BERBAGI ILMU KEPADA SESAMA"</h2></b>
+             <a href="#home" class="btn-pelajar-lanjut" id="get-learn" on>Pelajari Lebih Lanjut</a>
           </div>
-         <div class="carousel-item white-text" href="#two!">
-           <h2 class="first-paragraph">MARILAH BELAJAR, KARENA DENGAN BELAJAR PENTING UNTUKMU</h2>
-           <h4 class="second-header">-SINAU YO!</h4>
-       </div>
-  </div>
+    </div>
   </div>
  
 
@@ -68,6 +65,42 @@
     </div>
   </div>
 
+  <div class="container fourth-layout">
+    <div class="row">
+      <div class="col l12">
+          <h3 class="center heading-packet">Paket Belajar</h3>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col s4">
+            <div class="card-packet">
+                <img src="/img/Background/hemat.png" class="img-card" alt="">
+                <h4 class="heading-card center">PAKET 5 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>5</b>
+                  pertemuan dalam <b>1 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                  <h5 class="heading-rupiah center">Rp.50.000</h5>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card-packet-second">
+                <img src="/img/Background/agakhemat.png" class="img-card" alt="">
+                <h4 class="heading-card center">PAKET 10 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>10</b>
+                  pertemuan dalam <b>2 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                <h5 class="heading-rupiah center">Rp.100.000</h5>
+            </div>
+        </div>
+        <div class="col s4">
+            <div class="card-packet-third">
+                <img src="/img/Background/biasa.png" class="img-card" alt="">
+                <h4 class="heading-card center">PAKET 15 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>15</b>
+                  pertemuan dalam <b>3 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                <h5 class="heading-rupiah center">Rp.150.000</h5>
+            </div>
+        </div>
+    </div>
+  </div>
     <div class="container video-ces">
       <div class="sixth">
       <div class="row center">
@@ -137,13 +170,32 @@
   </div>
   @include('content.footer')
 @endsection
+
 @push('js')
-<script type="text/javascript">
-  $('.carousel.carousel-slider').carousel({fullWidth: true});
+<script >
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
 
-    $(document).ready(function(){
-      $('.parallax').parallax();
-    });
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
 
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
 </script>
 @endpush

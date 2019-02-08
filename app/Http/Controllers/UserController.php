@@ -66,10 +66,10 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Request $req)
+    public function edit(Request $request)
     {
         //
-        $id=$req->id;
+        $id=$request->id;
         $data= User::findorFail($id);
         return view('layouts.profile',['data'=>$data]);
     }
@@ -89,10 +89,13 @@ class UserController extends Controller
           'nama_depan' => 'string|max:255',
           'nama_belakang' => 'string|max:255',
           'username' => 'string|max:255',
-          'password' => 'string|min:6|confirmed',
-          'foto' => 'max:2000',
+          'password' => 'required|min:6|max:8',
+          'foto' => 'nullable|max:2000',
+          'phone' => 'max:14',
+          'address' => 'string|max:191',
 
         ]);
+        
         $path = Storage::disk('public')->put('images/'.$_FILES['foto']['name'],
         file_get_contents($_FILES['foto']['tmp_name']));
 
@@ -100,12 +103,13 @@ class UserController extends Controller
         $user->update([
           'nama_depan'=>$request->nama_depan,
           'nama_belakang'=>$request->nama_belakang,
-          'username'=>$request->username,
           'password'=>bcrypt($request->password),
+          'phone'=>$request->phone,
+          'birthday'=>$request->birthday,
+          'address'=>$request->address,
           'foto'=> 'storage/images/'.$_FILES['foto']['name'],
         //   'foto' => $path
       ]);
-
         return redirect(route('layouts.profile'));
     }
 

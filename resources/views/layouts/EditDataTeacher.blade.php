@@ -4,11 +4,12 @@
             <div class="row">
                   <div class="col s3 center" id="tab-choose-section">
                      <a href="{{route('guru')}}" class="link-beranda-teach"> <i class="medium material-icons">home</i> Kembali Ke Beranda</a>
-
+                        
                      <ul class="tabs" id="tab-teacher">
                            <li class="col l12 tab"><a href="#EditDataTeacher">Data Pengajar</a></li>
                            <li class="col l12 tab"><a href="#Subject">Materi Pengajaran</a></li>
                            <li class="col l12 tab"><a href="#Shcedule">Jadwal Pengajaran</a></li>
+                           <li class="col l12 tab"><a href="#Filing">Unggah Pencapaian yang didapat</a></li>
                         </ul>
                   </div>
                   {{-- <ul id="slide-out" class="side-nav">
@@ -22,6 +23,7 @@
                         @include('component.UserData.EditTeacher')
                         @include('component.UserData.ListSubjectForm')
                         @include('component.UserData.ListScheduleForm')
+                        @include('component.UserData.FileTeacher')
                   </div>
            </div>
    </div>

@@ -3,9 +3,9 @@ $font-roboto:'Roboto Slab', serif;
 .heading-content{
     font-family: $font-roboto;
     letter-spacing: 0.04em;
-    font-size: 70px;
+    font-size: 36px;
     color: white;
-    font-weight: 400;
+    font-weight: bold;
 }
 .heading-content-second{
     font-family: $font-roboto;
@@ -25,15 +25,31 @@ $font-roboto:'Roboto Slab', serif;
     font-family: $font-roboto;
     line-height: 30px;
     font-size: 18px;
-    color: black;
+    color: #4E4F51;
     font-weight:normal;
 }
 .heading-black-second{
     font-family: $font-roboto;
     line-height: 30px;
     font-size: 13px;
-    color: black;
+    color: #4E4F51;
     font-weight:normal;
+}
+.heading-black-third{
+    font-family: $font-roboto;
+    line-height: 30px;
+    font-size: 40px;
+    color: #4E4F51;
+    font-weight:700;
+    letter-spacing: 0.06em;
+}
+.heading-green-sixth{
+    font-family: $font-roboto;
+    line-height: 30px;
+    font-size: 16px;
+    color: #39B54A;
+    font-weight:normal;
+    letter-spacing: 0.06em;
 }
 .heading-white{
     font-family: $font-roboto;
@@ -108,6 +124,15 @@ $font-roboto:'Roboto Slab', serif;
     line-height: normal;
     
 }
+.heading-green-fifth{
+    color: #45E0C0;
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: normal;
+    
+}
 .heading-product{
     font-family: $font-roboto;
     letter-spacing: 0.04em;
@@ -145,6 +170,15 @@ $font-roboto:'Roboto Slab', serif;
     letter-spacing: 7%;
     line-height: 32px;
     
+}
+.heading-purple{
+    font-family: $font-roboto;
+    letter-spacing: 0.04em;
+    font-size: 40px;
+    color: #404F76;
+    font-weight: 700;
+    letter-spacing: 7%;
+    line-height: 32px;
 }
 .heading-content-fourth-black{
     font-family: $font-roboto;

@@ -41,3 +41,68 @@
 .paragraph-unknown{
     @extend .paragraph-first-purple;
 }
+.link-status-student{
+    @extend .absent;
+}
+.heading-data-list{
+    @extend .heading-black-third;
+}
+.btn-input-data{
+    @extend .btn-order-section;
+}
+.tb-data{
+    @extend .table-first;
+}
+.first-data-lay{
+    @extend .layouts-one;
+}
+.head-tb-data{
+    @extend .heading-black;
+}
+.list-tb-data{
+    @extend .list-second;
+}
+.heading-payment{
+    @extend .heading-black;
+}.heading-payment-second{
+    @extend .paragraph-third;
+}
+.img-profile-payment{
+    @extend .img-file-content-second;
+}
+.first-payment{
+    @extend .layouts-one;
+}
+.section-img{
+    @extend .img-section;
+}
+.heading-payment-third{
+    @extend .paragraph-second-green;
+}
+.link-pay{
+    @extend .info;
+}
+.img-pay-done{
+    @extend .img-file-content-third;
+}
+.img-pay-dash{
+    @extend .img-dash;
+}
+.link-pay-not{
+    @extend .info;
+}
+.link-had-pay{
+    @extend .info-green;
+}
+.heading-warn-pay{
+    @extend .heading-red-first;
+}
+.heading-warn-success{
+    @extend .heading-green-fourth;
+}
+.stat-pay-btn{
+    @extend .btn-red-content-third;
+}
+.pay-stat-img{
+    @extend .img-stat-pay;
+}

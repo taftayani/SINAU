@@ -37,14 +37,23 @@
 
                 <div class="row" id="rows-data"> 
                     <h5 class="list-heading-data">Pilih Waktu Pengajaran</h5>
-                   @foreach ($teacher->Schedule as $schedule)                          
+                    <div class="input-field col s12">
+                            <select name="shcedule_id">
+                                    <option value="" disabled>Waktu mengajar</option>
+                                @foreach ($teacher->Schedule as $schedules)                                                       
+                                    <option value="{{$schedules->id}}">{{$schedules->day}} {{$schedules->time_les}}</option>
+                                    @endforeach
+    
+                            </select>
+                          </div>
+                   {{-- @foreach ($teacher->Schedule as $schedule)                          
                             <div class="col xl4" id="column-subject"> 
                             <p>
                             <input type="checkbox" id="{{$schedule->id}}" name="shcedule_id[]" value="{{$schedule->id}}"/>
                                 <label for="{{$schedule->id}}">{{$schedule->day}} {{$schedule->time_les}}</label>
                              </p>
                             </div>
-                    @endforeach
+                    @endforeach --}}
                 </div>
 
                 <div class="row" id="rows-data">

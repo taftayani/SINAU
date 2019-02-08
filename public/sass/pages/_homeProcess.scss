@@ -1,3 +1,36 @@
+.heading-packet{
+    @extend .heading-purple;
+}
+.card-packet{
+    @extend .card-packet-content;
+}
+.img-card{
+    @extend .img-card-content;
+}
+.heading-card{
+    @extend .heading-green-fifth;
+}
+.paragraph-card{
+    @extend .paragraph-purple;
+}
+.card-packet-second{
+    @extend .card-packet-content-second;
+}
+.card-packet-third{
+    @extend .card-packet-content-third;
+}
+.heading-rupiah{
+    @extend .heading-green-sixth;
+}
+.btn-search-teach{
+    @extend .btn-purple-teach;
+}
+.btn-become-teach{
+    @extend .btn-green-teach;
+}
+.btn-process-study{
+    @extend .btn-red-teach;
+}
 .first-section{ 
     @extend .layout-first;
     .first-header{

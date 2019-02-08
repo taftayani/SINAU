@@ -17,7 +17,6 @@ class UserSeeder extends Seeder
             'email' => 'admin.sinau@gmail.com',
             'password' => bcrypt('uji123'),
             'role' => 'admin',
-            'username' => 'admin.sinau'
         ]);
     }
 }

@@ -18,7 +18,10 @@ class Teacher extends Model
     {
         return $this->hasMany('App\mata_pelajaran','teacher_id','id');
     }
-
+    public function Subjects()
+    {
+        return $this->belongsTo('App\mata_pelajaran','teacher_id','id');
+    }
     public function Schedule()
     {
         return $this->hasMany('App\Shcedule');
@@ -28,6 +31,10 @@ class Teacher extends Model
     {
         return $this->hasOne('App\Confirm');
     }
+    public function Stat()
+    {
+        return $this->hasMany('App\Stat');
+    }
     public function SeeTeacher()
     {
         return $this->belongsTo('App\User', 'user_id', 'id');
@@ -35,5 +42,9 @@ class Teacher extends Model
     public function Verified()
     {
         return $this->hasOne('App\verifikasi');
+    }
+    public function File()
+    {
+        return $this->hasMany('App\teacher_file');
     }
 }

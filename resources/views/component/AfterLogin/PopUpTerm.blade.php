@@ -1,9 +1,5 @@
-<li>
-    @if (Auth::user()->Teacher)
-         <a href="{{route('guru')}}" class="modal-trigger">Menjadi Pengajar ?</a> 
-    @else
-        <a href="#modal2" class="modal-trigger">Menjadi Pengajar ?</a> 
-    @endif 
+{{-- <li> --}}
+ 
     <div id="modal2" class="modal container col xl12">
         <div class="modal-content" id="modal-teacher">
             <div class="container">
@@ -31,4 +27,4 @@
             
         </div>
     </div>
-</li>
+{{-- </li> --}}

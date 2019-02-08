@@ -1,46 +1,36 @@
-<div class="container-fluid rows-third-profile">
-    <div class="row"> 
-      <div class="col xl12">
-        <h1 class="header-profile-second">Fitur</h1>
+<div class="container fourth-layout" id="Packet">
+    <div class="row">
+      <div class="col l12">
+          <h3 class="center heading-packet">Paket Belajar</h3>
       </div>
     </div>
-
-    <div class="row rows-column-fitur">
-        <div class="col xl5" id="img-study">
-            <div class="row">
-                <h1 class="center header-fitur">SINAU OFFLINE</h1>
+    <div class="row">
+        <div class="col s4">
+            <div class="card-packet">
+                <img src="/img/Background/hemat.png" class="img-card" alt="">
+                <h4 class="heading-card center">PAKET 5 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>5</b>
+                  pertemuan dalam <b>1 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                  <h5 class="heading-rupiah center">Rp.50.000</h5>
             </div>
-            <div class="row rows-teach">
-                <div class="col xl6 column-devider-fitur">
-                    <h5 class="center header-second-fitur">Pengajar Tersedia</h5>
-                </div>
-                <div class="col xl6">
-                  <h5 class="center header-second-fitur">65</h5>
-              </div>
-            </div>
-
-            <div class="row center">
-            <button class="btn-fitur"> <a href="{{route('name_teacher')}}" class="link-fitur">Lihat Pengajar</a> </button>
-            </div>
-
         </div>
-        <div class="col xl5" id="img-book">
-          <div class="row">
-              <h1 class="center header-fitur">SINAU BOOK</h1>
-          </div>
-          <div class="row rows-teach">
-              <div class="col xl6 column-devider-fitur">
-                  <h5 class="center header-second-fitur">Buku Yang Tersedia</h5>
-              </div>
-              <div class="col xl6">
-                <h5 class="center header-second-fitur">65</h5>
+        <div class="col s4">
+            <div class="card-packet-second">
+                <img src="/img/Background/agakhemat.png" class="img-card" alt="">
+                <h4 class="heading-card center">PAKET 10 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>10</b>
+                  pertemuan dalam <b>2 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                <h5 class="heading-rupiah center">Rp.100.000</h5>
             </div>
-          </div>
-
-          <div class="row center">
-              <button class="btn-fitur"><a href="" class="link-fitur">Lihat Buku</a></button>
-          </div>
-
-      </div>
+        </div>
+        <div class="col s4">
+            <div class="card-packet-third">
+                <img src="/img/Background/biasa.png" class="img-card" alt="">
+                <h4 class="heading-card center">PAKET 15 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>15</b>
+                  pertemuan dalam <b>3 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                <h5 class="heading-rupiah center">Rp.150.000</h5>
+            </div>
+        </div>
     </div>
-</div>
+  </div>

@@ -55,6 +55,14 @@ $font-roboto:'Roboto Slab', serif;
     line-height: 32px;
     letter-spacing: 7%;
 }
+.paragraph-second-green{
+    font-family: $font-roboto;
+    color: #12BF95;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 7%;
+}
 .paragraph-first-red{
     font-family: $font-roboto;
     color: #F06491;
@@ -71,11 +79,28 @@ $font-roboto:'Roboto Slab', serif;
     line-height: 32px;
     letter-spacing: 7%;
 }
+.paragraph-purple{
+    font-family: $font-roboto;
+    color: #404F76;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 32px;
+    letter-spacing: 0.04em;
+}
+
 .paragraph-second{
     font-family: $font-roboto;
     color: #4E4F51;
     font-weight: 300;
     font-size: 14px;
+    line-height: 32px;
+    letter-spacing: 0.07em;
+}
+.paragraph-third{
+    font-family: $font-roboto;
+    color: #4E4F51;
+    font-weight: 700;
+    font-size: 30px;
     line-height: 32px;
     letter-spacing: 0.07em;
 }

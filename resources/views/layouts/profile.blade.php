@@ -6,8 +6,8 @@
       font-family: Keep Singing;
     }
     .foto{
-      width: 300px;
-      height: 400px;
+      width: 200px;
+      height: 500px;
     }
     #button{
       width: 300px;
@@ -15,9 +15,12 @@
     .user{
       font-size: 20px;
     }
+    .content-edit{
+      padding-top: 100px;
+    }
   </style>
 
-<div class="container-fluid">
+<div class="container-fluid content-edit">
   <div class="row">
       <div class="col s12 m6">
         <div class="card z-depth-3">
@@ -29,8 +32,8 @@
             {{-- <a class="btn-floating halfway-fab waves-effect waves-light red" href="{{ route('user',['id'=>$baris->id]) }}"><i class="material-icons">create</i></a> --}}
           </div>
           <div class="card-content">
-            <p>Hallo <b class="user">{{ Auth::user()->username }}</b>, selamat datang di website sinau. Terima kasih kamu telah mendaftar
-            sebagai murid Sinau Yo. </p>
+            <p>Selamat datang di website sinau. Terima kasih kamu telah mendaftar
+            sebagai pengguna Sinau Yo. </p>
             <div class="divider"></div>
             <h6>Nama saya : <b>{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} </b></h6>
             <h6>email saya : <b>{{ Auth::user()->email }}</b> </h6>
@@ -55,41 +58,52 @@
           <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('nama_belakang')  }}</p>
         @endif
       </div>
+
+      <div class="row">
+          <div class="input-field col xl6 s12 m5">
+            <input id="phone" placeholder="Nomor Telp Masih kosong" name="phone" type="number" value="{{ Auth::user()->phone }}">
+            @if ($errors->has('phone'))
+            <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('phone')  }}</p>
+          @endif
+          </div>
+
+          <div class="input-field col xl6 s12 m5">
+              <input id="birth" name="birthday" type="date" value="{{ Auth::user()->birthday }}">
+
+              @if ($errors->has('birthday'))
+                <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('birthday')  }}</p>
+              @endif
+            </div>
+        </div>
+        
       <div class="row">
         <div class="input-field col s12">
-          <input placeholder="username" id="username" name="username" type="text" class="validate" value="{{ Auth::user()->username }}">
-        </div>
-      </div>
-      @if ($errors->has('username'))
-        <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('username')  }}</p>
-      @endif
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="password" placeholder="password"  name="password" type="password" class="validate" >
-          @if ($errors->has('password'))
-            <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
-          @endif
-        </div>
-        <div class="input-field col s6">
-        <input id="repassword" name="password_confirmation" type="password" class="validate" placeholder="re-password">
-        @if ($errors->has('password_confirmed'))
-          <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password_confirmed') }}</p>
+        <input id="password" placeholder="password" name="password" type="password">
+        @if ($errors->has('password'))
+          <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
         @endif
         </div>
       </div>
 
+      <div class="row">
+        <div class="input-field col s12">
+        <input id="address" placeholder="alamat" name="address" type="text"  value="{{ Auth::user()->address }}">
+        </div>
+      </div>
+
+      
       <div class="file-field input-field">
-      <div class="btn">
-        <span>Photo</span>
-        <input type="file" name="foto" multiple>
-      </div>
-      <div class="file-path-wrapper">
-        <input class="file-path validate"  value="{{ Auth::user()->foto }}">
-      </div>
-      @if ($errors->has('foto'))
+        <div class="btn">
+          <span>Photo</span>
+          <input type="file" name="foto" multiple>
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" value="{{ Auth::user()->foto }}" >
+        </div>
+        @if ($errors->has('foto'))
         <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('foto')  }}</p>
       @endif
-    </div>
+      </div>
     <button type="submit" name="button" class="btn grey darken-3" id="button" >Edit <i class="material-icons">create</i></button>
 
     </form>

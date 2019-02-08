@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nama_depan', 'nama_belakang', 'email','username','password','foto','phone','address','birthday','gender'
+        'nama_depan', 'nama_belakang', 'email','password','foto','phone','address','birthday','gender'
     ];
 
     /**
@@ -36,8 +36,17 @@ class User extends Authenticatable
             return $this->hasOne('App\mata_pelajaran');
         }
         
+        public function Shcedule()
+        {
+            return $this->hasMany('App\Shcedule');
+        }
+        
     public function Confirm()
     {
         return $this->hasOne('App\Confirm');
+    }
+    public function Stat()
+    {
+        return $this->hasOne('App\Stat');
     }
 }

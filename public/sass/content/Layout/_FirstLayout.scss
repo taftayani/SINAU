@@ -1,15 +1,17 @@
 .layout-first{
     background-image: url("../img/Background/ruler.png");
-    height: 800px;
+    height: 500px;
+    text-align: center;
     background-size: cover;
     padding-top: 100px;
 }
 .img-content-login{
     background-image: url("../img/Background/login.png");
-    padding-top: 9vw;
-    padding-bottom: 10vw;
+    padding-top: 100px;
+    padding-bottom: 100px;
     height: auto;
     background-size: cover;
+    background-repeat: no-repeat;
 }
 .login-home{
     background-size: cover;
@@ -30,4 +32,8 @@
     padding-bottom: 200px;
     background-color: #E5E5E5;
     padding-right: 30px;
+}
+.layouts-one{
+    padding-top: 100px;
+    padding-bottom: 100px;
 }

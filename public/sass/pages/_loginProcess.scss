@@ -16,7 +16,8 @@
 .btn-login{
     @extend .btn-login;
 }
-.login{
+
+.form-login{
     #email{
         @extend .form-reg;
     }
@@ -24,6 +25,7 @@
         @extend .form-reg;
     }
 }
+
 .link-forgot-password{
     @extend .link-forgot-password;  
 }
@@ -32,11 +34,6 @@
 }
 
 @media only screen and (max-width:1000px){
-    .img-login{
-        background-image: url("../img/Background/mobilelogin.png");
-        background-position: center;
-        background-size: cover;
-    }
    .form-login{
        padding-left: 0px;
        padding-right: 0px;

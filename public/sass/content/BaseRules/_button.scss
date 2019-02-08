@@ -11,7 +11,23 @@ $font-roboto:'Roboto Slab', serif;
     font-family: $font-roboto;
     line-height: 0.06em;
 }
-
+.btn-content-study{
+    background-color: #6A7BA9;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-family: $font-roboto;
+    letter-spacing: 0.06em;
+}
 
 .btn-register{
     background-color: #404F76;
@@ -34,8 +50,19 @@ $font-roboto:'Roboto Slab', serif;
     height: 50px;
     color: white;
     font-weight: 700;
-    margin-left: 270px;
     margin-bottom: 20px;
+    border-radius: 11.5px;
+    font-family: $font-roboto;
+    letter-spacing: 0.06em;
+}
+.btn-file-content{
+    background-color: #404F76;
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    height: 50px;
+    color: white;
+    font-weight: 700;
     border-radius: 11.5px;
     font-family: $font-roboto;
     letter-spacing: 0.06em;
@@ -98,4 +125,64 @@ $font-roboto:'Roboto Slab', serif;
 }
 .btn-red-content-second:hover{
     background-color: #FF665D;
+}
+.btn-red-content-third{
+    background-color: #F06491;
+    width: auto;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: auto;
+    color: white;
+    font-weight: 700;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: $font-roboto;
+}
+.btn-red-teach{
+    background-color: #F06491;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: auto;
+    color: white;
+    font-weight: normal;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: $font-roboto;
+}
+.btn-purple-teach{
+    background-color: #6A7BA9;;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: auto;
+    color: white;
+    font-weight: normal;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: $font-roboto;
+}
+.btn-green-teach{
+    background-color: #12BF95;
+    width: auto;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    height: auto;
+    color: white;
+    font-weight: normal;
+    font-size: 14px;
+    border-radius: 10px;
+    margin-top: 10px;
+    font-family: $font-roboto;
 }

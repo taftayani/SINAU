@@ -51,4 +51,15 @@ Route::put('KonfirmasiPesanan/{Pesanles}','ConfirmController@StatusConfirm')->na
 Route::get('FAQ','SurveyController@FAQ')->name('faq');
 Route::get('Faq','UserController@faq')->name('faq_log');
 Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
+Route::post('InputFile','TeacherFileController@store')->name('input_teacher_file');
+Route::delete('DeleteFile/{teacherFile}','TeacherFileController@destroy')->name('delete_file');
+
+//payment
+Route::get('Pembayaran/{confirm}','ConfirmController@Payment')->name('payment');
+Route::put('InputPembayaran/{confirm}','ConfirmController@PaymentReceipt')->name('payment_input');
+Route::put('KonfirmasiPembayaran/{confirm}','ConfirmController@PaymentInvoice')->name('payment_invoice');
+
+//proses belajar 
+Route::get('DataLesSiswa/{confirm}','ConfirmController@MoveStatus')->name('move');
+Route::post('InputDataLes','StatController@CreateStat')->name('input_stat');
 

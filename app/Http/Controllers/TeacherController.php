@@ -37,8 +37,7 @@ class TeacherController extends Controller
         $teacher=Teacher::where('user_id', Auth::user()->id)->first();
         $confirm=Confirm::where('teacher_id', $teacher->id)->get();
         return view('layouts.sinauOffTeacher',[
-            'teacher' => $teacher
-        ],[
+            'teacher' => $teacher,
             'confirm' => $confirm
         ]
     );

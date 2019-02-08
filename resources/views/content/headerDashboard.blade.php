@@ -16,7 +16,6 @@
               <li class="tab"><a href="#guru">Data Guru</a></li>
               <li class="tab"><a href="#matpel">Data Mata Pelajaran</a></li>
               <li class="tab"><a href="#pesanan">Data Pesanan</a></li>
-            
           </ul>
 
           <ul class="right hide-on-med-and-down navbar-section-second">
@@ -54,6 +53,13 @@
       <script type="text/javascript">
         // $(".dropdown-button").dropdown();
         $(".button-collapse").sideNav();
+        
+      </script>
+      <script>
+           $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+    $('.modal').modal();
+  });
       </script>
       @endpush
     
