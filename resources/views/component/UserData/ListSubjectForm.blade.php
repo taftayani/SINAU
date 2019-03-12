@@ -85,9 +85,9 @@
         <div class="row">
          
                 @foreach (Auth::user()->Teacher->Subject as $subjects)
-        <form action="{{route('subject.delete', ['Matpel'=>$subjects->id])}}" method="post">
-            {{ csrf_field()}}
-            {{ method_field('delete') }}
+                    <form action="{{route('subject.delete', ['Matpel'=>$subjects->id])}}" method="post">
+                            {{ csrf_field()}}
+                            {{ method_field('delete') }}
                         <div class="col xl3" id="list-matpel">       
                             <h6 class="list-subject"><button type="submit" name="delete" class="btn-delete"> <i class="tiny material-icons">cancel</i></button> {{$subjects->mata_pelajaran}}  </h6>  
                         </div>

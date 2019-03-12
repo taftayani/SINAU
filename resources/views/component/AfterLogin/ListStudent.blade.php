@@ -7,7 +7,7 @@
     <div class="row">
 
     @foreach ($confirm as $confirms)
-    
+        
         
 
         <div class="{{$confirms->TeacherOrder->id}}">
@@ -67,10 +67,9 @@
                                         <div class="container">
                                               <div class="row">
                                                     <h1 class="header-name">{{$confirms->UserOrder->nama_depan}} {{$confirms->UserOrder->nama_belakang}} / {{$confirms->UserOrder->gender}}</h1>
-                                                    <h1 class="header-contact">{{$confirms->UserOrder->email}} / {{$confirms->UserOrder->phone}}/ {{$confirms->UserOrder->birthday}}</h1>
+                                                    <h1 class="header-contact">{{$confirms->UserOrder->email}} / Hubungi : {{$confirms->UserOrder->phone}}/ {{$confirms->UserOrder->birthday}}</h1>
                                                     <ul>
                                                     <li class="header-contact"> <b>Ingin Les Di : </b>{{$confirms->address_les}}</li>
-                                                    <li class="header-contact"> <b>Jumlah Teman Murid :</b> {{$confirms->student}}</li>
                                                     <li class="header-contact"> <b>Mengambil Paket :</b> {{$confirms->packet}}</li>
                                                     <li class="header-contact"> <b>Materi yang diambil : </b>{{$confirms->SubjectOrder->mata_pelajaran}}</li>
                                                     <li class="header-contact"> <b>Waktu Les Yang diambil : </b>{{$confirms->ShceduleOrder->day}} {{$confirms->ShceduleOrder->time_les}}</li>

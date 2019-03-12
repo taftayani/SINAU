@@ -6,10 +6,11 @@
         </div>
         <div class="row">
                 @foreach ($confirm as $confirms)
-                        <div class="col xl2 center " id="column-profile-teach">
+                <div class="col xl2 center " id="column-profile-teach">
+                         @if ($confirms->teacher_id == $confirms->teacher_id)
                                 <img src="{{$confirms->TeacherOrder->SeeTeacher->foto}}" class="img-profile-teach">
                                 <h6 class="header-teach">{{$confirms->TeacherOrder->SeeTeacher->nama_depan}} {{$confirms->TeacherOrder->SeeTeacher->nama_belakang}}</h6>
-                                <p class="paragraph-title-educate">Hubungi : {{$confirms->TeacherOrder->SeeTeacher->phone}}</p>
+                                <p class="paragraph-title-educate">No. Telp (apabila anda belum dihubungi dalam <b>Lebih dari 3 Menit</b> ) untuk konfirmasi les: {{$confirms->TeacherOrder->SeeTeacher->phone}}</p>
                                 @if ($confirms->Status == 'Pesanan Diterima')
                                         <p class="paragraph-title-educate">Status Pesanan : 
                                                 <p class="paragraph-success">{{$confirms->Status}} </p>
@@ -30,7 +31,11 @@
                                         </p>
                                 @endif
                         
-                        </div>
+                    
+                        @else
+                            
+                        @endif
+                </div>
                 @endforeach
         </div>
     </div>

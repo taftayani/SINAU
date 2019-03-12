@@ -25,18 +25,17 @@ class ConfirmController extends Controller
         $subject=mata_pelajaran::where('teacher_id',$req->teacher_id)->get();
         $shcedule=Shcedule::where('teacher_id',$req->teacher_id)->get();
         // return $req;
-        // foreach($req->shcedule_id as $les){
+        foreach($req->shcedule_id as $les){
             Confirm::create([
                 'user_id' =>  Auth::user()->id,
                 'teacher_id' => $req->teacher_id,
                 'subject_id' => $req->subject_id,
-                'shcedule_id' => $req->shcedule_id,
-                'student' => $req->student,
+                'shcedule_id' => $les,
                 'packet' => $req->packet,
                 'address_les' => $req->address_les,
               ]);
           
-        // }
+        }
         $confirm=Confirm::where('user_id',Auth::user()->id)->get();
           Session::flash('message','data berhasil');
           return redirect(route('home'));
@@ -81,9 +80,13 @@ class ConfirmController extends Controller
     {
         $path = Storage::disk('public')->put('Pembayaran/'.$_FILES['pay']['name'],
         file_get_contents($_FILES['pay']['tmp_name']));
-        
-        $confirm-> pay=  'storage/Pembayaran/'.$_FILES['pay']['name'];
-        $confirm-> save();
+      
+            $confirm-> pay=  'storage/Pembayaran/'.$_FILES['pay']['name'];
+            $confirm-> friends= $request->friends;
+            $confirm-> friends2= $request->friends2;
+            $confirm-> friends3= $request->friends3;
+            $confirm-> friends4= $request->friends4;
+            $confirm-> save();
 
         return redirect(route('payment',['confirm'=>$confirm->id]));
     }

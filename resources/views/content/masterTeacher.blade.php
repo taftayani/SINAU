@@ -39,11 +39,12 @@
           </li>
       </ul>
 
+      <div class="navbar-fixed">
       <nav class=" nav-header">
           <div class="nav-wrapper">
            <a href="{{ route('guru') }}" class="brand-logo"><img src="../img/Logo/logo.png" alt=""class="logo"></a>
            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-               <ul class="right hide-on-med-and-down">
+         
               @guest
                 <ul class="right hide-on-med-and-down">
                   <li><a class="" href="{{ route('login') }}" >Masuk</a></li>
@@ -55,17 +56,19 @@
                   <li><a href="{{ route('login') }}">Masuk</a></li>
                 </ul>
               @else
-                  <ul class="log-user-header">
+                  <ul class="center hide-on-med-and-down log-user-header">
                     <li><a href="">SINAU OFFLINE</a></li>
                     <li><a href="">SINAU BOOK</a></li>
                     <li><a href="{{ route('beranda') }}">Halaman Murid ?</a></li>
                    </ul>
                 
-                 <li><a class="dropdown-button" href="#!" data-activates="dropdown2">
-                    <img src="../img/Logo/avatar.png" alt=""class="profile-img">
-                  <i class="material-icons right">arrow_drop_down</i></a></li>
-               </ul>
-
+                   <ul class="right hide-on-med-and-down">
+                    <li><a class="dropdown-button" href="#!" data-activates="dropdown2">
+                        <img src="{{Auth::user()->foto}}" class="profile-img">
+                      <i class="material-icons right">arrow_drop_down</i></a></li>
+                  </ul>
+              </div>
+      </div>
                <ul class="side-nav" id="mobile-demo">
                  <li> <a href="{{ route('layouts.profile') }}">profile</a> </li>
                  <li>   <a href="{{ route('logout') }}"

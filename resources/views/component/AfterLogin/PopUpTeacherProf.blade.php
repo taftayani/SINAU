@@ -11,7 +11,7 @@
                             <div class="container">
                                   <div class="row">
                                         <h1 class="header-name">{{$teachers->SeeTeacher->nama_depan}} {{$teachers->SeeTeacher->nama_belakang}}</h1>
-                                        <h1 class="header-contact">{{$teachers->ktp}} / {{$teachers->SeeTeacher->phone}} </h1>
+                                        <p class="paragraph-biodata">MOTIVASI MENGAJAR : </p>
                                         <p class="paragraph-biodata">{{$teachers->resume}}
                                         </p>      
                                   </div>
@@ -55,8 +55,7 @@
                 </div>
 
                 <div class="row right" id=""> 
-                <div class="col xl6"> <button class="btn-order"> <a href="{{route('Pilih_guru', ['teacher' => $teachers->id])}}" class="link-choose-teacher">Pilih Guru</a> </button></div>
-                        <div class="col xl6"><p class="paragraph-biodata">Jumlah Max Mengajar : <b>8 orang</b></p></div>
+                <div class="col xl12"> <button class="btn-order"> <a href="{{route('confirm', ['teacher' => $teachers->id])}}" class="link-choose-teacher">Pilih Guru</a> </button></div>
                    </div>
                 
             </div>

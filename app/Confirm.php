@@ -18,7 +18,12 @@ class Confirm extends Model
         'address_les',
         'Status',
         'date_les',
-        'mention'
+        'pay',
+        'stat_pay',
+        'friends',
+        'friends2',
+        'friends3',
+        'friends4'
     ];
 
     public function UserOrder()

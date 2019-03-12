@@ -29,7 +29,23 @@
                    
                         <form action="{{route('payment_input',['confirm'=>$confirm->id])}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
-                            {{ method_field('put') }}
+                            {{ method_field('put') }}  <h1></h1>
+                            @if ($confirm->packet == "50.000")
+                            <p>Apakah Kamu Ingin mengajak Teman Kamu ? ( <b>Max 2 orang</b> optional)</p>
+                                <input id="email" name="friends" type="text" class="validate" value="" placeholder="isi nama teman yang kamu ajak">
+                                <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                            @elseif($confirm->packet == "100.000")
+                            <p>Apakah Kamu Ingin mengajak Teman Kamu ? ( <b>Max 3 orang</b> optional)</p>
+                                <input id="email" name="friends" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                                <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                                <input id="email" name="friends3" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                            @elseif($confirm->packet == "150.000")
+                            <p>Apakah Kamu Ingin mengajak Teman Kamu ? ( <b>Max 4 orang</b> optional)</p>
+                                <input id="email" name="friends1" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                                <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                                <input id="email" name="friends3" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                                <input id="email" name="friends4" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                            @endif
                                     <div class="file-field input-field">
                                             <div class="btn">
                                               <span>File</span>

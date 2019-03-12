@@ -118,6 +118,7 @@
                             <th>Mata Pelajaran</th>
                             <th>Waktu Les</th>
                             <th>Paket</th>
+                            <th>Teman Yang Diajak</th>
                             <th>alamat les</th>
                             <th>Bukti Pembayaran</th>
                             <th>Status</th>
@@ -132,6 +133,16 @@
                             <td>{{$confirms->SubjectOrder->mata_pelajaran}}</td>
                             <td>{{$confirms->ShceduleOrder->day}} {{$confirms->ShceduleOrder->time_les}}</td>
                             <td>{{$confirms->packet}}</td>
+                                <td>
+                                    <ul>
+                                        <li>{{$confirms->friends}}</li>
+                                        <li>{{$confirms->friends2}}</li>
+                                        <li>{{$confirms->friends3}}</li>
+                                        <li>{{$confirms->friends4}}</li>
+                                    </ul>
+                                </td>
+                                
+                   
                             <td>{{$confirms->address_les}}</td>
                             <td>
                               @if ($confirms->pay == 'Belum Dibayar')

@@ -56,7 +56,7 @@
   width: 100px;
   height: 100px; }
 
-.img-stat-pay, .pay-stat-img {
+.img-stat-pay, .img-sertified-prove, .pay-stat-img {
   width: 30px;
   height: 30px; }
 
@@ -275,7 +275,8 @@
   line-height: 30px;
   font-size: 18px;
   color: #4E4F51;
-  font-weight: normal; }
+  font-weight: normal;
+  white-space: nowrap; }
 
 .heading-black-second, .paragraph-title-educate {
   font-family: "Roboto Slab", serif;
@@ -405,7 +406,7 @@
   letter-spacing: 7%;
   line-height: 32px; }
 
-.heading-content-fourth, .heading-term, .list-heading-data {
+.heading-content-fourth, .heading-term, .header-status-subject-matpel, .list-heading-data {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 18px;
@@ -561,6 +562,13 @@
   font-size: 30px;
   line-height: 32px;
   letter-spacing: 0.07em; }
+
+.pargraph-little-second, .paragraph-title-educate-second {
+  font-family: "Roboto Slab", serif;
+  color: #828282;
+  font-weight: 300;
+  font-size: 13px;
+  letter-spacing: 0.06em; }
 
 .form-reg, input[type="text"], .text-long, .form-login #email, .form-login #password {
   width: 100%;
@@ -732,7 +740,7 @@
   padding-top: 30px; }
 
 .navbar-section-loguser, .log-user-header {
-  margin-left: -1000px;
+  margin-left: 250px;
   padding-top: 20px;
   font-family: "Roboto Slab", serif;
   font-size: 18px;
@@ -989,7 +997,8 @@
   border-bottom: 1px solid #E1E1E1; }
 
 .bg-profile-teach, #layout-faq, .bg-profile-teacher, #layout-confirm {
-  background-color: #F3F3F3; }
+  background-color: white;
+  padding-top: 100px; }
 
 .bg-profile-off-content, .bg-profile-off {
   background-color: #F3F3F3; }

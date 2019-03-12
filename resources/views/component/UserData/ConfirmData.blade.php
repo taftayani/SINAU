@@ -19,7 +19,14 @@
                     {{-- <input type="hidden" name="subject_id" value="{{$subject->id}}"> --}}
                 {{-- <input type="hidden" name="shcedule_id"> --}}
                 <div class="row" id="rows-data">
-                    <h5 class="heading-confirm">Lengkapi data-data Dibawah ini</h5>
+                    <h5 class="heading-confirm">Lengkapi data-data Untuk Proses Belajar Dengan 
+                        @if ($teacher->SeeTeacher->gender == 'Male')
+                            Bapak {{$teacher->SeeTeacher->nama_depan}}
+                        @else
+                          Ibu {{$teacher->SeeTeacher->nama_depan}}
+                        @endif
+
+                    </h5>
                 </div>
 
                 <div class="row"> 
@@ -28,8 +35,8 @@
                         <select name="subject_id">
                                 <option value="" disabled>Materi Pengajaran</option>
                             @foreach ($teacher->Subject as $subjects)                                                       
-                                <option value="{{$subjects->id}}">{{$subjects->mata_pelajaran}}</option>
-                                @endforeach
+                                <option value="{{$subjects->id}}">{{$subjects->mata_pelajaran}}</option>                           
+                             @endforeach
 
                         </select>
                       </div>
@@ -37,15 +44,19 @@
 
                 <div class="row" id="rows-data"> 
                     <h5 class="list-heading-data">Pilih Waktu Pengajaran</h5>
-                    <div class="input-field col s12">
-                            <select name="shcedule_id">
+                    {{-- <div class="input-field col s12"> --}}
+                            {{-- <select name="shcedule_id"> --}}
                                     <option value="" disabled>Waktu mengajar</option>
                                 @foreach ($teacher->Schedule as $schedules)                                                       
-                                    <option value="{{$schedules->id}}">{{$schedules->day}} {{$schedules->time_les}}</option>
-                                    @endforeach
+                                    {{-- <option value="{{$schedules->id}}">{{$schedules->day}} {{$schedules->time_les}}</option> --}}
+                                    <p>
+                                        <input type="checkbox" id="{{$schedules->id}}" name="shcedule_id[]" value="{{$schedules->id}}"/>
+                                        <label for="{{$schedules->id}}">{{$schedules->day}} {{$schedules->time_les}}</label>
+                                     </p>
+                                @endforeach
     
-                            </select>
-                          </div>
+                            {{-- </select> --}}
+                          {{-- </div> --}}
                    {{-- @foreach ($teacher->Schedule as $schedule)                          
                             <div class="col xl4" id="column-subject"> 
                             <p>
@@ -56,7 +67,7 @@
                     @endforeach --}}
                 </div>
 
-                <div class="row" id="rows-data">
+                {{-- <div class="row" id="rows-data">
                     <h5 class="list-heading-data">Jumlah Murid Yang diajarkan</h5>
                     <p class="paragraph-confirm">(Kelipatan murid akan dikenakan 5% dari harga utama)</p>
                     <div class="input-field col s12" name="student">
@@ -72,11 +83,11 @@
                           <option value="8" name="student">8</option>
                         </select>
                       </div>
-                </div>
+                </div> --}}
 
                 <div class="row" id="rows-data">
                         <h5 class="list-heading-data">Paket Harga Yang Ditentukan</h5>
-                        <p class="paragraph-confirm">(Paket tersebut adalah harga satu murid)</p>
+                        <p class="paragraph-confirm">(Pililah Paket Belajar Bersama)</p>
                         <div class="input-field col s12" name="packet">
                             <select name="packet">
                               <option value="" disabled selected>Paket Harga</option>
@@ -96,11 +107,13 @@
                           </div>
                       </div>
 
-                <div class="row right" id="rows-btn-konfirmasi"> 
+                <div class="left" id="rows-btn-konfirmasi"> 
                     <div class="col xl6"> <button class="btn-order-return"> <a href="{{route('home')}}" class="link-choose-teacher">Batal</a> </button></div>
                        
                 </div>
+                <div class="right">
                     <button type="submit" class="btn-order-next" name="button">Kirim</button>
+                </div>
                 
         </form>
             </div>

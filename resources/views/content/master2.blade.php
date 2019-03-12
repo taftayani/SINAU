@@ -44,7 +44,6 @@
           <div class="nav-wrapper">
               <a href="{{ route('beranda') }}" class="brand-logo"><img src="../img/Logo/logo.png" alt=""class="logo"></a>
               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                  <ul class="right hide-on-med-and-down">
                   @guest
                     <ul class="right hide-on-med-and-down">
                       <li><a class="" href="{{ route('login') }}" >Masuk</a></li>
@@ -57,7 +56,7 @@
                     </ul>
                   @else
           
-                      <ul class="log-user-header">
+                      <ul class="center hide-on-med-and-down log-user-header">
                         <li><a href="#Produk">SINAU OFFLINE</a></li>
                         <li><a href="#Packet">Paket Belajar</a></li>
                         <li>   
