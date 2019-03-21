@@ -23,7 +23,10 @@ class Confirm extends Model
         'friends',
         'friends2',
         'friends3',
-        'friends4'
+        'friends4',
+        'test_file',
+        'score',
+        'link-video'
     ];
 
     public function UserOrder()

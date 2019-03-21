@@ -44,8 +44,6 @@
         </nav>
 
 @yield('contentDashboard')
-    
-     
       
      
     

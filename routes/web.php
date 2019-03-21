@@ -50,7 +50,6 @@ Route::post('PesanLes','ConfirmController@konfirmasi')->name('order_les');
 Route::put('KonfirmasiPesanan/{Pesanles}','ConfirmController@StatusConfirm')->name('konfirmasi');
 Route::get('FAQ','SurveyController@FAQ')->name('faq');
 Route::get('Faq','UserController@faq')->name('faq_log');
-Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
 Route::post('InputFile','TeacherFileController@store')->name('input_teacher_file');
 Route::delete('DeleteFile/{teacherFile}','TeacherFileController@destroy')->name('delete_file');
 
@@ -62,4 +61,9 @@ Route::put('KonfirmasiPembayaran/{confirm}','ConfirmController@PaymentInvoice')-
 //proses belajar 
 Route::get('DataLesSiswa/{confirm}','ConfirmController@MoveStatus')->name('move');
 Route::post('InputDataLes','StatController@CreateStat')->name('input_stat');
+Route::put('LinkUjian/{confirm}','StatController@LinkVideo')->name('link_tes');
+
+// Dashboard
+Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
+Route::put('SoalUjian/{confirm}','HomeController@TestPic')->name('tes_last');
 

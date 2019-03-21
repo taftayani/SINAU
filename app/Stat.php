@@ -9,7 +9,8 @@ class Stat extends Model
     protected $fillable=[
         'confirm_id',
         'date_les',
-        'mention'
+        'mention',
+        'prove'
     ];
 
     public function ConfirmOrder()

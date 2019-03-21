@@ -1,4 +1,5 @@
 @extends('content.headerDashboard')
+@extends('content.apps')
 @section('contentDashboard')
 
 <div id="home">
@@ -163,20 +164,60 @@
                                   <table class="tb-data">
                                         <thead class="head-tb-data">
                                         <tr class="center">
+                                            <th>Jumlah Pertemuan</th>
                                             <th>Tanggal Les</th>
                                             <th>Keterangan Les</th>
+                                            <th>Bukti Les</th>
                                         </tr>
                                         </thead>
-                                
+                                        @foreach ($confirms->SeeStat as $key => $stats)    
                                         <tbody class="list-tb-data">
-                                                @foreach ($confirms->SeeStat as $stats)      
-                                            <tr>                                                            
+                                               
+                                            <tr>           
+                                                    <td>Pertemuan {{++$key}}</td>                                                 
                                                     <td>{{$stats->date_les}}</td>
                                                     <td>{{$stats->mention}}</td>
+                                                    <td><img src="{{asset($stats->prove)}}" alt="" class="materialboxed pay-stat-img"></td>
                                              </tr>
-                                             @endforeach
+                                           
+                                             
                                      
                                         </tbody>
+                                     @if ($key == 5)
+                                        <h3 id="header_test_done">Soal Sudah dikirimkan</h3>
+                                         <form class="col 12" action="{{route('tes_last',['confirm'=>$confirms->id])}}"  enctype="multipart/form-data" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('put') }}   
+                                            <div class="file-field input-field" id="test_file_kolom">
+                                                        <div class="btn">
+                                                          <span>Upload Soal</span>
+                                                          <input type="file" name="test_file" multiple required>
+                                                        </div>
+                                                        <div class="file-path-wrapper">
+                                                          <input class="file-path validate" required>
+                                                        </div>
+                                                 </div>
+                                            <button type="submit" id="btn_file_test">Upload Soal</button>
+                                            
+                                         </form>
+                                    
+                                     @endif
+                                     @if ($confirms->test_file !== 'nul')
+                                         @push('js')
+                                             <script>
+                                                 document.getElementById('btn_file_test').style.display="none";
+                                                 document.getElementById('test_file_kolom').style.display="none";
+                                                 document.getElementById('heading_test_done').style.display="block";
+                                             </script>
+                                         @endpush
+                                    @else
+                                    <script>
+                                            document.getElementById('btn_file_test').style.display="block";
+                                            document.getElementById('test_file_kolom').style.display="block";
+                                            document.getElementById('heading_test_done').style.display="none";
+                                        </script>
+                                     @endif
+                                        @endforeach
                                 </table>
                                   </div>
                                   <div class="modal-footer">

@@ -10,6 +10,9 @@ use App\User;
 use App\Verifikasi;
 use App\mata_pelajaran;
 use App\Stat;
+use Illuminate\Http\File;
+use App\Http\Requests\UploadRequest;
+use Illuminate\Support\Facades\Storage;
 use Session;
 
 class HomeController extends Controller
@@ -50,6 +53,7 @@ class HomeController extends Controller
       );
     }
 
+// Dashboard Verifikasi
     public function Verifikasi(Request $request,Teacher $teacher)
     {
     $teacher->verifikasi = 'Akun Sudah Diverifikasi';
@@ -57,5 +61,13 @@ class HomeController extends Controller
     return redirect(route('home'));
 
    }
-    
+   public function TestPic(Request $request, Confirm $confirm)
+   {
+        $path = Storage::disk('public')->put('Soal/'.$_FILES['test_file']['name'],
+        file_get_contents($_FILES['test_file']['tmp_name']));
+       
+       $confirm->test_file = 'storage/Soal/'.$_FILES['test_file']['name'];
+       $confirm->save();
+       return redirect(route('home'));
+   }
 }
