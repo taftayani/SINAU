@@ -3,7 +3,7 @@
     <div class="container first-data-lay">
        <div class="row">
             <div class="row">
-            <h1 class="heading-data-list" >Silahkan Isi Kegiatan Les {{$confirm->UserOrder->nama_depan}} {{$confirm->UserOrder->nama_belakang}} / 
+            <h1 class="heading-data-list">Silahkan Isi Kegiatan Les {{$confirm->UserOrder->nama_depan}} {{$confirm->UserOrder->nama_belakang}} / 
               @if ($confirm->packet == '50.000')
                 Max Pertemuan <b>5 kali</b>
 
@@ -126,13 +126,17 @@
                                 <td><img src="{{asset($stats->prove)}}" alt="" class="materialboxed pay-stat-img"></td>
                           </tr>
                         </tbody>
-                        @if ($key == 5)
+                        @if ($key == 4)
                         @push('js')
                             <script>
                             document.getElementById('rows-data').style.display="none";
                             </script>
                           
                         @endpush
+                        <p>kegiatan proses pembelajaran anda sudah selesai. untuk mengakhiri proses terakhir, anda harus membuat sebuah
+                          video kreatif dengan tema soal yang akan diberikan oleh Sinau Yo mengenai materi <b>{{$stats->ConfirmOrder->SubjectOrder->mata_pelajaran}}</b>.
+                          Pecahkan jawabanmu dengan murid-murid kamu dan upload videomu di youtube
+                        </p>
                         <form class="col 12" action="{{route('link_tes',['confirm'=>$stats->ConfirmOrder->id])}}"  enctype="multipart/form-data" method="post">
                             {{ csrf_field() }}
                             {{ method_field('put') }}   
@@ -141,10 +145,17 @@
                             
                          </form>
                       @endif
-                        
-                        @endforeach
-                        <h3>Lihat Soal</h3>
-                        <img src="{{asset($stats->ConfirmOrder->test_file)}}" alt="" class="materialboxed pay-stat-img">
+                         @if ($key== 4)
+                          @if ($stats->ConfirmOrder->test_file == "nul")
+                              <h3>Soal Belum Diberikan, Silahkan Hubungi Admin</h3>
+                            @else
+                            <h3>Lihat Soal</h3>
+                          @endif
+                           
+                            <img src="{{asset($stats->ConfirmOrder->test_file)}}" alt="" class="materialboxed pay-stat-img">
+                         @endif
+                      @endforeach
+                      
 
                 </table>
               
@@ -181,12 +192,23 @@
                           </tr>
                         </tbody>
                       
-                        @if ($key == 15)
+                        @if ($key == 3)
                         @push('js')
                             <script>
                             document.getElementById('rows-data').style.display="none";
                             </script>
                         @endpush
+                        <p>kegiatan proses pembelajaran anda sudah selesai. untuk mengakhiri proses terakhir, anda harus membuat sebuah
+                          video kreatif dengan tema soal yang akan diberikan oleh Sinau Yo mengenai materi <b>{{$stats->ConfirmOrder->SubjectOrder->mata_pelajaran}}</b>.
+                          Pecahkan jawabanmu dengan murid-murid kamu dan upload videomu di youtube
+                        </p>
+                        <form class="col 12" action="{{route('link_tes',['confirm'=>$stats->ConfirmOrder->id])}}"  enctype="multipart/form-data" method="post">
+                            {{ csrf_field() }}
+                            {{ method_field('put') }}   
+                            <input type="text" name="link_video" id="" placeholder="Masukan Link Video" required> 
+                            <button type="submit" >Upload Link</button>
+                            
+                         </form>
                           <button type="submit" name="contract" value="Kontrak Dibatalkan">Kontrak Berakhir</button>
                       @endif
                         @endforeach

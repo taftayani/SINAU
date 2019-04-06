@@ -70,4 +70,13 @@ class HomeController extends Controller
        $confirm->save();
        return redirect(route('home'));
    }
+   public function LastProcess(Request $request, Confirm $confirm)
+   {    
+        $path = Storage::disk('public')->put('Bukti Bayar Pengajar/'.$_FILES['photo_last_pay']['name'],
+        file_get_contents($_FILES['photo_last_pay']['tmp_name']));
+       $confirm-> score = $request->score;
+       $confirm-> photo_last_pay = 'storage/Bukti Bayar Pengajar/'.$_FILES['photo_last_pay']['name'];
+       $confirm-> save();
+       return redirect(route('home'));
+   }
 }

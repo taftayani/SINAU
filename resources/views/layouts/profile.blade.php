@@ -68,7 +68,7 @@
           </div>
 
           <div class="input-field col xl6 s12 m5">
-              <input id="birth" name="birthday" type="date" value="{{ Auth::user()->birthday }}">
+              <input id="birth" name="birthday" type="date" value="{{ Auth::user()->birthday }}" required>
 
               @if ($errors->has('birthday'))
                 <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('birthday')  }}</p>
@@ -78,7 +78,7 @@
         
       <div class="row">
         <div class="input-field col s12">
-        <input id="password" placeholder="password" name="password" type="password">
+        <input id="password" placeholder="password" name="password" type="password" required>
         @if ($errors->has('password'))
           <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
         @endif
@@ -87,7 +87,7 @@
 
       <div class="row">
         <div class="input-field col s12">
-        <input id="address" placeholder="alamat" name="address" type="text"  value="{{ Auth::user()->address }}">
+        <input id="address" placeholder="alamat" name="address" type="text"  value="{{ Auth::user()->address }}" required>
         </div>
       </div>
 
@@ -98,7 +98,7 @@
           <input type="file" name="foto" multiple>
         </div>
         <div class="file-path-wrapper">
-          <input class="file-path validate" value="{{ Auth::user()->foto }}" >
+          <input class="file-path validate" required>
         </div>
         @if ($errors->has('foto'))
         <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('foto')  }}</p>

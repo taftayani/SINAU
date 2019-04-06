@@ -66,4 +66,5 @@ Route::put('LinkUjian/{confirm}','StatController@LinkVideo')->name('link_tes');
 // Dashboard
 Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
 Route::put('SoalUjian/{confirm}','HomeController@TestPic')->name('tes_last');
+Route::put('AkhiriPembelajaran/{confirm}','HomeController@LastProcess')->name('last_process');
 

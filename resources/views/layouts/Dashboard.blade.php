@@ -123,6 +123,7 @@
                             <th>alamat les</th>
                             <th>Bukti Pembayaran</th>
                             <th>Status</th>
+                            <th>Link Video</th>
                         </tr>
                     </thead>
                     @foreach ($confirmSee as $key => $confirms)
@@ -152,10 +153,11 @@
                               <img src="{{asset($confirms->pay)}}" alt="" class="materialboxed img-pay-dash">
                               @endif
                             </td>
+                           
                             <td> 
                            
                                 <a class="waves-effect waves-light btn modal-trigger" href="#{{$confirms->id}}">Lihat Status Les</a>
-                               
+                                
                                 <!-- Modal Structure -->
                                
                                 <div id="{{$confirms->id}}" class="modal">
@@ -168,6 +170,7 @@
                                             <th>Tanggal Les</th>
                                             <th>Keterangan Les</th>
                                             <th>Bukti Les</th>
+        
                                         </tr>
                                         </thead>
                                         @foreach ($confirms->SeeStat as $key => $stats)    
@@ -178,13 +181,14 @@
                                                     <td>{{$stats->date_les}}</td>
                                                     <td>{{$stats->mention}}</td>
                                                     <td><img src="{{asset($stats->prove)}}" alt="" class="materialboxed pay-stat-img"></td>
+                                                   
                                              </tr>
                                            
                                              
                                      
                                         </tbody>
-                                     @if ($key == 5)
-                                        <h3 id="header_test_done">Soal Sudah dikirimkan</h3>
+                                     @if ($key == 4)
+                                        <h3 id="header_test_done">Kirim File Soal</h3>
                                          <form class="col 12" action="{{route('tes_last',['confirm'=>$confirms->id])}}"  enctype="multipart/form-data" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('put') }}   
@@ -202,7 +206,7 @@
                                          </form>
                                     
                                      @endif
-                                     @if ($confirms->test_file !== 'nul')
+                                     @if ($stats->ConfirmOrder->test_file != "nul")
                                          @push('js')
                                              <script>
                                                  document.getElementById('btn_file_test').style.display="none";
@@ -236,6 +240,25 @@
                                 @endif
                              </form>
                                
+                            </td>
+                            <td>
+                                <a href="{{$confirms->link_video}}" target="_blank">link video</a>
+                            <form class="col 12" action="{{route('last_process',['confirm'=>$confirms->id])}}"  enctype="multipart/form-data" method="post">
+                                        {{ csrf_field() }}
+                                        {{ method_field('put') }}   
+                                        <input type="number" name="score" id="" placeholder="Masukan Score" required> 
+                                        <div class="file-field input-field" id="test_file_kolom">
+                                            <div class="btn">
+                                              <span>Sisipkan Pembayaran</span>
+                                              <input type="file" name="photo_last_pay" multiple required>
+                                            </div>
+                                            <div class="file-path-wrapper">
+                                              <input class="file-path validate" required>
+                                            </div>
+                                     </div>
+                                        <button type="submit" >Kirim</button>
+                                        
+                                     </form>
                             </td>
                         </tr>
                     </tbody>

@@ -16,7 +16,7 @@
                     <h3 class="heading-payment"> <b>Tempat Yang dipilih :</b> {{$confirm->address_les}}</h3>
                     <h3 class="heading-payment"> <b> Jumlah murid : </b> {{$confirm->student}}</h3>
                     <h3 class="heading-payment"> <b> Total yang harus dibayar :</b> Rp. {{$confirm->packet}}</h3>
-                    <h3 class="heading-payment"> <b> Ke Rekening:</b> Bank Mandiri / 0829291829289 / a.n Sahrul Evendi </h3>
+                    <h3 class="heading-payment"> <b> Ke Rekening:</b> Bank Mandiri / 0829291829289 / a.n SINAUYO </h3>
             </div>
      </div>
 
@@ -52,7 +52,7 @@
                                               <input type="file" name="pay" multiple>
                                             </div>
                                             <div class="file-path-wrapper">
-                                              <input class="file-path validate" >
+                                              <input class="file-path validate" required>
                                             </div>
                                           </div>
                                           <button type="submit" class="btn-file">Masukan</button>
@@ -67,8 +67,17 @@
                           <div class="col xl12">
                                 <a href="" class="link-pay">Lihat alur pembayaran Sinau Offline</a>
                           </div>
-                          <div class="col xl12">
-                                <img src="{{asset($confirm->pay)}}" alt="" class="img-pay-done">
+                          <div class="row">
+                            <div class="col xl6">
+                              <img src="{{asset($confirm->pay)}}" alt="" class="img-pay-done">
+                            </div>
+                            <div class="col xl6">
+                              <h3>Anda Mengajak Teman Yang Bernama :  </h3>
+                            <p>{{$confirm->friends}}</p>
+                            <p>{{$confirm->friends2}}</p>
+                            <p>{{$confirm->friends3}}</p>
+                            <p>{{$confirm->friends4}}</p>
+                            </div>
                           </div>
                        </div>
                     @endif

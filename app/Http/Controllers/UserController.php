@@ -91,7 +91,7 @@ class UserController extends Controller
           'username' => 'string|max:255',
           'password' => 'required|min:6|max:8',
           'foto' => 'nullable|max:2000',
-          'phone' => 'max:14',
+          'phone' => 'max:11',
           'address' => 'string|max:191',
 
         ]);
