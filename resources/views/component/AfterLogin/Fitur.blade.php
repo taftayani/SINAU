@@ -8,28 +8,28 @@
         <div class="col s4">
             <div class="card-packet">
                 <img src="/img/Background/hemat.png" class="img-card" alt="">
-                <h4 class="heading-card center">PAKET 5 PERTEMUAN</h4>
-                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>5</b>
+                <h4 class="heading-card center">PAKET 8 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>8</b>
                   pertemuan dalam <b>1 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
-                  <h5 class="heading-rupiah center">Rp.50.000</h5>
+                  <h5 class="heading-rupiah center">Rp160.000,00</h5>
             </div>
         </div>
         <div class="col s4">
             <div class="card-packet-second">
                 <img src="/img/Background/agakhemat.png" class="img-card" alt="">
-                <h4 class="heading-card center">PAKET 10 PERTEMUAN</h4>
-                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>10</b>
-                  pertemuan dalam <b>2 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
-                <h5 class="heading-rupiah center">Rp.100.000</h5>
+                <h4 class="heading-card center">PAKET 12 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>12</b>
+                  pertemuan dalam <b>1.5 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                <h5 class="heading-rupiah center">Rp220.000,00</h5>
             </div>
         </div>
         <div class="col s4">
             <div class="card-packet-third">
                 <img src="/img/Background/biasa.png" class="img-card" alt="">
-                <h4 class="heading-card center">PAKET 15 PERTEMUAN</h4>
-                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>15</b>
-                  pertemuan dalam <b>3 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
-                <h5 class="heading-rupiah center">Rp.150.000</h5>
+                <h4 class="heading-card center">PAKET 16 PERTEMUAN</h4>
+                <p class="paragraph-card center">Dipaket ini kamu akan mendapatkan <b>16</b>
+                  pertemuan dalam <b>2 bulan</b>, mulai dari awal kontrak belajar dimulai.</p>
+                <h5 class="heading-rupiah center">Rp280.000,00</h5>
             </div>
         </div>
     </div>

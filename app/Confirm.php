@@ -27,7 +27,11 @@ class Confirm extends Model
         'test_file',
         'score',
         'link-video',
-        'photo_last_pay'
+        'photo_last_pay',
+        'email_friend1',
+        'email_friend2',
+        'email_friend3',
+        'email_friend4'
     ];
 
     public function UserOrder()

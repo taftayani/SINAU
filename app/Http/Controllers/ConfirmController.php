@@ -86,6 +86,10 @@ class ConfirmController extends Controller
             $confirm-> friends2= $request->friends2;
             $confirm-> friends3= $request->friends3;
             $confirm-> friends4= $request->friends4;
+            $confirm-> email_friend1= $request->email_friend1;
+            $confirm-> email_friend2= $request->email_friend2;
+            $confirm-> email_friend3= $request->email_friend3;
+            $confirm-> email_friend4= $request->email_friend4;
             $confirm-> save();
 
         return redirect(route('payment',['confirm'=>$confirm->id]));

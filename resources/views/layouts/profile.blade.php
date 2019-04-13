@@ -78,7 +78,7 @@
         
       <div class="row">
         <div class="input-field col s12">
-        <input id="password" placeholder="password" name="password" type="password" required>
+        <input id="password" placeholder="isikan kata sandi lama atau isikan kata sandi baru" name="password" type="password" required>
         @if ($errors->has('password'))
           <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
         @endif
@@ -87,8 +87,20 @@
 
       <div class="row">
         <div class="input-field col s12">
-        <input id="address" placeholder="alamat" name="address" type="text"  value="{{ Auth::user()->address }}" required>
+        <input id="address" placeholder="nama jalan" name="address" type="text"  value="{{ Auth::user()->address }}" required>
         </div>
+        <div class="input-field col s6">
+        <input id="address" placeholder="Kecamatan" name="district" type="text"  value="{{ Auth::user()->district }}" required>
+          </div>
+          <div class="input-field col s6">
+          <input id="address" placeholder="Kelurahan" name="region" type="text"  value="{{ Auth::user()->region }}" required>
+            </div>
+            <div class="input-field col s6">
+            <input id="address" placeholder="Kota madya" name="province" type="text"  value="{{ Auth::user()->province }}" required>
+              </div>
+              <div class="input-field col s6">
+              <input id="address" placeholder="Kode Pos" name="pos_code" type="number"  value="{{ Auth::user()->pos_code }}" required>
+                </div>
       </div>
 
       
@@ -98,7 +110,7 @@
           <input type="file" name="foto" multiple>
         </div>
         <div class="file-path-wrapper">
-          <input class="file-path validate" required>
+        <input class="file-path validate" placeholder="masukan foto sebelumnya/ masukan foto baru" required>
         </div>
         @if ($errors->has('foto'))
         <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('foto')  }}</p>

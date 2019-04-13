@@ -42,7 +42,7 @@
                     <div class="row">
                     
                        
-                    @if (Auth::user()->foto== 'img/profile.ico')
+                    @if (Auth::user()->foto== 'img/profile.ico' && Auth::user()->phone==null)
                          <a href="#modal3" class="modal-trigger btn-search-teach">Cari Pengajar</a>
                          <div id="modal3" class="modal container col xl12">
                                 <div class="modal-content">

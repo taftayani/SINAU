@@ -60,11 +60,28 @@
                         <li><a href="#Produk">SINAU OFFLINE</a></li>
                         <li><a href="#Packet">Paket Belajar</a></li>
                         <li>   
-                          @if (Auth::user()->Teacher)
-                            <a href="{{route('guru')}}" class="modal-trigger">Menjadi Pengajar ?</a> 
-                         @else
-                             <a href="#modal2" class="modal-trigger">Menjadi Pengajar ?</a> 
-                        @endif </li>        
+                          @if (Auth::user()->foto== 'img/profile.ico')
+                          <a href="#modal3" class="modal-trigger">Menjadi Pengajar ?</a> 
+                          <div id="modal3" class="modal container col xl12">
+                              <div class="modal-content">
+                                  <div class="container">
+                                      <div class="row">
+                                          <h1 class="heading-term">Lengkapi Profile Anda Terlebih Dahulu</h1>
+                                      </div>
+                                  </div> 
+                              </div>
+                          </div>
+
+                          @else
+                            @if (Auth::user()->Teacher)
+                              
+                              <a href="{{route('guru')}}" class="modal-trigger">Menjadi Pengajar ?</a> 
+                              @else
+                              <a href="#modal2" class="modal-trigger">Menjadi Pengajar ?</a> 
+                            
+                              @endif
+                        @endif 
+                      </li>        
                     
                       </ul>
                       <ul class="right hide-on-med-and-down">

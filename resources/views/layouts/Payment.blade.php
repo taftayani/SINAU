@@ -10,11 +10,10 @@
                   
                     <h3 class="heading-payment"> <b>Nama Guru : </b> {{$confirm->TeacherOrder->SeeTeacher->nama_depan}} {{$confirm->TeacherOrder->SeeTeacher->nama_belakang}}</h3>
                     <h3 class="heading-payment"> <b>Materi Pembelajaran :</b> {{$confirm->SubjectOrder->mata_pelajaran}}</h3>
-                    <h3 class="heading-payment"> <b> Les yang dipilih :</b>
+                    <h3 class="heading-payment"> <b> Jadwal les yang dipilih :</b>
                         {{$confirm->ShceduleOrder->day}} {{$confirm->ShceduleOrder->time_les}}
                     </h3>
                     <h3 class="heading-payment"> <b>Tempat Yang dipilih :</b> {{$confirm->address_les}}</h3>
-                    <h3 class="heading-payment"> <b> Jumlah murid : </b> {{$confirm->student}}</h3>
                     <h3 class="heading-payment"> <b> Total yang harus dibayar :</b> Rp. {{$confirm->packet}}</h3>
                     <h3 class="heading-payment"> <b> Ke Rekening:</b> Bank Mandiri / 0829291829289 / a.n SINAUYO </h3>
             </div>
@@ -30,22 +29,50 @@
                         <form action="{{route('payment_input',['confirm'=>$confirm->id])}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             {{ method_field('put') }}  <h1></h1>
-                            @if ($confirm->packet == "50.000")
-                            <p>Apakah Kamu Ingin mengajak Teman Kamu ? ( <b>Max 2 orang</b> optional)</p>
-                                <input id="email" name="friends" type="text" class="validate" value="" placeholder="isi nama teman yang kamu ajak">
-                                <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
-                            @elseif($confirm->packet == "100.000")
-                            <p>Apakah Kamu Ingin mengajak Teman Kamu ? ( <b>Max 3 orang</b> optional)</p>
-                                <input id="email" name="friends" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
-                                <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
-                                <input id="email" name="friends3" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
-                            @elseif($confirm->packet == "150.000")
-                            <p>Apakah Kamu Ingin mengajak Teman Kamu ? ( <b>Max 4 orang</b> optional)</p>
-                                <input id="email" name="friends1" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
-                                <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
-                                <input id="email" name="friends3" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
-                                <input id="email" name="friends4" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak">
+                            @if ($confirm->packet == "160.000")
+                            <p>Karena anda mengambil paket pertemuan 8 kali, anda berhak mengajak teman anda ( <b>Max 2 orang</b> bersifat optional)</p>
+                            <div class="row">
+                                <div class="col xl6">
+                                    <input id="email" name="friends" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                    <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                </div>
+                                <div class="col xl6">
+                                    <input id="email" name="email_friend1" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                    <input id="email" name="email_friend2" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                </div>
+                             </div>
+                            @elseif($confirm->packet == "220.000")
+                            <p>Karena anda mengambil paket pertemuan 12 kali, anda berhak mengajak teman anda  ( <b>Max 3 orang</b> bersifat optional)</p>
+                               <div class="row">
+                                  <div class="col xl6">
+                                      <input id="email" name="friends" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                      <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                      <input id="email" name="friends3" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                  </div>
+                                  <div class="col xl6">
+                                      <input id="email" name="email_friend1" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                      <input id="email" name="email_friend2" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                      <input id="email" name="email_friend3" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                  </div>
+                               </div>
+                            @elseif($confirm->packet == "280.000")
+                            <p>Karena anda mengambil paket pertemuan 16 kali, anda berhak mengajak teman anda  ( <b>Max 4 orang</b> bersifat optional)</p>
+                            <div class="row">
+                                <div class="col xl6">
+                                    <input id="email" name="friends" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                    <input id="email" name="friends2" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                    <input id="email" name="friends3" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                    <input id="email" name="friends4" type="text" class="validate" value="" placeholder="isi nama teman kamu yang kamu ajak" required>
+                                </div>
+                                <div class="col xl6">
+                                    <input id="email" name="email_friend1" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                    <input id="email" name="email_friend2" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                    <input id="email" name="email_friend3" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                    <input id="email" name="email_friend4" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
+                                </div>
+                             </div>
                             @endif
+                                  <label for="">Upload Bukti Bayar</label>
                                     <div class="file-field input-field">
                                             <div class="btn">
                                               <span>File</span>
@@ -73,10 +100,34 @@
                             </div>
                             <div class="col xl6">
                               <h3>Anda Mengajak Teman Yang Bernama :  </h3>
-                            <p>{{$confirm->friends}}</p>
-                            <p>{{$confirm->friends2}}</p>
-                            <p>{{$confirm->friends3}}</p>
-                            <p>{{$confirm->friends4}}</p>
+                              <table>
+                                <thead>
+                                  <tr>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                      <td>{{$confirm->friends}}</td>
+                                      <td>{{$confirm->email_friend1}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td>{{$confirm->friends2}}</td>
+                                      <td>{{$confirm->email_friend2}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td>{{$confirm->friends3}}</td>
+                                      <td>{{$confirm->email_friend3}}</td>
+                                  </tr>
+                                  <tr>
+                                      <td>{{$confirm->friends4}}</td>
+                                      <td>{{$confirm->email_friend4}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            
+                            
                             </div>
                           </div>
                        </div>

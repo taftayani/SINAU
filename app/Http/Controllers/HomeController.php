@@ -14,6 +14,7 @@ use Illuminate\Http\File;
 use App\Http\Requests\UploadRequest;
 use Illuminate\Support\Facades\Storage;
 use Session;
+use DB;
 
 class HomeController extends Controller
 {
@@ -41,7 +42,27 @@ class HomeController extends Controller
         $matpel=mata_pelajaran::all();
         $confirmSee=Confirm::all();
         $user=User::all();
+        $mata_pelajaran_fav = DB::table('mata_pelajarans as a')
+        ->select('a.mata_pelajaran as nama', DB::raw('count(*) as jumlah'))
+        ->join('confirms as b', 'a.id' , '=', 'b.subject_id')
+        ->groupBy('a.mata_pelajaran')
+        ->get();
+        $paket_belajar_favorit = DB::table('confirms')
+        ->select('packet as nama', DB::raw('count(*) as jumlah'))
+        ->groupBy('packet')
+        ->get();
+        $guru_fav = DB::table('teachers as a')
+        ->select('a.ktp as nama', DB::raw('count(*) as jumlah'))
+        ->join('confirms as b', 'a.id' , '=', 'b.teacher_id')
+        ->groupBy('a.ktp')
+        ->get();
+        $total_kontrak_belajar = DB::table('months as a')->select('a.name', DB::raw('count(b.created_at) as jumlah'))
+        ->leftJoin('confirms as b', DB::raw('MONTH(b.created_at)'), '=', 'a.id')
+        ->groupBy('a.name')
+        ->orderBy('a.id', 'asc')
+        ->get();
         // $stat=Stat::all();
+
         return view('layouts.beranda',[
             'user'=> $user,
             'teacher'=> $teacher,
@@ -49,6 +70,10 @@ class HomeController extends Controller
             'confirmSee' => $confirmSee,
             'confirm' => $confirm,
             'stat' => $stat,
+            'mata_pelajaran_fav' => $mata_pelajaran_fav,
+            'paket_belajar_favorit' => $paket_belajar_favorit,
+            'guru_fav' => $guru_fav,
+            'months' => $total_kontrak_belajar
         ]
       );
     }

@@ -1,4 +1,4 @@
-<div id="{{$teachers->id}}" class="modal container col xl12">
+<div id="{{$teachers->id}}" class="modal container col xl12" style="left:50px;">
     <div class="modal-content">
              <div class="container"> 
                 <div class="row"> 

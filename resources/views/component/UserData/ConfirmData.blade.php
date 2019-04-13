@@ -19,7 +19,7 @@
                     {{-- <input type="hidden" name="subject_id" value="{{$subject->id}}"> --}}
                 {{-- <input type="hidden" name="shcedule_id"> --}}
                 <div class="row" id="rows-data">
-                    <h5 class="heading-confirm">Lengkapi data-data Untuk Proses Belajar Dengan 
+                    <h5 class="heading-confirm">Lengkapi Data Berikut Untuk Proses Belajar Dengan 
                         @if ($teacher->SeeTeacher->gender == 'Male')
                             Bapak {{$teacher->SeeTeacher->nama_depan}}
                         @else
@@ -30,10 +30,10 @@
                 </div>
 
                 <div class="row"> 
-                    <h5 class="list-heading-data">Pilih Materi Pengajaran:</h5>
+                    <h5 class="list-heading-data">Pilih Materi Belajar:</h5>
                     <div class="input-field col s12" name="materi">
                         <select name="subject_id">
-                                <option value="" disabled>Materi Pengajaran</option>
+                                <option value="" disabled>Materi Belajar</option>
                             @foreach ($teacher->Subject as $subjects)                                                       
                                 <option value="{{$subjects->id}}">{{$subjects->mata_pelajaran}}</option>                           
                              @endforeach
@@ -43,15 +43,17 @@
                 </div>
 
                 <div class="row" id="rows-data"> 
-                    <h5 class="list-heading-data">Pilih Waktu Pengajaran</h5>
-                                    <option value="" disabled>Waktu mengajar</option>
-                                @foreach ($teacher->Schedule as $schedules)                                                       
-                                    {{-- <option value="{{$schedules->id}}">{{$schedules->day}} {{$schedules->time_les}}</option> --}}
+                    <h5 class="list-heading-data">Pilih Jadwal Waktu Belajar Anda</h5>
+                    {{-- <select name="shcedule_id[]"> --}}
+                                    {{-- <option value="" disabled>Waktu mengajar</option> --}}
+                                @foreach ($teacher->Schedule as $schedules)             
+                                    {{-- <option value="{{$schedules->id}}">{{$schedules->day}} {{$schedules->time_les}}</option>                                            --}}
                                     <p>
                                         <input type="checkbox" id="{{$schedules->id}}" name="shcedule_id[]" value="{{$schedules->id}}"/>
                                         <label for="{{$schedules->id}}">{{$schedules->day}} {{$schedules->time_les}}</label>
                                      </p>
                                 @endforeach
+                        {{-- </select> --}}
                 </div>
 
                 <div class="row" id="rows-data">
@@ -60,9 +62,9 @@
                         <div class="input-field col s12" name="packet">
                             <select name="packet">
                               <option value="" disabled selected>Paket Harga</option>
-                              <option value="50.000" name="packet">1 bulan 5x = 50 rb</option>
-                              <option value="100.000" name="packet">1 bulan 10x =100 rb</option>
-                              <option value="150.000" name="packet">1 bulan 15x=150 rb</option>
+                              <option value="160.000" name="packet">1 bulan 8x = Rp160.000,00</option>
+                              <option value="220.000" name="packet">1.5 bulan 12x = Rp220.000,00</option>
+                              <option value="260.000" name="packet">2 bulan 16x = Rp280.000,00</option>
                             </select>
                           </div>
                     </div>
@@ -70,8 +72,9 @@
                     <div class="row">
                           <div class="row">
                             <div class="input-field col s12" name="address_les">
-                              <textarea id="textarea1" class="materialize-textarea" name="address_les"></textarea>
-                              <label for="textarea1">Isikan alamat dimana anda ingin les</label>
+                                    <label>Alamat Yang digunakan sebagai tempat les</label>
+                                <input type="text" name="address_les" value="{{ Auth::user()->address }}, {{ Auth::user()->region }}, {{ Auth::user()->district }},{{ Auth::user()->province }}">
+                                <p>PS :anda dapat menggantikan dengan alamat lain</p>
                             </div>
                           </div>
                       </div>

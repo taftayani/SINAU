@@ -107,6 +107,10 @@ class UserController extends Controller
           'phone'=>$request->phone,
           'birthday'=>$request->birthday,
           'address'=>$request->address,
+          'district' => $request->district,
+          'region' => $request->region,
+          'province' => $request->province,
+          'pos_code' => $request->pos_code,
           'foto'=> 'storage/images/'.$_FILES['foto']['name'],
         //   'foto' => $path
       ]);

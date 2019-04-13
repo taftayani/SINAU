@@ -19,7 +19,7 @@
             <form class="col s12" method="post" action="{{ route('register') }}">
                {{ csrf_field() }}
               <div class="row">
-                <div class="input-field col xl5 s12 m5 text-long">
+                <div class="input-field col xl5 s12 m5 text-long" style="margin-right:10px;">
                   <input id="first_name" name="nama_depan" type="text" class="text-long" value="{{ old('nama_depan') }}">
 
                 @if ($errors->has('nama_depan'))
@@ -41,7 +41,7 @@
               </div>
 
               <div class="row">
-                <div class="input-field col xl5 s12 m5 text-long">
+                <div class="input-field col xl5 s12 m5 text-long" style="margin-right:10px;">
                   <input id="email" name="email" type="email" class="validate text-long" value="{{ old('email') }}">
 
                   @if ($errors->has('email'))
@@ -58,6 +58,13 @@
                     @endif
   
                     <label for="password">password</label>
+                  </div>
+                  <div class="input-field col xl10 s12 m5 text-long" style="margin-top:40px;">
+                    <select name="gender">
+                        <option disabled selected>Jenis Kelamin</option>
+                        <option value="Male" name="gender">Laki-Laki</option>
+                        <option value="Female" name="gender">Perempuan</option>
+                    </select>
                   </div>
               </div>
 

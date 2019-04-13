@@ -7,7 +7,13 @@
                 <div class="link-column-profile"><a href="{{route ('shown_teacher') }}" class="link-profile">Data Anda Mengajar</a></div>
               </div>
               <div class="col xl8 column-paragraph">
-                  <h6 class="heading-profile"><b>{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} </b></h6>
+                  <h6 class="heading-profile" style="white-space: nowrap;"><b>{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} </b>
+                    @if ($teacher->verifikasi == "Belum Verifikasi")
+                        (Akun Belum Diverifikasi)
+                    @else 
+                        (Akun Sudah Diverifikasi)
+                    @endif
+                  </h6>
                   <h6 class="heading-second-profile"> <i class="tiny material-icons">location_on</i>{{ Auth::user()->address}}</h6>
                   <h6 class="heading-second-profile"><i class="tiny material-icons">email</i> {{ Auth::user()->email}}</h6>
                   <h6 class="heading-second-profile"><i class="tiny material-icons">local_phone</i> {{ Auth::user()->phone}}</h6>

@@ -18,6 +18,8 @@
                                
                                         @if ($confirms->Pay == 'Belum Dibayar')
                                                  <a href="{{route('payment',['confirm'=>$confirms->id])}}" class="link-pay-not">Lakukan Pembayaran</a>
+                                        @elseif($confirms->Pay != 'Belum Dibayar')
+                                                <a href="{{route('payment',['confirm'=>$confirms->id])}}" class="link-pay-not">Lihat Detail Les</a>
                                         @else
                                          <a href="{{route('payment',['confirm'=>$confirms->id])}}" class="link-had-pay">Cek Bukti Pembayaran</a>
                                         @endif
