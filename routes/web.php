@@ -54,7 +54,7 @@ Route::post('InputFile','TeacherFileController@store')->name('input_teacher_file
 Route::delete('DeleteFile/{teacherFile}','TeacherFileController@destroy')->name('delete_file');
 
 //payment
-Route::get('Pembayaran/{confirm}','ConfirmController@Payment')->name('payment');
+Route::get('DetailLes/{confirm}','ConfirmController@Payment')->name('payment');
 Route::put('InputPembayaran/{confirm}','ConfirmController@PaymentReceipt')->name('payment_input');
 Route::put('KonfirmasiPembayaran/{confirm}','ConfirmController@PaymentInvoice')->name('payment_invoice');
 
@@ -67,4 +67,7 @@ Route::put('LinkUjian/{confirm}','StatController@LinkVideo')->name('link_tes');
 Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
 Route::put('SoalUjian/{confirm}','HomeController@TestPic')->name('tes_last');
 Route::put('AkhiriPembelajaran/{confirm}','HomeController@LastProcess')->name('last_process');
+
+//feedback guru
+Route::put('PendapatPengajaran/{confirm}','ConfirmController@FeedbackTeacher')->name('feedback_teacher');
 

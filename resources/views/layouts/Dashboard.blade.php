@@ -1,9 +1,6 @@
 @extends('content.headerDashboard')
 @extends('content.apps')
 @section('contentDashboard')
-
- 
-
 <div id="home" class="container" style="margin-left: 250px; margin-top: 100px;">
 <h3>Data Murid</h3>
     <div class="datastat">
@@ -169,7 +166,7 @@
                            
                             <td> 
                            
-                                <a class="waves-effect waves-light btn modal-trigger" href="#{{$confirms->id}}">Lihat Status Les</a>
+                                <a class="waves-effect waves-light btn modal-trigger" href="#{{$confirms->id}}" style="white-space:nowrap">Lihat Status Les</a>
                                 
                                 <!-- Modal Structure -->
                                
@@ -218,27 +215,27 @@
                                             <button type="submit" id="btn_file_test">Kirim Soal</button>
                                             
                                          </form>
-                                    
+                                                @if ($stats->ConfirmOrder->test_file != "nul")
+                                            
+                                                @push('js')
+                                                    <script>   
+                                                        document.getElementById('tes').style.display="none";
+                                                            document.getElementById('test_file_kolom').style.display="none";
+                                                            document.getElementById('heading_test_done').style.display="none";
+                                                    </script>
+                                                @endpush
+                                            @else
+                                            @push('js')
+                                                    <script>
+                                                        document.getElementById('btn_file_test').style.display="none";
+                                                            document.getElementById('test_file_kolom').style.display="none";
+                                                            document.getElementById('heading_test_done').style.display="none";
+                                                    </script>
+                                                @endpush
+                                            @endif
                                      @endif
                                      {{-- end upload --}}
-                                     @if ($stats->ConfirmOrder->test_file != "nul")
-                                     
-                                         @push('js')
-                                             <script>   
-                                                  document.getElementById('tes').style.display="none";
-                                                    document.getElementById('test_file_kolom').style.display="none";
-                                                    document.getElementById('heading_test_done').style.display="none";
-                                             </script>
-                                         @endpush
-                                    @else
-                                    @push('js')
-                                             <script>
-                                                  document.getElementById('btn_file_test').style.display="none";
-                                                    document.getElementById('test_file_kolom').style.display="none";
-                                                    document.getElementById('heading_test_done').style.display="none";
-                                             </script>
-                                         @endpush
-                                     @endif
+                                    
 
                                         @endforeach
                                 </table>
@@ -261,31 +258,29 @@
                                
                             </td>
                             <td>
-                            @if ($confirms->link_video == "nul")
-                            
+                            @if ($confirms->link_video != "nul")
                                @push('js')
                                <script>
-                                    document.getElementById('link-soal').style.display="none";
+                                    document.getElementById('link-soal').style.color="red";
                                 </script>
                                @endpush
                             @endif
                             <a href="{{$confirms->link_video}}" target="_blank" id="link-soal">link video</a>
-                            <form class="col 12" action="{{route('last_process',['confirm'=>$confirms->id])}}"  enctype="multipart/form-data" method="post">
-                                        {{ csrf_field() }}
-                                        {{ method_field('put') }}   
-                                        <input type="number" name="score" id="" placeholder="Masukan Score" required> 
-                                        <div class="file-field input-field" id="test_file_kolom">
-                                            <div class="btn">
-                                              <span>Sisipkan Pembayaran</span>
-                                              <input type="file" name="photo_last_pay" multiple required>
-                                            </div>
-                                            <div class="file-path-wrapper">
-                                              <input class="file-path validate" required>
-                                            </div>
-                                     </div>
-                                        <button type="submit" >Kirim</button>
-                                        
-                                     </form>
+                                <form class="col 12" action="{{route('last_process',['confirm'=>$confirms->id])}}"  enctype="multipart/form-data" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('put') }}   
+                                            <input type="number" name="score" id="" placeholder="Masukan Score" required> 
+                                            <div class="file-field input-field" id="test_file_kolom">
+                                                <div class="btn" style="white-space:nowrap">
+                                                <span>Kirim Bukti Bayar</span>
+                                                <input type="file" name="photo_last_pay" multiple required>
+                                                </div>
+                                                <div class="file-path-wrapper">
+                                                <input class="file-path validate" required>
+                                                </div>
+                                        </div>
+                                            <button type="submit" >Kirim</button>                    
+                                </form>
                             </td>
                         </tr>
                     </tbody>

@@ -64,7 +64,12 @@
 }
 .heading-payment{
     @extend .heading-black;
-}.heading-payment-second{
+}
+.heading-payment-red{
+    @extend .heading-black;
+    color: #F06491;
+}
+.heading-payment-second{
     @extend .paragraph-third;
 }
 .img-profile-payment{
@@ -105,4 +110,13 @@
 }
 .pay-stat-img{
     @extend .img-stat-pay;
+}
+.heading-detail-les{
+    @extend .heading-content-grey-first;
+    border-bottom: 1px solid#D3D3D3;
+    padding-bottom: 20px;
+}
+.heading-friend-taken{
+    @extend .heading-content-grey-first;
+    color: #787878;
 }

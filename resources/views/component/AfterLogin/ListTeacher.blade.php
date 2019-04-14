@@ -43,9 +43,13 @@
            
                      
                   @endif
-                         @include('component.AfterLogin.PopUpTeacherProf')           
+                         @include('component.AfterLogin.PopUpTeacherProf')
+                         
+                         
                   @endforeach
+                
                </div>
+               {{-- {{$teacher->links()}} --}}
       </div>
 </div>
 {{-- sains and technology --}}
@@ -60,7 +64,7 @@
        @foreach ($teacher as $teachers)
        @if ($teachers->verifikasi == 'Akun Sudah Diverifikasi')
         @foreach ($teachers->Subject as $subjects)
-            @if ($subjects->mata_pelajaran == 'Biologi' || $subjects->mata_pelajaran == 'Kimia' || $subjects->mata_pelajaran == 'Fisika' || $subjects->mata_pelajaran == 'Pemrogaman')
+            @if ($subjects->mata_pelajaran == 'Biologi' || $subjects->mata_pelajaran == 'Kimia' || $subjects->mata_pelajaran == 'Fisika' || $subjects->mata_pelajaran == 'pemrogaman')
                 <a class="col xl4 center modal-trigger" id="column-profile-teach" href="#{{$teachers->id}}">
                       <div class="row">
                        <img src="{{$teachers->SeeTeacher->foto}}" class="img-profile-teach">
@@ -90,6 +94,7 @@
                            </div>
                       </div>
                 </a>
+                
             @endif
             
             @endforeach
@@ -97,6 +102,7 @@
               @include('component.AfterLogin.PopUpTeacherProf')           
        @endforeach
     </div>
+    {{-- {{$teacher->links()}} --}}
 </div>
 </div>
 

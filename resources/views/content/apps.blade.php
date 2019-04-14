@@ -23,7 +23,7 @@
         .datastat{
           background: #fff; 
           padding: 30px;
-          overflow-x: hidden;
+          overflow-x: auto;
           overflow-y: auto;
           height: 500px;
         }

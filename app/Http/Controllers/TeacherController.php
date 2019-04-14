@@ -18,12 +18,21 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function TeacherView()
+    public function TeacherView(Teacher $teacher)
     {
         $teacher=Teacher::all();
+        // foreach($teacher as $teachers){
+        //    foreach($teachers->Subject as $subjects){
+        //     if($subjects->mata_pelajaran == "Biologi" || $subjects->mata_pelajaran == 'Kimia' || $subjects->mata_pelajaran == 'Fisika' || $subjects->mata_pelajaran == 'pemrogaman'){
+        //         $teacher = Teacher::paginate(3);
+        //     }
+        //    }
+        // }
+        
         $teacher_see=Teacher::where('user_id', Auth::user()->id)->first();
         // $subject=mata_pelajaran::where('teacher_nama_depan', $teacher_see->user_nama_depan)->get();
         $subject=mata_pelajaran::all(); 
+
         return view('layouts.LihatGuru',[
             'teacher' => $teacher
         ],[
@@ -102,7 +111,6 @@ class TeacherController extends Controller
         ]);
         // ->with('message','data berhasil');
     }
-
     /**
      * Store a newly created resource in storage.
      *

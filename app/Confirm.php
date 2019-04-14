@@ -31,7 +31,9 @@ class Confirm extends Model
         'email_friend1',
         'email_friend2',
         'email_friend3',
-        'email_friend4'
+        'email_friend4',
+        'score_teaching',
+        'feedback_teaching'
     ];
 
     public function UserOrder()

@@ -270,7 +270,7 @@
   color: white;
   font-weight: 700; }
 
-.heading-black, .header-teach, .head-tb-data, .heading-payment {
+.heading-black, .header-teach, .head-tb-data, .heading-payment, .heading-payment-red {
   font-family: "Roboto Slab", serif;
   line-height: 30px;
   font-size: 18px;
@@ -442,7 +442,7 @@
   letter-spacing: 7%;
   line-height: 32px; }
 
-.heading-content-grey-first, .header-name {
+.heading-content-grey-first, .header-name, .heading-detail-les, .heading-friend-taken {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 30px;
@@ -936,11 +936,11 @@
 .tab-screen, #tab-teacher {
   overflow-y: scroll;
   height: auto;
-  background-color: white;
+  background-color: #404F76;
   margin-top: 30px; }
 
 .tab-layout, #tab-choose-section {
-  background-color: white;
+  background-color: #404F76;
   height: 90vw;
   padding-top: 40px; }
 
@@ -997,8 +997,7 @@
   border-bottom: 1px solid #E1E1E1; }
 
 .bg-profile-teach, #layout-faq, .bg-profile-teacher, #layout-confirm {
-  background-color: white;
-  padding-top: 100px; }
+  background-color: white; }
 
 .bg-profile-off-content, .bg-profile-off {
   background-color: #F3F3F3; }
@@ -1079,5 +1078,15 @@
     margin-left: 0px; } }
 #modal-teacher {
   left: 50px; }
+
+.heading-payment-red {
+  color: #F06491; }
+
+.heading-detail-les {
+  border-bottom: 1px solid #D3D3D3;
+  padding-bottom: 20px; }
+
+.heading-friend-taken {
+  color: #787878; }
 
 /*# sourceMappingURL=master.css.map */

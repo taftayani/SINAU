@@ -103,5 +103,13 @@ class ConfirmController extends Controller
 
         return redirect(route('home'));
     }
+    public function FeedbackTeacher(Request $req, Confirm $confirm)
+    {
+       $confirm-> score_teaching =$req->score_teaching;
+       $confirm-> feedback_teaching =$req->feedback_teaching;
+       $confirm->save();
+        // return $confirm;
+    return redirect(route('home',['confirm'=>$confirm->id]));
+    }
     
 }

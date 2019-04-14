@@ -11,7 +11,7 @@ class Teacher extends Model
         'npwp',
         'pendidikan',
         'resume',
-        'user_id',
+        'user_id'
       ];
 
       public function Subject()

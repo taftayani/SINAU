@@ -86,7 +86,7 @@
                       </ul>
                       <ul class="right hide-on-med-and-down">
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown2">
-                            <img src="{{Auth::user()->foto}}" class="profile-img">
+                            <img src="{{asset(Auth::user()->foto)}}" class="profile-img">
                           <i class="material-icons right">arrow_drop_down</i></a></li>
                       </ul>
                   </div>
