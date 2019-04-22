@@ -34,6 +34,9 @@
 }
 .header-name{
     @extend .heading-content-grey-first;
+    font-size: 38px;
+    width: 30rem;
+    text-transform: capitalize;
 }
 .header-contact{
     @extend .heading-content-grey-second;

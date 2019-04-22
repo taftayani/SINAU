@@ -18,26 +18,34 @@ class TeacherController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function TeacherView(Teacher $teacher)
+    public function TeacherView(Teacher $teacher,Request $req)
     {
         $teacher=Teacher::all();
-        // foreach($teacher as $teachers){
-        //    foreach($teachers->Subject as $subjects){
-        //     if($subjects->mata_pelajaran == "Biologi" || $subjects->mata_pelajaran == 'Kimia' || $subjects->mata_pelajaran == 'Fisika' || $subjects->mata_pelajaran == 'pemrogaman'){
-        //         $teacher = Teacher::paginate(3);
-        //     }
-        //    }
+        $teacher=Teacher::paginate(3);
+        if($req->search){
+            $teacher=Teacher::paginate(3);
+        }
+        // else{
+        //     $teacher=mata_pelajaran::where('teacher_id','LIKE','%'.$req->array_search.'%')->paginate(3);
+        //     $teacher->appends($req->only('search'));
         // }
-        
         $teacher_see=Teacher::where('user_id', Auth::user()->id)->first();
         // $subject=mata_pelajaran::where('teacher_nama_depan', $teacher_see->user_nama_depan)->get();
         $subject=mata_pelajaran::all(); 
-
+        // $subject=mata_pelajaran::paginate(2);
+        //  if($req->search){
+        //     $subject=mata_pelajaran::paginate(3);
+        // }
+        // else{
+        //     $subject=mata_pelajaran::where('mata_pelajaran','LIKE','%'.$req->array_search.'%')->paginate(3);
+        //     $subject->appends($req->only('search'));
+        // }
         return view('layouts.LihatGuru',[
             'teacher' => $teacher
         ],[
             'subject' => $subject
         ]);
+        
     }
 
   
@@ -134,6 +142,7 @@ class TeacherController extends Controller
           return view('layouts.beranda',[
               'teacher' => $teacher
           ]);
+         
     }
     
 

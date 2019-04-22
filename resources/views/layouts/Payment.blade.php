@@ -191,7 +191,7 @@
                                   </p>
                                 </div>
                                 <div class="col xl6">
-                                    @if ($confirm->score_teaching != null)
+                                    @if ($confirm->score_teaching == null)
                                       <label for="">Terima kasih telah memberikan pendapat anda. berikut nilai dan pendapat yang diberikan ::</label>
                                       <ul>
                                         <li>Pengajaran yang diajarjan : {{$confirm->score_teaching}}</li>

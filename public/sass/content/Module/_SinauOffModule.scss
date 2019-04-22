@@ -22,12 +22,11 @@
     padding-bottom: 10px;
 }
 .card-data-content{
-    padding-top: 30px;
     padding-bottom: 30px;
     padding-right: 30px;
     padding-left: 30px;
-    border-top: 7px solid #45E0C0;
-    background-color: #F9F9F9;
+    box-shadow:  9px 3px 21px rgba(0, 0, 0, 0.25);
+    background-color: white;
 }
 .column-section-img{
     background-color: #F9F9F9;
@@ -41,7 +40,7 @@
     background-color: white
 }
 .rows-list{
-    margin-bottom: 50px;
+    margin-bottom: 0px;
 }
 .column-img-section{
     margin-right: 70px;

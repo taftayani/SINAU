@@ -6,6 +6,8 @@
 }
 .heading-confirm{
     @extend .heading-content-third;
+    text-align: center;
+    color: #12BF95;
 }
 .list-heading-data{
     @extend .heading-content-fourth;
@@ -119,4 +121,59 @@
 .heading-friend-taken{
     @extend .heading-content-grey-first;
     color: #787878;
+}
+.heading-inform{
+    @extend .heading-content;
+    color: black;
+}
+.header-teach-name{
+    @extend .heading-black;
+    white-space: normal;
+    line-height: normal;
+    color: white;
+    padding-left: 10px;
+    background: #12BF95;
+    letter-spacing: 0.07em;
+    width: 12rem;
+    font-weight: bold;
+}
+.header-phone-teach{
+    @extend .heading-black;
+    white-space: normal;
+    line-height: normal;
+    color: #6A7BA9;
+    font-weight: bold;
+}
+.header-leaving{
+    @extend .heading-black;
+    white-space: normal;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.42);
+}
+.header-birth{
+    @extend .heading-black;
+    white-space: normal;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.42);
+}
+.header-gender{
+    @extend .heading-black;
+    white-space: normal;
+    line-height: normal;
+    color: rgba(0, 0, 0, 0.42);
+}
+.heading-matpel{
+    @extend .heading-black;
+    white-space: normal;
+    line-height: normal;
+    color: #12BF95;;
+    text-transform: capitalize;
+    
+}
+.header-motivate{
+    @extend .heading-content-third;
+    color: #2E3B60;
+}
+.paragraph-resume{
+    @extend .paragraph-second;
 }

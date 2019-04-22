@@ -71,3 +71,5 @@ Route::put('AkhiriPembelajaran/{confirm}','HomeController@LastProcess')->name('l
 //feedback guru
 Route::put('PendapatPengajaran/{confirm}','ConfirmController@FeedbackTeacher')->name('feedback_teacher');
 
+// serch teacher
+Route::get('CariGuru','TeacherController@TeacherView')->name('search_teacher');

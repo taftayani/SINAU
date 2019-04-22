@@ -249,10 +249,17 @@
   margin-top: 10px;
   font-family: "Roboto Slab", serif; }
 
-.heading-content, .first-section .first-header {
+.heading-content, .first-section .first-header, .heading-inform {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 36px;
+  color: white;
+  font-weight: bold; }
+
+.heading-content, .first-section .first-header, .heading-inform {
+  font-family: "Roboto Slab", serif;
+  letter-spacing: 0.05em;
+  font-size: 34px;
   color: white;
   font-weight: bold; }
 
@@ -270,7 +277,7 @@
   color: white;
   font-weight: 700; }
 
-.heading-black, .header-teach, .head-tb-data, .heading-payment, .heading-payment-red {
+.heading-black, .header-teach, .head-tb-data, .heading-payment, .heading-payment-red, .header-teach-name, .header-phone-teach, .header-leaving, .header-birth, .header-gender, .heading-matpel {
   font-family: "Roboto Slab", serif;
   line-height: 30px;
   font-size: 18px;
@@ -388,7 +395,7 @@
   font-weight: 400;
   line-height: 40px; }
 
-.heading-content-third, .header-subject, .heading-teacher-form, .heading-confirm {
+.heading-content-third, .header-subject, .heading-teacher-form, .heading-confirm, .header-motivate {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 24px;
@@ -474,7 +481,7 @@
   font-size: 20px;
   letter-spacing: 0.06em; }
 
-.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm, .paragraph-file {
+.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm, .paragraph-resume, .paragraph-file {
   font-family: "Roboto Slab", serif;
   color: #404F76;
   font-weight: 300;
@@ -547,7 +554,7 @@
   line-height: 32px;
   letter-spacing: 0.04em; }
 
-.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm, .paragraph-file {
+.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm, .paragraph-resume, .paragraph-file {
   font-family: "Roboto Slab", serif;
   color: #4E4F51;
   font-weight: 300;
@@ -788,10 +795,9 @@
 
 .column-profile-choose-teacher, #column-profile-teach {
   background-color: white;
-  padding-left: 23px;
-  padding-top: 10px;
   padding-bottom: 23px;
-  padding-right: 23px; }
+  margin-bottom: 4px;
+  box-shadow: 9px 3px 21px rgba(0, 0, 0, 0.25); }
 
 .column-profile-choose-teacher:hover, #column-profile-teach:hover {
   background-color: #F0F0F0;
@@ -901,12 +907,11 @@
   padding-bottom: 10px; }
 
 .card-data-content, #column-data {
-  padding-top: 30px;
   padding-bottom: 30px;
   padding-right: 30px;
   padding-left: 30px;
-  border-top: 7px solid #45E0C0;
-  background-color: #F9F9F9; }
+  box-shadow: 9px 3px 21px rgba(0, 0, 0, 0.25);
+  background-color: white; }
 
 .column-section-img, #column-img-confirm {
   background-color: #F9F9F9;
@@ -920,7 +925,7 @@
   background-color: white; }
 
 .rows-list, #rows-data {
-  margin-bottom: 50px; }
+  margin-bottom: 0px; }
 
 .column-img-section, #column-img-edit-teach {
   margin-right: 70px; }
@@ -997,7 +1002,8 @@
   border-bottom: 1px solid #E1E1E1; }
 
 .bg-profile-teach, #layout-faq, .bg-profile-teacher, #layout-confirm {
-  background-color: white; }
+  background-color: white;
+  padding-top: 70px; }
 
 .bg-profile-off-content, .bg-profile-off {
   background-color: #F3F3F3; }
@@ -1076,8 +1082,67 @@
 
   .paragraph-register, .paragraph-reg {
     margin-left: 0px; } }
+.header-profile-second {
+  color: #C4C4C4;
+  font-weight: normal;
+  margin-bottom: -1px; }
+
+.header-teach {
+  text-transform: capitalize;
+  color: white;
+  font-weight: bold; }
+
+.paragraph-title-educate-second {
+  color: #F06491;
+  text-transform: capitalize;
+  font-size: 14px; }
+
+.header-div-teach {
+  background: rgba(175, 175, 175, 0.78);
+  margin-top: -9px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px; }
+
+.header-teaching {
+  padding-left: 10px; }
+
+.header-location {
+  font-family: 'Roboto Slab', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: normal;
+  letter-spacing: 0.1em;
+  text-transform: capitalize;
+  color: #F9F9F9; }
+
+.img-location {
+  width: 30px;
+  margin-right: 10px; }
+
+.paragraph-teacher-choose {
+  font-family: 'Roboto Slab', serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: normal;
+  text-align: center;
+  letter-spacing: 0.07em;
+  color: #858585; }
+
+.header-name {
+  font-size: 38px;
+  width: 30rem;
+  text-transform: capitalize; }
+
 #modal-teacher {
   left: 50px; }
+
+.heading-confirm {
+  text-align: center;
+  color: #12BF95; }
 
 .heading-payment-red {
   color: #F06491; }
@@ -1088,5 +1153,48 @@
 
 .heading-friend-taken {
   color: #787878; }
+
+.heading-inform {
+  color: black; }
+
+.header-teach-name {
+  white-space: normal;
+  line-height: normal;
+  color: white;
+  padding-left: 10px;
+  background: #12BF95;
+  letter-spacing: 0.07em;
+  width: 12rem;
+  font-weight: bold; }
+
+.header-phone-teach {
+  white-space: normal;
+  line-height: normal;
+  color: #6A7BA9;
+  font-weight: bold; }
+
+.header-leaving {
+  white-space: normal;
+  line-height: normal;
+  color: rgba(0, 0, 0, 0.42); }
+
+.header-birth {
+  white-space: normal;
+  line-height: normal;
+  color: rgba(0, 0, 0, 0.42); }
+
+.header-gender {
+  white-space: normal;
+  line-height: normal;
+  color: rgba(0, 0, 0, 0.42); }
+
+.heading-matpel {
+  white-space: normal;
+  line-height: normal;
+  color: #12BF95;
+  text-transform: capitalize; }
+
+.header-motivate {
+  color: #2E3B60; }
 
 /*# sourceMappingURL=master.css.map */
