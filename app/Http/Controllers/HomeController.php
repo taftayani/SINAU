@@ -33,15 +33,30 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Confirm $tes){   
+    public function index(Confirm $tes, Request $request){   
 
         $confirm=Confirm::where('user_id',Auth::user()->id)->get();
         $stat=Stat::where('confirm_id',$tes->id)->get();
+        
         // return Auth::user();
-        $teacher=Teacher::all();
-        $matpel=mata_pelajaran::all();
-        $confirmSee=Confirm::all();
+
+        //user
         $user=User::all();
+        $user_male = User::where('gender', 'Male')->get();
+        $user_female = User::where('gender', 'Female')->get();
+
+        //teacher
+        $teacher=Teacher::all();
+        // $teacher_male=Teacher::where('gender', 'Male')->get();
+        // $teacher_female=Teacher::where('gender', 'Female')->get();
+
+        //matpel
+        $matpel=mata_pelajaran::all();
+        
+        //transaksi
+        $confirmSee=Confirm::all();
+
+        //statistika
         $mata_pelajaran_fav = DB::table('mata_pelajarans as a')
         ->select('a.mata_pelajaran as nama', DB::raw('count(*) as jumlah'))
         ->join('confirms as b', 'a.id' , '=', 'b.subject_id')
@@ -61,10 +76,16 @@ class HomeController extends Controller
         ->groupBy('a.name')
         ->orderBy('a.id', 'asc')
         ->get();
+        $total_murid = User::count();
+        $total_guru = Teacher::count();
+        $total_pemesanan = Confirm::count();
+
         // $stat=Stat::all();
 
         return view('layouts.beranda',[
             'user'=> $user,
+            'user_male' => $user_male,
+            'user_female' => $user_female,
             'teacher'=> $teacher,
             'matpel'=> $matpel,
             'confirmSee' => $confirmSee,
@@ -72,8 +93,13 @@ class HomeController extends Controller
             'stat' => $stat,
             'mata_pelajaran_fav' => $mata_pelajaran_fav,
             'paket_belajar_favorit' => $paket_belajar_favorit,
+            // 'index_pbf' => $index_pbf,
             'guru_fav' => $guru_fav,
-            'months' => $total_kontrak_belajar
+            'months' => $total_kontrak_belajar,
+            'total_murid' => $total_murid,
+            'total_guru' => $total_guru,
+            'total_pemesanan' => $total_pemesanan
+
         ]
       );
     }

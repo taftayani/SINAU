@@ -1,5 +1,6 @@
 
 <div class="container-fluid rows-second-profile" id="tes2">
+
     <div class="row">
       <div class="container">
           <div class="row"> 
@@ -10,8 +11,7 @@
                  <p class="center paragraph-teacher-choose">Pilih salah satu pengajar untuk melakukan kontrak belajar </p>
               </div>
           </div>
-        <form action="{{route('search_teacher')}}" method="GET">
-          {{ csrf_field() }}
+        {{-- <form action="{{route('search_teacher')}}" method="GET"> --}}
           <div class="row">
             <div class="col l3">
                
@@ -20,21 +20,20 @@
               <label for="">Cari Materi</label>
               <select name="search">
                   <option value="" disabled>Materi Belajar</option>
-                  <option value="matematika" name="search">Matematika</option> 
-                  <option value="biologi" name="search">Biologi</option> 
-                  <option value="fisika" name="search">Fisika</option> 
-                  <option value="PKN" name="search">PKN</option>                         
+                  <option value="matematika" name="search" id="all-btn">Semua</option> 
+                  <option value="biologi" name="search" id="sains-btn">Sains dan Teknologi</option> 
+                  <option value="fisika" name="search" id="social-btn">Sosial dan Enterpreneur</option>                      
           </select>
            </div>
            <div class="col l2">
-              <button type="submit">Cari</button>
+              <button type="button" id="btn" onclick="myDisable()">Cari</button>
            </div>
         </div> 
-      </form> 
+      {{-- </form>  --}}
       </div> 
 {{-- list teacher --}}
    <div class="container">
-      <div class="row">
+      <div class="row" id="all">
           @foreach ($teacher as $teachers)
           @if ($teachers->verifikasi == 'Akun Sudah Diverifikasi')
           <div class="col xl4">
@@ -89,7 +88,7 @@
       </div>
 </div>
 {{-- sains and technology --}}
-<div class="row">
+<div class="row" id="sains">
     <div class="container">
         <div class="row"> 
             <div class="col xl12">
@@ -157,7 +156,7 @@
              {{-- {{$teacher->links()}} --}}
 </div>
 {{-- Sosial enterpreneur --}}
-<div class="row">
+<div class="row" id="social">
     <div class="container">
         <div class="row"> 
             <div class="col xl12">
@@ -224,5 +223,32 @@
  </div>
 </div>
              {{-- {{$teacher->links()}} --}}
+             <script>
+                 if(document.getElementById('all-btn').selected){
+                            document.getElementById('sains').style.display="none";
+                            document.getElementById('all').style.display="block";
+                            document.getElementById('social').style.display="none";
+                        }
+                 function myDisable(){
+                    $(document).ready(function(){
+                        if(document.getElementById('all-btn').selected){
+                            document.getElementById('sains').style.display="none";
+                            document.getElementById('all').style.display="block";
+                            document.getElementById('social').style.display="none";
+                        } 
+                        else if(document.getElementById('sains-btn').selected){
+                            document.getElementById('all').style.display="none";
+                            document.getElementById('social').style.display="none";
+                            document.getElementById('sains').style.display="block";
+                        }   
+                        else if(document.getElementById('social-btn').selected){
+                            document.getElementById('all').style.display="none";
+                            document.getElementById('social').style.display="block";
+                            document.getElementById('sains').style.display="none";
+                        }          
+                    });
+                 }
+                 
+                </script>
 </div>
 </div>

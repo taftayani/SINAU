@@ -292,7 +292,7 @@
   color: #4E4F51;
   font-weight: normal; }
 
-.heading-black-third, .heading-data-list, .header-name-student-absen, .header-gather-absen, .list-name-gather, .heading-file {
+.heading-black-third, .heading-data-list, .heading-file {
   font-family: "Roboto Slab", serif;
   line-height: 30px;
   font-size: 40px;
@@ -345,7 +345,7 @@
   font-weight: 700;
   line-height: normal; }
 
-.heading-green-first, .header-list-schedule, .heading-status-success, .header-table-status-absen {
+.heading-green-first, .header-list-schedule, .heading-status-success {
   color: #12BF95;
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
@@ -481,7 +481,7 @@
   font-size: 20px;
   letter-spacing: 0.06em; }
 
-.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .contract-cancel, .contract-confirm, .contract-does-confirm, .paragraph-confirm, .label-no-absen, .label-ya-absen, .label-sick-absen, .label-permit-absen, .label-no-absen-gather, .label-ya-absen-gather, .label-sick-absen-gather, .label-absen-gather, .paragraph-resume, .paragraph-file {
+.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm, .paragraph-resume, .paragraph-file {
   font-family: "Roboto Slab", serif;
   color: #404F76;
   font-weight: 300;
@@ -554,7 +554,7 @@
   line-height: 32px;
   letter-spacing: 0.04em; }
 
-.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .contract-cancel, .contract-confirm, .contract-does-confirm, .paragraph-confirm, .label-no-absen, .label-ya-absen, .label-sick-absen, .label-permit-absen, .label-no-absen-gather, .label-ya-absen-gather, .label-sick-absen-gather, .label-absen-gather, .paragraph-resume, .paragraph-file {
+.paragraph-second, .paragraph-term, .third-layout .paragraph-first, .third-layout .paragraph-login, .paragraph-biodata, .paragraph-confirm, .paragraph-resume, .paragraph-file {
   font-family: "Roboto Slab", serif;
   color: #4E4F51;
   font-weight: 300;
@@ -1140,124 +1140,9 @@
 #modal-teacher {
   left: 50px; }
 
-.header-teach-contract {
-  font-size: 20px;
-  text-transform: capitalize; }
-
-.contract-cancel {
-  color: #F06491; }
-
-.contract-confirm {
-  text-align: center;
-  font-weight: bold;
-  color: #12BF95; }
-
-.contract-does-confirm {
-  text-align: center;
-  font-weight: bold;
-  color: white;
-  background: #F06491; }
-
 .heading-confirm {
   text-align: center;
   color: #12BF95; }
-
-.heading-data-list {
-  text-align: center;
-  line-height: 47px;
-  letter-spacing: 0.02em;
-  color: #4E4F51;
-  font-weight: normal;
-  border: 3px solid #C4C4C4;
-  box-sizing: border-box;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 10px;
-  padding-right: 10px; }
-
-.header-name-status-student {
-  color: #12BF95;
-  font-weight: bold; }
-
-#rows-data {
-  background-color: white;
-  box-shadow: 4px 4px 10px #C4C4C4;
-  padding: 30px; }
-
-.header-name-student-absen {
-  font-size: 24px;
-  line-height: 32px;
-  color: #858585;
-  text-align: justify; }
-
-.header-gather-absen {
-  font-size: 16px;
-  text-align: justify;
-  color: #C4C4C4; }
-
-.list-name-gather {
-  font-size: 16px;
-  color: #4E4F51; }
-
-.label-no-absen {
-  color: #F06491;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold; }
-
-.label-ya-absen {
-  color: #12BF95;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold; }
-
-.label-sick-absen {
-  color: #DDCF4D;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold; }
-
-.label-permit-absen {
-  color: #858585;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold; }
-
-.header-table-status-absen {
-  font-size: 16px;
-  color: #C4C4C4; }
-
-.label-no-absen-gather {
-  color: #858585;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold;
-  border: 2px solid red;
-  border-radius: 8px; }
-
-.label-ya-absen-gather {
-  color: #858585;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold;
-  border: 2px solid #12BF95;
-  border-radius: 8px; }
-
-.label-sick-absen-gather {
-  color: #858585;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold;
-  border: 2px solid yellow;
-  border-radius: 8px; }
-
-.label-absen-gather {
-  color: #858585;
-  line-height: 18px;
-  letter-spacing: 0.02em;
-  font-weight: bold;
-  border: 2px solid grey;
-  border-radius: 8px; }
 
 .heading-payment-red {
   color: #F06491; }
@@ -1312,4 +1197,4 @@
 .header-motivate {
   color: #2E3B60; }
 
-/*# sourceMappingURL=master.css.map */
+/*# sourceMappingURL=style.css.map */

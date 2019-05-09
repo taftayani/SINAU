@@ -237,24 +237,70 @@
           {{-- 160.000 packet --}}
           {{-- 220.000 packet --}}
           @if ($confirm->packet == "220.000")
-          <div class="container">
+          <div class="container-fluid">
               <table class="tb-data">
                       <thead class="head-tb-data">
                       <tr >
                               <th>Pertemuan</th>
+                              <th>Nama Lengkap</th>
+                              <th>Status Kehadiran</th>
                               <th>Keterangan Les</th>
-                              <th>Foto Les</th>
+                              <th>Konfirmasi Pertemuan</th>
                       </tr>
                       </thead>
                       @foreach ($confirm->SeeStat as $key => $confirms)
                       <tbody class="list-tb-data">                    
                         <tr>
                             <td>Pertemuan {{++$key}}</td>
+                            <td>
+                                <ul>
+                                  <li>{{$confirms->ConfirmOrder->UserOrder->nama_depan}} {{$confirms->ConfirmOrder->UserOrder->nama_belakang}}</li>
+                                  <li>{{$confirms->ConfirmOrder->friends}}</li>
+                                  <li>{{$confirms->ConfirmOrder->friends2}}</li>
+                                  <li>{{$confirms->ConfirmOrder->friends3}}</li>
+                                  <li>{{$confirms->ConfirmOrder->friends4}}</li>
+                                </ul>
+                              </td>
+                              <td>
+                                  <ul>
+                                    <li>{{$confirms->student_stat}}</li>
+                                    <li>{{$confirms->friends_stat}}</li>
+                                    <li>{{$confirms->friends2_stat}}</li>
+                                    <li>{{$confirms->friends3_stat}}</li>
+                                    <li>{{$confirms->friends4_stat}}</li>
+                                  </ul>
+                                </td>
                             <td>{{$confirms->mention}}</td>
-                            <td><img src="{{asset($confirms->prove)}}" alt="" class="materialboxed pay-stat-img"></td>
+                            <td>
+                              @if ($confirms->confirm_student != null)
+                                  <h4>Ajarannya {{$confirms->confirm_student}}</h4>
+                              @else
+                                <div class="row">
+                                    <form class="col 12" action="{{route('confirm_absen',['stat'=>$confirms->id])}}" enctype="multipart/form-data" method="post">
+                                        {{ csrf_field() }}
+                                        {{ method_field('put') }}  
+                                        <label for="">Tanggapan Mengajar</label> 
+                                          <p>
+                                            <input class="with-gap" value="Tidak Paham" name="confirm_student" type="radio" id="tdp" checked />
+                                            <label for="tdp">Tidak Paham</label>
+                                          </p>
+                                          <p>
+                                              <input class="with-gap" value="Paham" name="confirm_student" type="radio" id="p"/>
+                                              <label for="p">Paham</label>
+                                          </p>
+                                          <p>
+                                              <input class="with-gap" value="Sangat Paham" name="confirm_student" type="radio" id="sp"/>
+                                              <label for="sp">Sangat Paham</label>
+                                            </p>
+                                           
+                                        <button type="submit" >Kirim</button>                    
+                                    </form>
+                                </div>
+                                @endif
+                            </td>
                         </tr>
                       </tbody>
-                       @if ($key == 1)
+                       @if ($key == 12)
                           <div class="row">
                               <div class="col xl6">
                                   <p>Proses pengajaran anda telah selesai. Silahkan berikan nilai dari <b>untuk sangat tidak baik

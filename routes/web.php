@@ -63,6 +63,9 @@ Route::get('DataLesSiswa/{confirm}','ConfirmController@MoveStatus')->name('move'
 Route::post('InputDataLes','StatController@CreateStat')->name('input_stat');
 Route::put('LinkUjian/{confirm}','StatController@LinkVideo')->name('link_tes');
 
+// confirm status les
+Route::put('KonfirmasiKehadiran/{stat}','StatController@ConfirmStat')->name('confirm_absen');
+
 // Dashboard
 Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
 Route::put('SoalUjian/{confirm}','HomeController@TestPic')->name('tes_last');

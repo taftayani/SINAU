@@ -7,15 +7,16 @@
       <link type="text/css" rel="stylesheet" href="{{asset('css/materialize.min.css')}}"  media="screen,projection"/>
       <link rel="stylesheet" href="{{asset('cssSinauyo/master.css')}}">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-      {{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> --}}
-      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script src="{{asset('js/print-this/printThis.js')}}"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+      
+
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
       <link rel="stylesheet" href="/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
       <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
       <title>Mari berbagi ilmu kepada Sesama</title>
 
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
       <style>
         body{
           background: #F7F7F7;
@@ -119,13 +120,18 @@
         }
       </style>
 
+      
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
     </head>
 
     <body>
   
-      @yield('content')
+      @yield('content') 
       <!--Import jQuery before materialize.js-->
-      <script type="text/javascript" src="{{asset('https://code.jquery.com/jquery-3.2.1.min.js')}}"></script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="{{asset('js/materialize.min.js')}}"></script>
       <script type="text/javascript">
       // $( document ).ready(function(){$(".button-collapse").sideNav()});
@@ -140,13 +146,13 @@
       </script>
       <script>
         $(document).ready(function(){
-        $('ul.tabs').tes();
-      });
+          $('ul.tabs').tes();
+        });
       </script>
       <script>
             $(document).ready(function(){
-          $('ul.tabs').tabs('select_tab', 'tab_id');
-        });
+              $('ul.tabs').tabs('select_tab', 'tab_id');
+            });
         </script>
       @stack('js')
     </body>

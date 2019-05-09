@@ -10,7 +10,7 @@ use App\Confirm;
 use Illuminate\Http\Request;
 use Auth;
 use Session;
-
+use DB;
 class TeacherController extends Controller
 {
     /**
@@ -21,12 +21,12 @@ class TeacherController extends Controller
     public function TeacherView(Teacher $teacher,Request $req)
     {
         $teacher=Teacher::all();
-        $teacher=Teacher::paginate(3);
-        if($req->search){
-            $teacher=Teacher::paginate(3);
-        }
+        $teacher=Teacher::paginate(4);
+        // if($req->search){
+        //     $teacher=Teacher::paginate(4);
+        // }
         // else{
-        //     $teacher=mata_pelajaran::where('teacher_id','LIKE','%'.$req->array_search.'%')->paginate(3);
+        //     $teacher=mata_pelajaran::where('mata_pelajaran','matematika')->paginate(3);
         //     $teacher->appends($req->only('search'));
         // }
         $teacher_see=Teacher::where('user_id', Auth::user()->id)->first();

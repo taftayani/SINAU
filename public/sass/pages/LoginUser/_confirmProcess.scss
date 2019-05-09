@@ -48,6 +48,113 @@
 }
 .heading-data-list{
     @extend .heading-black-third;
+    text-align: center;
+    line-height: 47px;
+    letter-spacing: 0.02em;
+    color: #4E4F51;
+    font-weight: normal;
+    border: 3px solid #C4C4C4;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.header-name-status-student{
+    color: #12BF95;
+    font-weight: bold;
+}
+#rows-data{
+    background-color: white;
+    box-shadow: 4px 4px 10px #C4C4C4;
+    padding:30px;
+}
+.header-name-student-absen{
+    @extend .heading-black-third;
+    font-size: 24px;
+    line-height: 32px;
+    color: #858585;
+    text-align: justify;
+}
+.header-gather-absen{
+    @extend .heading-black-third;
+    font-size: 16px;
+    text-align: justify;
+    color: #C4C4C4;
+}
+.list-name-gather{
+    @extend .heading-black-third;
+    font-size: 16px;
+    color: #4E4F51;
+}
+.label-no-absen{
+    color: #F06491;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+}
+.label-ya-absen{
+    color: #12BF95;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+}
+.label-sick-absen{
+    color: #DDCF4D;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+}
+.label-permit-absen{
+    color: #858585;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+}
+.header-table-status-absen{
+    @extend .heading-green-first;
+    font-size: 16px;
+    color: #C4C4C4;
+}
+.label-no-absen-gather{
+    color: #858585;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+    border: 2px solid red;
+    border-radius: 8px;
+}
+.label-ya-absen-gather{
+    color: #858585;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+    border: 2px solid #12BF95;
+    border-radius: 8px;
+}
+.label-sick-absen-gather{
+    color: #858585;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+    border: 2px solid yellow;
+    border-radius: 8px;
+}
+.label-absen-gather{
+    color: #858585;
+    @extend .paragraph-second;
+    line-height: 18px;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+    border: 2px solid grey;
+    border-radius: 8px;
 }
 .btn-input-data{
     @extend .btn-order-section;

@@ -71,3 +71,25 @@
 #modal-teacher{
     left: 50px;
 }
+.header-teach-contract{
+    @extend .heading-content-grey-first;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.contract-cancel{
+    @extend .paragraph-second;
+    color: #F06491;
+}
+.contract-confirm{
+    @extend .paragraph-second;
+    text-align: center;
+    font-weight: bold;
+    color: #12BF95;
+}
+.contract-does-confirm{
+    @extend .paragraph-second;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+    background: #F06491;
+}

@@ -10,7 +10,12 @@ class Stat extends Model
         'confirm_id',
         'date_les',
         'mention',
-        'prove'
+        'student_stat',
+        'friends_stat',
+        'friends2_stat',
+        'friends3_stat',
+        'friends4_stat',
+        'confirm_student'
     ];
 
     public function ConfirmOrder()

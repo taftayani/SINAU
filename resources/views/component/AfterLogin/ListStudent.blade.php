@@ -11,13 +11,25 @@
         
 
         <div class="{{$confirms->TeacherOrder->id}}">
-            <a class="col xl2 center modal-trigger" id="column-profile-teach" href="#{{$confirms->id}}">
-                <img src="{{$confirms->UserOrder->foto}}" class="img-profile-teach">
-                <h6 class="header-teach">{{$confirms->UserOrder->nama_depan}} {{$confirms->UserOrder->nama_belakang}}</h6>
-                <p class="paragraph-title-educate"></p>
-             </a>
-
-
+          <div class="container">
+                    <div class="col xl4">
+                            <a class="center modal-trigger" href="#{{$confirms->id}}">
+                                <div id="column-profile-teach">
+                                    <img src="{{$confirms->UserOrder->foto}}" class="img-profile-teach">
+                                    <h6 class="header-teach-contract">{{$confirms->UserOrder->nama_depan}} {{$confirms->UserOrder->nama_belakang}}</h6>
+                                    <label for="">{{$confirms->UserOrder->gender}} / Paket : {{$confirms->packet}} </label>
+                                    @if ($confirms->Status == "Pesanan Ditolak")
+                                        <p class="contract-cancel">Kontrak Anda Tolak</p>
+                                    @elseif($confirms->Status == "Pesanan Diterima")
+                                        <p class="contract-confirm">Kontrak Sudah Dikonfirmasi</p>
+                                    @else 
+                                        <p class="contract-does-confirm">Kontrak Belum Anda Konfirmasi</p>
+                                    @endif
+                                </div>
+                            </a>
+                        </div>
+          </div>
+      
         <div id="{{$confirms->id}}" class="modal container col xl12">
                 <div class="modal-content">
                          <div class="container"> 

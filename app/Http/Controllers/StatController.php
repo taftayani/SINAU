@@ -14,17 +14,14 @@ class StatController extends Controller
 {
     public function CreateStat(Request $req, Stat $stat)
     {
-    //    Stat::create([
-    //     'confirm_id' =>$req->confirm_id,
-    //     'date_les' => $req->date_les,
-    //     'mention' => $req->mention
-    //    ]);
-    $path = Storage::disk('public')->put('Bukti Belajar/'.$_FILES['prove']['name'],
-        file_get_contents($_FILES['prove']['tmp_name']));
-        $stat-> prove=  'storage/Bukti Belajar/'.$_FILES['prove']['name'];
         $stat-> confirm_id = $req->confirm_id;
         $stat-> date_les = $req->date_les;
         $stat-> mention = $req->mention;
+        $stat-> student_stat = $req->student_stat;
+        $stat-> friends_stat = $req->friends_stat;
+        $stat-> friends2_stat = $req->friends2_stat;
+        $stat-> friends3_stat = $req->friends3_stat;
+        $stat-> friends4_stat = $req->friends4_stat;
         $stat-> save();
        return redirect(route('guru'));
     }
@@ -35,5 +32,12 @@ class StatController extends Controller
 
        $confirm->save();
        return redirect(route('guru'));
+    }
+    public function ConfirmStat(Request $req, Stat $stat)
+    {
+        $stat->confirm_student =$req->confirm_student;
+        $stat->save();
+        // return $stat;
+        return redirect(route('home'));
     }
 }
