@@ -37,26 +37,53 @@ class HomeController extends Controller
 
         $confirm=Confirm::where('user_id',Auth::user()->id)->get();
         $stat=Stat::where('confirm_id',$tes->id)->get();
-        
-        // return Auth::user();
-
-        //user
         $user=User::all();
-        $user_male = User::where('gender', 'Male')->get();
-        $user_female = User::where('gender', 'Female')->get();
-
-        //teacher
         $teacher=Teacher::all();
-        // $teacher_male=Teacher::where('gender', 'Male')->get();
-        // $teacher_female=Teacher::where('gender', 'Female')->get();
-
-        //matpel
         $matpel=mata_pelajaran::all();
         
         //transaksi
         $confirmSee=Confirm::all();
+        return view('layouts.beranda',[
+            'user'=> $user,
+            'teacher'=> $teacher,
+            'matpel'=> $matpel,
+            'confirmSee' => $confirmSee,
+            'confirm' => $confirm,
+            'stat' => $stat,
+        ]
+      );
+    }
+    public function User()
+    {
+        $user = User::all();
+        return view('dashboard.user', compact(['user','stat']));
+    }
+    //Teacher
+    public function teacher(){
+        $teacher=Teacher::all();
+        return view('dashboard.teacher',compact(['teacher']));
+    }
 
-        //statistika
+    //Transaction
+    public function transaction(){
+        // $transaksi_pembelajaran = DB::table('confirms as a')
+        // ->select('a.*', 'b.*', 'c.*')
+        // ->join('users as b', 'b.id', '=', 'a.user_id')
+        // ->join('teachers as c', 'c.id', '=', 'a.teacher_id')
+        // ->get();
+        $transaksi_pembelajaran = Confirm::all();
+
+
+        $confirmSee=Confirm::all();
+
+        // dd($transaksi_pembelajaran);
+        // return $transaksi_pembelajaran;
+        
+        return view('dashboard.transaction',compact(['transaksi_pembelajaran', 'confirmSee']));
+    }
+
+    //Statistics
+    public function statistics(){
         $mata_pelajaran_fav = DB::table('mata_pelajarans as a')
         ->select('a.mata_pelajaran as nama', DB::raw('count(*) as jumlah'))
         ->join('confirms as b', 'a.id' , '=', 'b.subject_id')
@@ -71,38 +98,14 @@ class HomeController extends Controller
         ->join('confirms as b', 'a.id' , '=', 'b.teacher_id')
         ->groupBy('a.ktp')
         ->get();
-        $total_kontrak_belajar = DB::table('months as a')->select('a.name', DB::raw('count(b.created_at) as jumlah'))
+        $months = DB::table('months as a')->select('a.name', DB::raw('count(b.created_at) as jumlah'))
         ->leftJoin('confirms as b', DB::raw('MONTH(b.created_at)'), '=', 'a.id')
         ->groupBy('a.name')
         ->orderBy('a.id', 'asc')
         ->get();
-        $total_murid = User::count();
-        $total_guru = Teacher::count();
-        $total_pemesanan = Confirm::count();
-
-        // $stat=Stat::all();
-
-        return view('layouts.beranda',[
-            'user'=> $user,
-            'user_male' => $user_male,
-            'user_female' => $user_female,
-            'teacher'=> $teacher,
-            'matpel'=> $matpel,
-            'confirmSee' => $confirmSee,
-            'confirm' => $confirm,
-            'stat' => $stat,
-            'mata_pelajaran_fav' => $mata_pelajaran_fav,
-            'paket_belajar_favorit' => $paket_belajar_favorit,
-            // 'index_pbf' => $index_pbf,
-            'guru_fav' => $guru_fav,
-            'months' => $total_kontrak_belajar,
-            'total_murid' => $total_murid,
-            'total_guru' => $total_guru,
-            'total_pemesanan' => $total_pemesanan
-
-        ]
-      );
+        return view('dashboard.statistics',compact(['mata_pelajaran_fav', 'paket_belajar_favorit', 'guru_fav', 'months']));
     }
+
 
 // Dashboard Verifikasi
     public function Verifikasi(Request $request,Teacher $teacher)
@@ -114,10 +117,10 @@ class HomeController extends Controller
    }
    public function TestPic(Request $request, Confirm $confirm)
    {
-        $path = Storage::disk('public')->put('Soal/'.$_FILES['test_file']['name'],
-        file_get_contents($_FILES['test_file']['tmp_name']));
+        $path = Storage::disk('public')->put('Soal/'.$_FILES['test_file_last']['name'],
+        file_get_contents($_FILES['test_file_last']['tmp_name']));
        
-       $confirm->test_file = 'storage/Soal/'.$_FILES['test_file']['name'];
+       $confirm->test_file = 'storage/Soal/'.$_FILES['test_file_last']['name'];
        $confirm->save();
        return redirect(route('home'));
    }

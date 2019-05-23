@@ -24,8 +24,7 @@
         .datastat{
           background: #fff; 
           padding: 30px;
-          overflow-x: hidden;
-          overflow-y: auto;
+          overflow: scroll;
           height: 500px;
         }
         .total{

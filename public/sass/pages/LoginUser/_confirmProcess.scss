@@ -173,6 +173,17 @@
 }
 .heading-payment{
     @extend .heading-black;
+    text-transform: capitalize;
+    white-space:normal;
+}
+.heading-payment-grey{
+    @extend .heading-black;
+    color: #D27575;
+    text-transform: capitalize;
+    white-space: normal;
+}
+.rows-detail-les{
+    border-bottom: 1px solid #D3D3D3;
 }
 .heading-payment-red{
     @extend .heading-black;
@@ -192,6 +203,66 @@
 }
 .heading-payment-third{
     @extend .paragraph-second-green;
+    border: 2px solid #45E0C0;
+    border-radius: 11px;
+    padding-left: 10px;
+}
+.rows-friend-pay{
+    background-color: white;
+    box-sizing: border-box;
+    box-shadow:  0px 4px 4px #C4C4C4;  
+}
+.rows-friend{
+    border-bottom: 1px solid #D3D3D3;
+}
+#paragraph-video{
+    @extend .paragraph-content;
+    font-size: 16px;
+    color: #c4c4c4;   
+}
+.bold-status{
+    @extend .paragraph-content;
+    color: #555555;  
+    font-size: 16px;
+}
+.status-danger-test{
+    @extend .paragraph-content;
+    font-size: 20px;
+    color: #F06491;
+    font-weight: bold;
+}
+.form-video{
+    box-shadow: 0px 2px 4px 2px #c4c4c4 !important;
+    padding: 20px;
+}
+#link-upload-disabled{
+    background-color: #c4c4c4;
+    @extend .paragraph-content;
+    font-size: 20px;
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
+#link-upload{
+    background-color: #12BF95;
+    @extend .paragraph-content;
+    font-size: 20px;
+    border-radius: 100px;
+    padding: 10px;
+    cursor: pointer;
+}
+.theader-table-status{
+    @extend .paragraph-second-green;
+    color: #555555;   
+    font-weight: 400;
+    font-style: normal;
+}
+.tbody-table-status{
+    @extend .paragraph-second-green;
+    color: #555555;   
+    font-weight: 400;
+    font-size: 16px;
+    font-style: normal;
 }
 .link-pay{
     @extend .info;
@@ -283,4 +354,51 @@
 }
 .paragraph-resume{
     @extend .paragraph-second;
+}
+.img-answer-test{
+    width: 75%;
+}
+.img-done{
+    width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header-test-student{
+    @extend .heading-content-third;
+    font-size: 26px;
+    color: #2E3B60;
+}
+.card-test-student{
+    background-color: white;
+    box-shadow: 0px 4px 4px #C4C4C4;
+    padding-bottom: 30px;
+    border-radius: 10px;
+    border: none;
+}
+.btn-test-student{
+    @extend .btn-purple-teach;
+    font-size: 30px;
+    margin-top: 0px;
+}
+.btn-opini-student{
+    @extend .btn-purple-teach;
+}
+.list-student-name{
+    @extend .list-first;
+    text-align: left;
+}
+.list-absen-student{
+    @extend .list-second;
+    text-align: left;
+    color: #4E4F51;
+}
+.desc-status-les{
+    @extend .pargraph-little;
+}
+.header-confirm-student{
+    @extend .heading-content-third-black;
+    font-size: 20px;
+}
+.status-confirm-student{
+    color: #F06491;
 }

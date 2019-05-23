@@ -1,5 +1,5 @@
 @if (Auth::user()->role == 'admin')
-    @include('layouts.Dashboard')
+    @include('dashboard.user')
 @else
     @include('layouts.User')
 @endif

@@ -8,8 +8,7 @@
       <link rel="stylesheet" href="{{asset('cssSinauyo/master.css')}}">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <script src="{{asset('js/print-this/printThis.js')}}"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+     
       
 
       <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
@@ -69,7 +68,7 @@
         .tabs .indicator{
           display: none;
         }
-        .tabs .tab a:focus.active {
+        .navactive {
           background-color: #3BF4C7;
         }
         .nav-ver{
@@ -81,12 +80,15 @@
           
           text-align: left;
         }
-        table, th, tr, td{
+        th, .td{
           border: 1px solid #000;
         }
         .printbtn{
           float:right;
           cursor:pointer;
+        }
+        .pageactive{
+          font-weight: bold;
         }
         .sidenav-filter{
           width: 130px;
@@ -118,6 +120,18 @@
           color: #4EAE91;
           font-weight: bold;
         }
+        table, tr, td{
+          text-align:center;
+        }
+        .btn{
+          background: linear-gradient(180deg, #404F76 0%, #5C6682 100%);
+        }
+        .detailbtn{
+          cursor:pointer;
+        }
+        .detailbtn_pemesanan{
+          cursor:pointer;
+        }
       </style>
 
       
@@ -132,7 +146,11 @@
       @yield('content') 
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="{{asset('js/materialize.min.js')}}"></script>
+      
+      <script src="{{asset('js/fancytable/src/fancyTable.js')}}"></script>
+
       <script type="text/javascript">
       // $( document ).ready(function(){$(".button-collapse").sideNav()});
       </script>

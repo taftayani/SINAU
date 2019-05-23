@@ -70,7 +70,11 @@ Route::put('KonfirmasiKehadiran/{stat}','StatController@ConfirmStat')->name('con
 Route::put('VerifikasiAkunGuru/{teacher}','HomeController@Verifikasi')->name('verifikasi_data');
 Route::put('SoalUjian/{confirm}','HomeController@TestPic')->name('tes_last');
 Route::put('AkhiriPembelajaran/{confirm}','HomeController@LastProcess')->name('last_process');
-
+Route::post('/home', 'HomeController@index');
+Route::get('/home/user','HomeController@User');
+Route::get('/home/teacher', 'HomeController@teacher');
+Route::get('/home/transaction', 'HomeController@transaction')->name('home_transaction');
+Route::get('/home/statistics', 'HomeController@statistics');
 //feedback guru
 Route::put('PendapatPengajaran/{confirm}','ConfirmController@FeedbackTeacher')->name('feedback_teacher');
 

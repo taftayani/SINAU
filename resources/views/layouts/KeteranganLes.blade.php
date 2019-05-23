@@ -246,12 +246,11 @@
                   <table class="tb-data">
                           <thead class="head-tb-data">
                           <tr class="center">
-                              <th>Pertemuan</th>
-                              <th>Nama Lengkap</th>
-                              <th>Status Kehadiran</th>
-                              <th>Tanggal les</th>
-                              <th>Keterangan Les</th>
-                              <th>Konfirmasi Murid</th>
+                            <th class="header-table-status-absen">Pertemuan</th>
+                            <th>Nama Murid</th>
+                            <th class="header-table-status-absen">Tanggal Les Kehadiran</th>
+                            <th >Keterangan Les</th>
+                            <th class="header-table-status-absen">Konfirmasi Murid</th>
                           </tr>
                           </thead>
                           @foreach ($stat as $key => $stats)
@@ -439,26 +438,27 @@
                                     <td>{{$stats->mention}}</td>
                                     <td>
                                         @if ($stats->confirm_student == null)
-                                        <h4>Belum Dikonfirmasi</h4>
+                                        <h4 class="status-confirm-student">Belum Dikonfirmasi</h4>
                                       @else 
-                                        <h4>{{$stats->confirm_student}}</h4>
+                                        <h4 class="header-confirm-student">{{$stats->confirm_student}}</h4>
                                     @endif
                                     </td>
                               </tr>
                         </tbody>
-                        @if ($key == 12)
+                        @if ($key == 5)
                         @push('js')
                             <script>
                             document.getElementById('rows-data').style.display="none";
                             </script>
                           
                         @endpush
-                        <p id="paragraph-video">kegiatan proses pembelajaran sudah diujung akhir. untuk mengakhiri proses terakhir, anda harus membuat sebuah
-                            video kreatif dengan tema soal yang akan diberikan oleh Sinau Yo mengenai materi <b>{{$stats->ConfirmOrder->SubjectOrder->mata_pelajaran}}</b>.
-                            Pecahkan jawabanmu dengan murid-murid kamu dan upload videomu di youtube. Soal akan dikirimkan paling telat 1 hari sebelum materi terakhir disampaikan.
-                            dan pembuatan video diberikan waktu 1 hingga 2 hari setelah materi akhir telah anda berikan kepada murid
+                        <p id="paragraph-video">Kegiatan proses pembelajaran sudah diujung akhir. <b class="bold-status">untuk mengakhiri proses terakhir</b>, anda harus membuat sebuah
+                          <b class="bold-status">video kreatif</b> dengan tema soal yang akan diberikan oleh Sinau Yo mengenai materi <b class="bold-status">{{$stats->ConfirmOrder->SubjectOrder->mata_pelajaran}}</b>.
+                            Pecahkan jawabanmu <b class="bold-status">dengan murid-murid kamu</b> dan <b class="bold-status">upload videomu di youtube</b>. Soal akan dikirimkan <b class="bold-status">paling telat 1 hari sebelum materi terakhir disampaikan</b>.
+                            dan pembuatan video diberikan <b class="bold-status">waktu 1 hingga 2 hari</b> setelah materi akhir telah anda berikan kepada murid
                           </p>
-                        <form class="col 12" action="{{route('link_tes',['confirm'=>$stats->ConfirmOrder->id])}}"  enctype="multipart/form-data" method="post">
+                        <div class=" form-video">
+                          <form class="col 12" action="{{route('link_tes',['confirm'=>$stats->ConfirmOrder->id])}}"  enctype="multipart/form-data" method="post">
                             {{ csrf_field() }}
                             {{ method_field('put') }}   
                             <input type="text" name="link_video" id="input-video" placeholder="Masukan Link Video" required> 
@@ -466,8 +466,9 @@
                             <button type="submit" id="link-upload">Upload Link</button>
                             
                          </form>
+                        </div>
                       @endif
-                         @if ($key== 12)
+                         @if ($key== 5)
                          
                           @if ($stats->ConfirmOrder->test_file == "nul")
                             @push('js')
@@ -476,7 +477,7 @@
                                 document.getElementById("link-upload-disabled").style.display="block";
                               </script>
                             @endpush
-                              <h3>Soal Belum Diberikan, Silahkan Hubungi Admin</h3>
+                              <h3 class="status-danger-test">Soal Belum Diberikan, Silahkan Hubungi Admin</h3>
                             @else
                             @push('js')
                               <script>
@@ -518,11 +519,11 @@
                 <table class="tb-data">
                         <thead class="head-tb-data">
                         <tr class="center">
-                            <th>Pertemuan</th>
-                            <th>Nama Lengkap</th>
-                            <th>Tanggal Les</th>
-                            <th>Keterangan Les</th>
-                            <th>Bukti Foto Belajar</th>
+                          <th class="header-table-status-absen">Pertemuan</th>
+                          <th>Nama Murid</th>
+                          <th class="header-table-status-absen">Tanggal Les Kehadiran</th>
+                          <th >Keterangan Les</th>
+                          <th class="header-table-status-absen">Konfirmasi Murid</th>
                         </tr>
                         </thead>
                         @foreach ($stat as $key => $stats)

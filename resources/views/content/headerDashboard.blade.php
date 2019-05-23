@@ -4,13 +4,13 @@
       <li><a href="{{ route('guru') }}">Daftar Sebagai Guru</a></li>
     </ul> --}}
     @extends('content.apps')
-    <div style="position: absolute; height: 70px; top: 0px; width: 100%; left: 0px; background:  #E9E9E9;">
+    <div style="position: absolute; height: 70px; top: 0px; width: 100%; left: 0px; background:  #6A7BA9;">
     <ul class="right hide-on-med-and-down navbar-section-second">
             <li style="padding: 20px; margin-right: 20px;">
               <img src="{{asset('../img/logo/avatar.png')}}" alt="" width="25" height="25" style="margin-right: 10px; margin-top: -2px;">
-              <span style="margin-right: 10px">{{ Auth::user()->nama_belakang }}</span>
-              <a onClick="$('.dropdown-button').dropdown();" class='dropdown-button' href='#' data-activates='logout' style="text-decoration: none; color: #8b8b8b">
-                <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <span style="margin-right: 10px; color: #ffffff">{{ Auth::user()->nama_belakang }}</span>
+              <a onclick="$('.dropdown-button').dropdown();" class='dropdown-button' href='#' data-activates='logout' style="text-decoration: none; color: #8b8b8b">
+                <i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #ffffff"></i>
               </a>
           </ul>
     </div>
@@ -34,7 +34,7 @@
           </a>
 
           <div style="padding: 10px; border: 1px solid rgb(97, 97, 97);">
-            <img src="{{asset('../img/logo/avatar.png')}}" style="float: left; margin-right: 20px; margin-top: 5px;" alt="" width="35" height="35">
+            <img src="{{asset('../img/logo/avatar.png')}}" style="float:   left; margin-right: 20px; margin-top: 5px;" alt="" width="35" height="35">
             <div>
               <p style="color: #d3d3d3; opacity: 0.90; margin-bottom: -5px;">Welcome</p>
               <p style="color: #ffffff;">{{ Auth::user()->nama_belakang }}</p>
@@ -43,20 +43,35 @@
             
           <p style="color: #FFFFFF; opacity: 0.65; margin: 22px;">Dashboard</p>
 
-          <ul class="tabs" style="height: 200px;">
-            <li class="tab nav-ver active"><a href="#home" style="color: #fff;">Data Murid</a></li>
-            <li class="tab nav-ver"><a href="#guru" style="color: #fff;">Data Guru</a></li>
+          <ul class="" style="height: 200px;">
+            <li id="nv-murid" class="nav-ver"><a href="/home" style="color: #fff;">Data Murid</a></li>
+            <li id="nv-guru" class="nav-ver"><a href="/home/teacher" style="color: #fff;">Data Guru</a></li>
             <!-- <li class="tab"><a href="#matpel">Data Mata Pelajaran</a></li> -->
-            <li class="tab nav-ver"><a href="#pesanan" style="color: #fff;">Data Pesanan</a></li>
-            <li class="tab nav-ver"><a href="#statistika" style="color: #fff;">Statistika</a></li>
+            <li id="nv-transaction"class="nav-ver"><a href="/home/transaction" style="color: #fff;">Data Pesanan</a></li>
+            <li id="nv-statistics" class="nav-ver"><a href="/home/statistics" style="color: #fff;">Statistika</a></li>
           </ul>
-          <!-- <script>
-            $( ".tab" ).click(function(){
-              var url = "{{Request::url()}}";
-              window.location = url;
 
-            });
-          </script> -->
+          @if(Request::url() === url('/home'))
+              <script>
+                $('.nav-ver').removeClass('navactive');
+                $('#nv-murid').addClass('navactive')
+              </script>
+          @elseif(Request::url() === url('/home/teacher'))
+              <script>
+                $('.nav-ver').removeClass('navactive');
+                $('#nv-guru').addClass('navactive')
+              </script>
+          @elseif(Request::url() === url('/home/transaction'))
+              <script>
+                $('.nav-ver').removeClass('navactive');
+                $('#nv-transaction').addClass('navactive')
+              </script>
+          @elseif(Request::url() === url('/home/statistics'))
+              <script>
+                $('.nav-ver').removeClass('navactive');
+                $('#nv-statistics').addClass('navactive')
+              </script>
+          @endif
     </div>
     <!-- <div class="navbar-fixed">
     <ul class="tabs" id="navbar-section-first">

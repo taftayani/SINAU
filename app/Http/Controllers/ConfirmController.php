@@ -97,14 +97,17 @@ class ConfirmController extends Controller
 
     public function PaymentInvoice(Request $request, Confirm $confirm)
     {
-
         $confirm-> stat_pay=$request->stat_pay;
         $confirm-> save();
-
         return redirect(route('home'));
     }
     public function FeedbackTeacher(Request $req, Confirm $confirm)
     {
+        $path = Storage::disk('public')->put('Bukti Akhir Pembelajaran/'.$_FILES['last_photo_learning']['name'],
+        file_get_contents($_FILES['last_photo_learning']['tmp_name']));
+    
+       $confirm-> last_photo_learning= 'storage/Bukti Akhir Pembelajaran/'.$_FILES['last_photo_learning']['name'];
+       $confirm-> answer_test_student= $req->answer_test_student;
        $confirm-> score_teaching =$req->score_teaching;
        $confirm-> feedback_teaching =$req->feedback_teaching;
        $confirm->save();
