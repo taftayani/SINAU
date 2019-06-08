@@ -22,6 +22,8 @@ Route::post('/survey', 'SurveyController@survey')->name('survey');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user','UserController@edit')->name('user');
 Route::put('edit/{user}','UserController@update')->name('edit');
+Route::put('edit/photo/{user}','UserController@PhotoEdit')->name('change_photo');
+Route::put('edit/password/{user}','UserController@ChangePass')->name('change_password');
 Route::get('profile','UserController@profile')->name('layouts.profile');
 Route::get('beranda','UserController@dashboard')->name('beranda');
 Route::get('sinau.offline','Pruduct@index')->name('sinau_offline');

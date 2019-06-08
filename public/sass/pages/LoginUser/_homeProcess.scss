@@ -128,3 +128,10 @@
 
     color: #858585;
 }
+.edit-data{
+    @extend .heading-content-grey-first;
+    border-bottom: 1px solid #555555;
+}
+#input-form{
+    @extend .form-reg;
+}

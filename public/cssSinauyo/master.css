@@ -449,7 +449,7 @@
   letter-spacing: 7%;
   line-height: 32px; }
 
-.heading-content-grey-first, .header-name, .header-teach-contract, .heading-detail-les, .heading-friend-taken {
+.heading-content-grey-first, .edit-data, .header-name, .header-teach-contract, .heading-step-teacher, .heading-detail-les, .heading-friend-taken {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 30px;
@@ -497,7 +497,7 @@
   letter-spacing: 0.02em;
   text-align: justify; }
 
-.paragraph-profile {
+.paragraph-profile, .paragraph-step-teacher {
   font-family: "Roboto Slab", serif;
   color: #696969;
   font-weight: 300;
@@ -577,7 +577,7 @@
   font-size: 13px;
   letter-spacing: 0.06em; }
 
-.form-reg, input[type="text"], .text-long, .form-login #email, .form-login #password {
+.form-reg, input[type="text"], .text-long, .form-login #email, .form-login #password, #input-form {
   width: 100%;
   height: 57px;
   font-family: "Roboto Slab", serif;
@@ -707,7 +707,7 @@
   letter-spacing: 0.07em;
   color: #67759B; }
 
-.list-term-content, .list-term {
+.list-term-content, .list-term, .list-step-teacher {
   font-family: "Roboto Slab", serif;
   font-style: normal;
   font-weight: 700;
@@ -1132,6 +1132,9 @@
   letter-spacing: 0.07em;
   color: #858585; }
 
+.edit-data {
+  border-bottom: 1px solid #555555; }
+
 .header-name {
   font-size: 38px;
   width: 30rem;
@@ -1157,6 +1160,29 @@
   font-weight: bold;
   color: white;
   background: #F06491; }
+
+.card-step-teacher {
+  background: #FFFFFF;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 20px;
+  height: 15rem; }
+
+.paragraph-step-teacher {
+  margin-top: 0px; }
+
+.list-step-teacher {
+  line-height: 1.3rem;
+  color: #858585;
+  text-align: justify;
+  font-weight: normal; }
+
+.heading-step-teacher {
+  font-weight: normal; }
 
 .heading-confirm {
   text-align: center;

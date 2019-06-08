@@ -7,7 +7,9 @@
     }
     .foto{
       width: 200px;
-      height: 500px;
+      height: 200px;
+      margin-left: auto;
+      margin-right: auto;
     }
     #button{
       width: 300px;
@@ -20,39 +22,43 @@
     }
   </style>
 
-<div class="container-fluid content-edit">
+<div class="container content-edit">
   <div class="row">
-      <div class="col s12 m6">
-        <div class="card z-depth-3">
-          <div class="card-image">
-            {{-- @php
-              dd(Auth::user()->)
-            @endphp --}}
+    <h1 class="edit-data">Edit Foto</h1>
+      <div class="col s12 m12 center">     
             <img src="{{Auth::user()->foto}}" class="foto">
-            {{-- <a class="btn-floating halfway-fab waves-effect waves-light red" href="{{ route('user',['id'=>$baris->id]) }}"><i class="material-icons">create</i></a> --}}
-          </div>
-          <div class="card-content">
-            <p>Selamat datang di website sinau. Terima kasih kamu telah mendaftar
-            sebagai pengguna Sinau Yo. </p>
-            <div class="divider"></div>
-            <h6>Nama saya : <b>{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} </b></h6>
-            <h6>email saya : <b>{{ Auth::user()->email }}</b> </h6>
-          </div>
-        </div>
+            <form action="{{ route('change_photo',['user'=>Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
+                {{ csrf_field() }}
+                {{ method_field('put') }}  
+              <div class="file-field input-field">
+                    <div class="btn">
+                      <span>Photo</span>
+                      <input type="file" name="foto" multiple>
+                    </div>
+                    <div class="file-path-wrapper">
+                    <input class="file-path validate " id="input-form" placeholder="masukan foto sebelumnya/ masukan foto baru" required>
+                    </div>
+                    @if ($errors->has('foto'))
+                    <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('foto')  }}</p>
+                  @endif
+                  </div>
+                  <button type="submit" name="button" class="btn grey darken-3" id="button" >Ubah Foto<i class="material-icons">create</i></button>
+            </form> 
       </div>
       <!-- edit profile-->
-    <form class="col s12 m6" action="{{ route('edit',['user'=>Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
+      <h1 class="edit-data">Edit Data Diri</h1>
+    <form class="col s12 m12 center" action="{{ route('edit',['user'=>Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       {{ method_field('put') }}
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Nama depan" id="first_name" name="nama_depan" type="text" class="validate" value="{{ Auth::user()->nama_depan }}">
+          <input placeholder="Nama depan" id="input-form" name="nama_depan" type="text" class="validate" value="{{ Auth::user()->nama_depan }}">
         </div>
         @if ($errors->has('nama_depan'))
           <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('nama_depan')  }}</p>
         @endif
         <div class="input-field col s6">
-          <input id="last_name" name="nama_belakang" placeholder="nama belakang" type="text" class="validate" value="{{ Auth::user()->nama_belakang }}">
+          <input id="input-form" name="nama_belakang" placeholder="nama belakang" type="text" class="validate" value="{{ Auth::user()->nama_belakang }}">
         </div>
         @if ($errors->has('nama_belakang'))
           <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('nama_belakang')  }}</p>
@@ -61,14 +67,14 @@
 
       <div class="row">
           <div class="input-field col xl6 s12 m5">
-            <input id="phone" placeholder="Nomor Telp Masih kosong" name="phone" type="number" value="{{ Auth::user()->phone }}">
+            <input id="input-form" placeholder="Nomor Telp Masih kosong" name="phone" type="number" value="{{ Auth::user()->phone }}">
             @if ($errors->has('phone'))
             <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('phone')  }}</p>
           @endif
           </div>
 
           <div class="input-field col xl6 s12 m5">
-              <input id="birth" name="birthday" type="date" value="{{ Auth::user()->birthday }}" required>
+              <input id="input-form" name="birthday" type="date" value="{{ Auth::user()->birthday }}" required>
 
               @if ($errors->has('birthday'))
                 <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('birthday')  }}</p>
@@ -76,49 +82,45 @@
             </div>
         </div>
         
-      <div class="row">
-        <div class="input-field col s12">
-        <input id="password" placeholder="isikan kata sandi lama atau isikan kata sandi baru" name="password" type="password" required>
-        @if ($errors->has('password'))
-          <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
-        @endif
-        </div>
-      </div>
 
-      <div class="row">
+    <div class="row">
         <div class="input-field col s12">
-        <input id="address" placeholder="nama jalan" name="address" type="text"  value="{{ Auth::user()->address }}" required>
+        <input id="input-form" placeholder="nama jalan" name="address" type="text"  value="{{ Auth::user()->address }}" required>
         </div>
         <div class="input-field col s6">
-        <input id="address" placeholder="Kecamatan" name="district" type="text"  value="{{ Auth::user()->district }}" required>
+        <input id="input-form" placeholder="Kecamatan" name="district" type="text"  value="{{ Auth::user()->district }}" required>
           </div>
           <div class="input-field col s6">
-          <input id="address" placeholder="Kelurahan" name="region" type="text"  value="{{ Auth::user()->region }}" required>
+          <input id="input-form" placeholder="Kelurahan" name="region" type="text"  value="{{ Auth::user()->region }}" required>
             </div>
             <div class="input-field col s6">
-            <input id="address" placeholder="Kota madya" name="province" type="text"  value="{{ Auth::user()->province }}" required>
+            <input id="input-form" placeholder="Kota madya" name="province" type="text"  value="{{ Auth::user()->province }}" required>
               </div>
               <div class="input-field col s6">
-              <input id="address" placeholder="Kode Pos" name="pos_code" type="number"  value="{{ Auth::user()->pos_code }}" required>
+              <input id="input-form" placeholder="Kode Pos" name="pos_code" type="number"  value="{{ Auth::user()->pos_code }}" required>
                 </div>
       </div>
 
       
-      <div class="file-field input-field">
-        <div class="btn">
-          <span>Photo</span>
-          <input type="file" name="foto" multiple>
-        </div>
-        <div class="file-path-wrapper">
-        <input class="file-path validate" placeholder="masukan foto sebelumnya/ masukan foto baru" required>
-        </div>
-        @if ($errors->has('foto'))
-        <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('foto')  }}</p>
-      @endif
-      </div>
-    <button type="submit" name="button" class="btn grey darken-3" id="button" >Edit <i class="material-icons">create</i></button>
-
+     
+    <button type="submit" name="button" class="btn grey darken-3" id="button" >Edit Data Diri<i class="material-icons">create</i></button>
     </form>
+    <h1 class="edit-data">Ubah Password</h1>
+    <div class="col m12 s12 center">
+        <form  action="{{ route('change_password',['user'=>Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            {{ method_field('put') }}
+            <div class="row">
+                <div class="input-field col s12">
+                <input id="input-form" placeholder="Ganti Password" name="password" type="password" required>
+                @if ($errors->has('password'))
+                  <p class="red-text"><i class="material-icons">create</i>{{ $errors->first('password')  }}</p>
+                @endif
+                </div>
+              </div>
+              <button type="submit" name="button" class="btn grey darken-3" id="button" >Edit Password<i class="material-icons">create</i></button>
+        </form>
+    </div>
     </div>
     </div>
 

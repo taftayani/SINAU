@@ -89,21 +89,14 @@ class UserController extends Controller
           'nama_depan' => 'string|max:255',
           'nama_belakang' => 'string|max:255',
           'username' => 'string|max:255',
-          'password' => 'required|min:6|max:8',
-          'foto' => 'nullable|max:2000',
           'phone' => 'max:13',
           'address' => 'string|max:191',
 
         ]);
-        
-        $path = Storage::disk('public')->put('images/'.$_FILES['foto']['name'],
-        file_get_contents($_FILES['foto']['tmp_name']));
-
         // $path = Storage::disk('public')->put('avatars', $request->foto);
         $user->update([
           'nama_depan'=>$request->nama_depan,
           'nama_belakang'=>$request->nama_belakang,
-          'password'=>bcrypt($request->password),
           'phone'=>$request->phone,
           'birthday'=>$request->birthday,
           'address'=>$request->address,
@@ -111,12 +104,25 @@ class UserController extends Controller
           'region' => $request->region,
           'province' => $request->province,
           'pos_code' => $request->pos_code,
-          'foto'=> 'storage/images/'.$_FILES['foto']['name'],
         //   'foto' => $path
       ]);
         return redirect(route('layouts.profile'));
     }
+    public function PhotoEdit(Request $request,User $user)
+    {
+      $path = Storage::disk('public')->put('images/'.$_FILES['foto']['name'],
+      file_get_contents($_FILES['foto']['tmp_name']));
 
+      $user-> foto='storage/Images/'.$_FILES['foto']['name'];
+      $user->save();
+      return redirect(route('layouts.profile'));
+    }
+    public function ChangePass(Request $request,User $user)
+    {
+      $user-> password = bcrypt($request->password);
+      $user->save();
+      return redirect(route('layouts.profile'));
+    }
     /**
      * Remove the specified resource from storage.
      *
