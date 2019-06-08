@@ -92,7 +92,7 @@
                     {{-- <h5 class="list-heading-data">Pilih Materi Belajar:</h5> --}}
                     <div class="input-field col s12" name="materi">
                         <select name="subject_id">
-                                <option value="" disabled="disabled">Pilih Materi Belajar</option>
+                                <option value="" disabled selected>Pilih Materi Belajar</option>
                             @foreach ($teacher->Subject as $subjects)                                                       
                                 <option value="{{$subjects->id}}">{{$subjects->mata_pelajaran}}</option>                           
                              @endforeach

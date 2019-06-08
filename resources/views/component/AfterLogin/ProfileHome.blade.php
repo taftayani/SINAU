@@ -56,14 +56,29 @@
                     @else
                         <a href="{{route('name_teacher')}}" class="btn-search-teach">Cari Pengajar</a>
                     @endif
-                        <button type="submit" class="btn-become-teach">Bagaimana Menjadi Pengajar ?</button>
-                        <button type="submit" class="btn-process-study">Bagaimana Proses Belajar dan Mengajar</button>
+                        <button type="submit" class="btn-become-teach" id="btn-how-teaching">Bagaimana Menjadi Pengajar ?</button>
+                        <button type="submit" class="btn-process-study" id="btn-how-study">Bagaimana Melakukan Kontrak Belajar ?</button>
                     </div>
                 </div>
             </div>
           </div>
         </div>
-
+        <div class="container" id="img-how-teaching">
+           <div class="row">
+              <button type="submit" class="btn-become-teach" id="cancel-btn-how-teaching">X</button>
+            <div class="col xl12 center">  
+                <img src="{{asset('img/Product/Menjadi Pengajar.svg')}}" alt="">
+            </div>
+           </div>
+        </div>
+        <div class="container" id="img-how-study">
+            <div class="row">
+               <button type="submit" class="btn-become-teach" id="cancel-btn-how-study">X</button>
+             <div class="col xl12 center">  
+                 <img src="{{asset('img/Product/Mengikuti Pembelajaran.svg')}}" alt="">
+             </div>
+            </div>
+         </div>
         <div class="container">
           <div class="row">
             <div class="fourth">
@@ -82,3 +97,21 @@
       </div>
     </div>
   </div>
+@push('js')
+    <script>
+      $('#img-how-teaching').hide();
+      $('#img-how-study').hide();
+    $('#btn-how-teaching').click(function(){
+      document.getElementById('img-how-teaching').style.display="block";
+    })
+    $('#btn-how-study').click(function(){
+      document.getElementById('img-how-study').style.display="block";
+    })
+    $('#cancel-btn-how-teaching').click(function(){
+      document.getElementById('img-how-teaching').style.display="none";
+    })
+    $('#cancel-btn-how-study').click(function(){
+      document.getElementById('img-how-study').style.display="none";
+    })
+    </script>
+@endpush

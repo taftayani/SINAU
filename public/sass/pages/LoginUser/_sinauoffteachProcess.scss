@@ -25,6 +25,7 @@
 }
 .bg-profile-off{
     @extend .bg-profile-off-content;
+    background-color: white;
 }
 #modal-teacher{
     @extend .modal-content-section;
@@ -118,4 +119,20 @@
 .heading-step-teacher{
     @extend .heading-content-grey-first;
     font-weight: normal;
+}
+.paragraph-info-teacher{
+    @extend .paragraph-profile;
+    margin-top: 0px;
+    color: #858585;
+}
+.card-info-teacher{
+    @extend .card-step-teacher;
+    height: auto;
+}
+.bold-info{
+    color: #F06491;
+}
+.paragraph-extend-info{
+    @extend .paragraph-profile;
+    color: #12BF95;
 }

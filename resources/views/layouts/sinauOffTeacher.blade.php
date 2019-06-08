@@ -91,6 +91,49 @@
                         </div>
             </div>
        </div>
+       <div class="container">
+            <div class="row">
+                  <div class="col m12 center">
+                        <h4 class="heading-step-teacher">Informasi Tambahan</h4>
+                  </div>
+                <div class="row">
+                     <div class="col xl12">
+                           <div class="card-info-teacher">
+                                 <div class="row ">
+                                       <div class="col m3">
+                                       <img src="{{asset('img/Product/info.svg')}}" alt="">
+                                       </div>
+                                       <div class="col m9">
+                                          <p class="paragraph-step-teacher">
+                                             Kewajiban Saat Anda Menjadi Pengajar
+                                          </p>
+                                          <p class="paragraph-info-teacher">
+                                                Saat anda sudah <b class="bold-info">menjadi pegajar</b>, 
+                                                anda sudah <b class="bold-info">bertanggung jawab penuh dalam proses pembelajaraan
+                                                 yang akan anda jalani. Dan anda wajib untuk memberi absen kepada 
+                                                 murid dan kawan-kawannya </b> saat proses pembelajaran berlangsung. 
+                                                 Anda <b class="bold-info">diwajibkan untuk membuat video anda bersama murid-murid anda</b>. 
+                                                 Dan isi dari video tersebut yaitu berupa <b class="bold-info">pemecahan masalah/solusi dari 
+                                                 soal yang akan diberikan oleh Sinau Yo bedasarkan materi yang akan anda 
+                                                 ajarkan</b>. Dan anda wajib menjawab <b class="bold-info">memberikan solusi dari masalah tersebut 
+                                                 dengan murid-murid anda</b>, sehingga akan terlihat kerja sama dalam pemecahan
+                                                 soal tersebut.  
+
+                                          </p>
+
+                                          <p class="paragraph-extend-info">
+                                             <b>TAMBAHAN : </b> Soal akan diberikan saat kontrak belajar anda berakhir, namun anda dapat  memulai pembuatan video
+                                              saat anda memulai kontrak belajar diawal, atau  disaat anda memberikan materi pengajaran. buatlah video tersebut
+                                              semenarik mungkin :))....
+                                          </p>
+                                       </div>
+                                    </div>
+                           </div>
+                        </div>
+                </div>
+            </div>
+
+       </div>
         @include('component.AfterLogin.ListSubject')
         @include('component.AfterLogin.ListSchedule')
         @include('component.AfterLogin.ListStudent')

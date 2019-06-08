@@ -497,7 +497,7 @@
   letter-spacing: 0.02em;
   text-align: justify; }
 
-.paragraph-profile, .paragraph-step-teacher {
+.paragraph-profile, .paragraph-step-teacher, .paragraph-info-teacher, .paragraph-extend-info {
   font-family: "Roboto Slab", serif;
   color: #696969;
   font-weight: 300;
@@ -1135,6 +1135,9 @@
 .edit-data {
   border-bottom: 1px solid #555555; }
 
+.bg-profile-off {
+  background-color: white; }
+
 .header-name {
   font-size: 38px;
   width: 30rem;
@@ -1161,7 +1164,7 @@
   color: white;
   background: #F06491; }
 
-.card-step-teacher {
+.card-step-teacher, .card-info-teacher {
   background: #FFFFFF;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 10px;
@@ -1183,6 +1186,19 @@
 
 .heading-step-teacher {
   font-weight: normal; }
+
+.paragraph-info-teacher {
+  margin-top: 0px;
+  color: #858585; }
+
+.card-info-teacher {
+  height: auto; }
+
+.bold-info {
+  color: #F06491; }
+
+.paragraph-extend-info {
+  color: #12BF95; }
 
 .heading-confirm {
   text-align: center;
