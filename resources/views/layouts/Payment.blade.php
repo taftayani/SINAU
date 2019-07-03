@@ -71,7 +71,7 @@
                                       <input id="email" name="email_friend3" type="text" class="validate" value="" placeholder="isi alamat email teman yang kamu ajak" required>
                                   </div>
                                </div>
-                            @elseif($confirm->packet == "280.000")
+                            @elseif($confirm->packet == "260.000")
                             <p>Karena anda mengambil paket pertemuan 16 kali, anda berhak mengajak teman anda  ( <b>Max 4 orang</b> bersifat optional)</p>
                             <div class="row">
                                 <div class="col xl6">

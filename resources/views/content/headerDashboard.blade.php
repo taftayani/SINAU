@@ -12,7 +12,7 @@
               <a onclick="$('.dropdown-button').dropdown();" class='dropdown-button' href='#' data-activates='logout' style="text-decoration: none; color: #8b8b8b">
                 <i class="fa fa-ellipsis-v" aria-hidden="true" style="color: #ffffff"></i>
               </a>
-          </ul>
+      </ul>
     </div>
     <ul id='logout' class='dropdown-content' style="margin-top: 40px;">
       <li>

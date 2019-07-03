@@ -61,6 +61,8 @@
                         <td class="td">
                         @if ($teachers->verifikasi == 'Akun Sudah Diverifikasi')
                         <p>{{$teachers->verifikasi}}</p>
+                        @elseif($teachers->verifikasi == 'Verifikasi Akun Ditolak')
+                        <p>{{$teachers->verifikasi}}</p>
                         @else
                             <form action="{{route('verifikasi_data',['teacher'=>$teachers->id])}}" method="post" enctype="multipart/form-data">
                                 {{ csrf_field() }}
@@ -73,7 +75,7 @@
                                 {{ method_field('put') }}
                                 <button type="submit" name="verifikasi" value="Verifikasi Akun Ditolak">Tolak Verfikasi</button> 
                             </form>
-                            @endif
+                        @endif
                         </td>
 
                         <td class="td">

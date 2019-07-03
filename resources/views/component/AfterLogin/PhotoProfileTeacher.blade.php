@@ -10,8 +10,10 @@
                   <h6 class="heading-profile" style="white-space: nowrap;"><b>{{ Auth::user()->nama_depan }} {{ Auth::user()->nama_belakang }} </b>
                     @if ($teacher->verifikasi == "Belum Verifikasi")
                         (Akun Belum Diverifikasi)
-                    @else 
+                    @elseif($teacher->verifikasi == "Akun Sudah Diverifikasi") 
                         (Akun Sudah Diverifikasi)
+                    @elseif($teacher->verifikasi == "Verifikasi Akun Ditolak")
+                        (Akun Anda Ditolak)
                     @endif
                   </h6>
                   <h6 class="heading-second-profile"> <i class="tiny material-icons">location_on</i>{{ Auth::user()->address}}</h6>

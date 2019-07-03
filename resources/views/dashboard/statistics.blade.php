@@ -177,15 +177,11 @@
                         var namapaket;
                         @foreach($paket_belajar_favorit as $pbf)
                             
-                            if('{{$pbf->nama}}' == '100.000'){
-                                namapaket = "Paket 1";
-                            }else if('{{$pbf->nama}}' == '150.000'){
-                                namapaket = "Paket 2";
-                            }else if('{{$pbf->nama}}' == '160.000'){
+                             if('{{$pbf->nama}}' == '160.000'){
                                 namapaket = "8 Pertemuan";
                             }else if('{{$pbf->nama}}' == '220.000'){
                                 namapaket = "12 Pertemuan";
-                            }else if('{{$pbf->nama}}' == '280.000'){
+                            }else if('{{$pbf->nama}}' == '260.000'){
                                 namapaket = "16 pertemuan";
                             }
                             
@@ -209,9 +205,9 @@
                                         label: 'Jumlah Murid',
                                         data: dataspaket,
                                         backgroundColor: [
-                                            'rgba(255, 99, 132, 0.2)',
-                                            'rgba(54, 162, 235, 0.2)',
-                                            'rgba(255, 206, 86, 0.2)',
+                                            // 'rgba(255, 99, 132, 0.2)',
+                                            // 'rgba(54, 162, 235, 0.2)',
+                                            // 'rgba(255, 206, 86, 0.2)',
                                             'rgba(75, 192, 192, 0.2)',
                                             'rgba(153, 102, 255, 0.2)',
                                             'rgba(255, 159, 64, 0.2)'
@@ -261,15 +257,11 @@
                             <tr>
                                 <td class="td" width="70px"><p>
                                 <?php 
-                                    if($pbf->nama == "100.000"){
-                                        echo 'Paket 1';
-                                    }else if($pbf->nama == "150.000"){
-                                        echo 'Paket 2';
-                                    }else if($pbf->nama == '160.000'){
+                                   if($pbf->nama == '160.000'){
                                         echo "8 Pertemuan";
                                     }else if($pbf->nama == '220.000'){
                                         echo "12 Pertemuan";
-                                    }else if($pbf->nama == '280.000'){
+                                    }else if($pbf->nama == '260.000'){
                                         echo '16 pertemuan';
                                     }
                                 ?>

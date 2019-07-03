@@ -65,8 +65,6 @@
                                         <td class="td">  
                                             @if ($confirms->stat_pay == 'Pembayaran Sudah Diterima')
                                             <p>Pembayaran Sudah Diterima</p>
-                                            @elseif($confirms->stat_pay == 'Pembayaran Ditolak')
-                                            <p>Pembayaran Ditolak</p>
                                             @else
                                             <form action="{{route('payment_invoice',['confirm'=>$confirms->id])}}" method="post">
                                                 {{ csrf_field() }}
@@ -158,13 +156,18 @@
                                         <a class="btn modal-trigger" href="#{{$tp->id}}">Lihat Status Les</a>
                                     </td>
                                     <td class="td">
+                                        @if ($tp->link_video == 'nul')
+                                            <p>Belum Mengirim Link</p>              
+                                        @else
                                         <a href="{{$tp->link_video}}" target="_blank">Link Video</a>
-                                        <form action="{{route('last_process',['confirm'=>$tp->id])}}" method="post">
+                                        @endif
+                                        
+                                        {{-- <form action="{{route('last_process',['confirm'=>$tp->id])}}" method="post">
                                             {{ csrf_field() }}
                                             {{ method_field('put') }}  
                                             <input type="number" name="score" id="" placeholder="Masukan Score" required> 
                                             <input type="submit" value="Kirim">
-                                        </form>
+                                        </form> --}}
                                     </td>
                                     <td class="td">
                                         <form action="{{route('last_process',['confirm'=>$tp->id])}}"  enctype="multipart/form-data" method="post" style="width: 70%; margin-left: auto; margin-right: auto; margin-left: 50px;">
@@ -172,21 +175,24 @@
                                             {{ method_field('put') }}   
                                                 <div class="row" style="margin-bottom: -10px; margin-left: -30px;">
                                                     <div class="col-9">
-                                                    <div class="file-field input-field" id="test_file_kolom">
-                                                        <div class="btn">
-                                                            <span>Sisipkan Pembayaran</span>
-                                                            <input type="file" name="photo_last_pay" multiple required>
-                                                        </div><br>
-                                                        <div class="file-path-wrapper">
-                                                            <input class="file-path validate" required>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                    <div class="col-2">
-                                                        <a href="{{$tp->pay}}"><img src="https://image.flaticon.com/icons/svg/149/149092.svg" alt="" width="30" style="margin-top: 80px; margin-left: -20px;"></a>
+                                                        @if ($tp->photo_last_pay=="nul")
+                                                            <div class="file-field input-field" id="test_file_kolom">
+                                                                <div class="btn">
+                                                                    <span>Sisipkan Pembayaran</span>
+                                                                    <input type="file" name="photo_last_pay" multiple required>
+                                                                </div><br>
+                                                                <div class="file-path-wrapper">
+                                                                    <input class="file-path validate" required>
+                                                                </div>
+                                                            </div>
+                                                            <input type="submit" value="Kirim">
+                                                        @else 
+                                                        <img src="{{asset($tp->photo_last_pay)}}" alt="" class="materialboxed img-pay-dash">
+                                                        @endif
+                                                   
                                                     </div>
                                                 </div>
-                                            <input type="submit" value="Kirim">
+                                           
                                         </form>
                                     </td>
                                     <td class="td"><img class="detailbtn"src="https://image.flaticon.com/icons/svg/149/149309.svg" alt="" width="20"></td>
