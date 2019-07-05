@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 21, 2019 at 04:36 PM
+-- Generation Time: Jul 05, 2019 at 05:25 AM
 -- Server version: 10.1.35-MariaDB
 -- PHP Version: 7.2.9
 
@@ -34,7 +34,6 @@ CREATE TABLE `confirms` (
   `user_id` int(10) UNSIGNED NOT NULL,
   `subject_id` int(10) UNSIGNED NOT NULL,
   `shcedule_id` int(10) UNSIGNED NOT NULL,
-  `student` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `packet` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `address_les` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -48,17 +47,27 @@ CREATE TABLE `confirms` (
   `friends4` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `test_file` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT 'nul',
   `score` int(5) DEFAULT NULL,
-  `link_video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'nul'
+  `link_video` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT 'nul',
+  `photo_last_pay` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'nul',
+  `email_friend1` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_friend2` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_friend3` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email_friend4` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `score_teaching` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `feedback_teaching` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `last_photo_learning` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `answer_test_student` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `confirms`
 --
 
-INSERT INTO `confirms` (`id`, `teacher_id`, `user_id`, `subject_id`, `shcedule_id`, `student`, `packet`, `address_les`, `created_at`, `updated_at`, `Status`, `pay`, `stat_pay`, `friends`, `friends2`, `friends3`, `friends4`, `test_file`, `score`, `link_video`) VALUES
-(16, 78, 54, 29, 16, NULL, '100.000', 'tes gasssss', '2019-02-13 09:08:10', '2019-03-21 08:23:12', 'Pesanan Diterima', 'storage/Pembayaran/Screen Shot 2019-02-10 at 21.19.52.png', 'Pembayaran Sudah Diterima', 'tes', 'aj', NULL, NULL, 'storage/Soal/Screen Shot 2019-03-19 at 16.40.55.png', NULL, 'https://www.youtube.com/watch?v=zLAhRiUeJ8E'),
-(17, 78, 55, 28, 15, NULL, '100.000', 'tes', '2019-02-25 00:00:08', '2019-02-25 00:00:44', 'Pesanan Diterima', 'Belum Dibayar', 'Belum terdapat bukti pembayaran', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(18, 78, 56, 27, 15, NULL, '150.000', 'haji bardan', '2019-02-28 17:16:37', '2019-02-28 17:19:00', 'Pesanan Diterima', 'storage/Pembayaran/FIRST_DAY_OF_SCHOOL_JULY_18_EEZY_04 (1).png', 'Pembayaran Sudah Diterima', NULL, 'Mia', 'Sanny', NULL, NULL, NULL, NULL);
+INSERT INTO `confirms` (`id`, `teacher_id`, `user_id`, `subject_id`, `shcedule_id`, `packet`, `address_les`, `created_at`, `updated_at`, `Status`, `pay`, `stat_pay`, `friends`, `friends2`, `friends3`, `friends4`, `test_file`, `score`, `link_video`, `photo_last_pay`, `email_friend1`, `email_friend2`, `email_friend3`, `email_friend4`, `score_teaching`, `feedback_teaching`, `last_photo_learning`, `answer_test_student`) VALUES
+(23, 79, 64, 31, 18, '220.000', 'kampung melayu mesjid 1, Kebon Baru, Tebet,Jakarta Selatan', '2019-04-13 11:05:12', '2019-04-14 02:04:19', 'Pesanan Diterima', 'storage/Pembayaran/Screen Shot 2019-04-13 at 15.07.18.png', 'Pembayaran Sudah Diterima', 'Rangga Ayesah', 'Breda Taftayani', 'Sahrul Evendi', NULL, 'storage/Soal/Screen Shot 2019-04-13 at 22.04.17.png', NULL, 'https://www.youtube.com/watch?v=MoSmX1xNnAQ', 'nul', 'rang@gmail.com', 'Bred@gmail.com', 'rul@gmail.com', NULL, 'tidak baik', 'tes', NULL, NULL),
+(24, 79, 65, 32, 19, '160.000', 'Jalan Sukapura Blok 8, Bandung', '2019-04-14 07:20:04', '2019-06-15 21:33:06', 'Pesanan Diterima', 'storage/Pembayaran/bayar.jpg', 'Pembayaran Sudah Diterima', 'Dinda Gemala', 'Anandita Ika Yunita', NULL, NULL, 'storage/Soal/Bg-giveway.svg', NULL, 'https://www.youtube.com/watch?v=GK3mT3FRKGg', 'storage/Bukti Bayar Pengajar/messageImage_1539849289881.jpg', 'dinda@yahoo.co.id', 'nita123@mail.com', NULL, NULL, 'sangat baik', 'guru tuh asik banget jelasin materinya, dan rekomen banget untuk menjelaskan hal dasar', NULL, NULL),
+(25, 81, 60, 34, 20, '160.000', 'haji bardan raya,...', '2019-04-14 20:09:49', '2019-04-14 20:13:21', 'Pesanan Diterima', 'Belum Dibayar', 'Belum terdapat bukti pembayaran', NULL, NULL, NULL, NULL, 'nul', NULL, 'nul', 'nul', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(26, 79, 65, 30, 18, '220.000', 'Jalan Sukabirus No. 5, Kebon Baru, Sukabirus,Bandung Selatan', '2019-04-27 10:36:05', '2019-05-18 06:14:46', 'Pesanan Diterima', 'storage/Pembayaran/bayar.jpg', 'Pembayaran Sudah Diterima', 'Dinda Gemala', 'Gufarah Nurarafah', 'Anandita Masuyuma Khaidir', NULL, 'storage/Soal/teach.png', NULL, 'https://www.youtube.com/watch?v=MoSmX1xNnAQ', 'nul', 'dinda@mail.com', 'Gur123@mail.com', 'Dit123@gmail.com', NULL, 'sangat baik', 'guru tuh asik banget jelasin materinya, dan rekomen banget untuk menjelaskan hal dasar', 'storage/Bukti Akhir Pembelajaran/register.png', 'jawaban dari soal tersebut, adalah kita harus mengerjakan soal tersebut dengan sungguh-sungguh. tergantung dari niat yang dimiliki');
 
 -- --------------------------------------------------------
 
@@ -82,7 +91,16 @@ CREATE TABLE `mata_pelajarans` (
 INSERT INTO `mata_pelajarans` (`id`, `mata_pelajaran`, `created_at`, `updated_at`, `description`, `teacher_id`) VALUES
 (27, 'matematika', '2019-02-13 07:01:54', '2019-02-13 07:01:54', NULL, 78),
 (28, 'Biologi', '2019-02-13 07:01:54', '2019-02-13 07:01:54', NULL, 78),
-(29, 'kimia', '2019-02-13 07:01:54', '2019-02-13 07:01:54', NULL, 78);
+(29, 'kimia', '2019-02-13 07:01:54', '2019-02-13 07:01:54', NULL, 78),
+(30, 'matematika', '2019-04-04 23:00:06', '2019-04-04 23:00:06', NULL, 79),
+(31, 'Biologi', '2019-04-04 23:00:06', '2019-04-04 23:00:06', NULL, 79),
+(32, 'kimia', '2019-04-04 23:00:06', '2019-04-04 23:00:06', NULL, 79),
+(33, 'matematika', '2019-04-14 05:15:20', '2019-04-14 05:15:20', NULL, 81),
+(34, 'pemrogaman', '2019-04-14 05:15:20', '2019-04-14 05:15:20', NULL, 81),
+(35, 'Alpro', '2019-04-14 05:15:20', '2019-04-14 05:15:20', NULL, 81),
+(36, 'Ekonomi', '2019-04-14 06:19:58', '2019-04-14 06:19:58', NULL, 82),
+(37, 'marketing', '2019-04-14 06:19:58', '2019-04-14 06:19:58', NULL, 82),
+(38, 'PKN', '2019-04-14 06:19:58', '2019-04-14 06:19:58', NULL, 82);
 
 -- --------------------------------------------------------
 
@@ -121,7 +139,39 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (18, '2018_11_12_142158_create_confirms_table', 16),
 (19, '2018_11_13_103253_create_table_confirms', 17),
 (20, '2018_11_25_114027_create_verifikasis_table', 18),
-(21, '2018_12_02_135046_create_stats_table', 19);
+(21, '2018_12_02_135046_create_stats_table', 19),
+(22, '2019_04_13_144518_crete_table_months', 20);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `months`
+--
+
+CREATE TABLE `months` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `months`
+--
+
+INSERT INTO `months` (`id`, `name`, `created_at`, `updated_at`) VALUES
+(1, 'january', NULL, NULL),
+(2, 'february', NULL, NULL),
+(3, 'march', NULL, NULL),
+(4, 'april', NULL, NULL),
+(5, 'may', NULL, NULL),
+(6, 'june', NULL, NULL),
+(7, 'july', NULL, NULL),
+(8, 'august', NULL, NULL),
+(9, 'september', NULL, NULL),
+(10, 'october ', NULL, NULL),
+(11, 'november ', NULL, NULL),
+(12, 'desember', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -142,7 +192,7 @@ CREATE TABLE `password_resets` (
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 ('taftayani_breda@yahoo.co.id', '$2y$10$Wh323SApe7zOf5ltv18Que19UmAtFrymfbXNPMYZWfgvOfyCnipAa', '2018-02-13 07:43:26'),
 ('karina@mail.com', '$2y$10$G2QEkx/lQLI8ReZRQ1.7Y.2XhV.4oEv6k56qDKIn9O31T9WYbV0KO', '2018-03-26 06:21:51'),
-('taftayani123@gmail.com', '$2y$10$wqMhghXVyxrK9Ei.XLFSlOBlMFnSnv/sd4nfrnVd1vUt9DCKq2DLW', '2018-11-06 00:07:26');
+('taftayani123@gmail.com', '$2y$10$cOEP4K1qf6M30zEAiVoxvOJuRUxmoKJOAzSKTAdmMSBGrcM765naC', '2019-06-21 00:47:56');
 
 -- --------------------------------------------------------
 
@@ -166,7 +216,12 @@ CREATE TABLE `shcedules` (
 INSERT INTO `shcedules` (`id`, `day`, `time_les`, `created_at`, `updated_at`, `teacher_id`) VALUES
 (15, 'Rabu', '13.00-14.30', '2019-02-13 07:02:03', '2019-02-13 07:02:03', 78),
 (16, 'Selasa', '13.00-14.30', '2019-02-13 07:26:15', '2019-02-13 07:26:15', 78),
-(17, 'Selasa', '08.30-10.00', '2019-02-13 07:51:50', '2019-02-13 07:51:50', 78);
+(17, 'Selasa', '08.30-10.00', '2019-02-13 07:51:50', '2019-02-13 07:51:50', 78),
+(18, 'Rabu', '13.00-14.30', '2019-04-04 23:00:16', '2019-04-04 23:00:16', 79),
+(19, 'Kamis', '08.30-10.00', '2019-04-04 23:00:24', '2019-04-04 23:00:24', 79),
+(20, 'Selasa', '13.00-14.30', '2019-04-14 05:15:32', '2019-04-14 05:15:32', 81),
+(21, 'Selasa', '13.00-14.30', '2019-04-14 06:20:05', '2019-04-14 06:20:05', 82),
+(22, 'Kamis', '19.00-20.30', '2019-04-14 06:20:13', '2019-04-14 06:20:13', 82);
 
 -- --------------------------------------------------------
 
@@ -181,19 +236,13 @@ CREATE TABLE `stats` (
   `mention` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
-  `prove` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `student_stat` varchar(13) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `friends_stat` varchar(13) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `friends2_stat` varchar(13) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `friends3_stat` varchar(13) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `friends4_stat` varchar(13) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `confirm_student` varchar(13) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `stats`
---
-
-INSERT INTO `stats` (`id`, `confirm_id`, `date_les`, `mention`, `created_at`, `updated_at`, `prove`) VALUES
-(1, 16, '2019-03-13', 'tes', '2019-03-12 07:27:42', '2019-03-12 07:27:42', ''),
-(2, 16, '2019-03-15', 'saat ini latihan soal', '2019-03-12 07:38:03', '2019-03-12 07:38:03', ''),
-(3, 16, '2019-03-13', 'masukin foto', '2019-03-12 08:03:42', '2019-03-12 08:03:42', 'storage/Pembayaran/Screen Shot 2019-03-12 at 10.54.28.png'),
-(4, 16, '2019-03-16', 'masuin 22222', '2019-03-12 08:08:37', '2019-03-12 08:08:37', 'storage/Bukti Belajar/Screen Shot 2019-03-08 at 10.46.46.png'),
-(5, 16, '2019-03-14', 'masukin foto', '2019-03-12 09:01:53', '2019-03-12 09:01:53', 'storage/Bukti Belajar/Screen Shot 2019-03-06 at 14.38.54.png');
 
 -- --------------------------------------------------------
 
@@ -244,22 +293,27 @@ INSERT INTO `surveys` (`id`, `nama_depan`, `nama_belakang`, `email`, `tanggapan`
 
 CREATE TABLE `teachers` (
   `id` int(10) UNSIGNED NOT NULL,
-  `ktp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `npwp` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `ktp` decimal(30,0) DEFAULT NULL,
+  `npwp` decimal(30,0) DEFAULT NULL,
   `pendidikan` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `resume` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `user_id` int(10) UNSIGNED NOT NULL,
-  `verifikasi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Belum Verifikasi'
+  `verifikasi` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Belum Verifikasi',
+  `score_teaching` int(4) DEFAULT NULL,
+  `feedback_teaching` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `teachers`
 --
 
-INSERT INTO `teachers` (`id`, `ktp`, `npwp`, `pendidikan`, `resume`, `created_at`, `updated_at`, `user_id`, `verifikasi`) VALUES
-(78, '12345678', '9028282999192', 'keprof', 'saya mengajar, dengan alasan adalah. karena ilmu yang saya miliki ingin dimiliki oleh orang lain juga', '2019-02-13 06:55:55', '2019-02-13 07:03:51', 53, 'Akun Sudah Diverifikasi');
+INSERT INTO `teachers` (`id`, `ktp`, `npwp`, `pendidikan`, `resume`, `created_at`, `updated_at`, `user_id`, `verifikasi`, `score_teaching`, `feedback_teaching`) VALUES
+(78, '12345678', '9028282999192', 'keprof', 'saya mengajar, dengan alasan adalah. karena ilmu yang saya miliki ingin dimiliki oleh orang lain juga', '2019-02-13 06:55:55', '2019-02-13 07:03:51', 53, 'Akun Sudah Diverifikasi', NULL, NULL),
+(79, '123456', '1234567', 'keprof', 'saya ingin berbagi ilmu dengan orang2 sekitar karena keinginan saya pribadi', '2019-04-04 22:59:44', '2019-04-04 23:47:09', 60, 'Akun Sudah Diverifikasi', NULL, NULL),
+(81, '123456789', '123456789', 'S1', 'alasan saya ingin membagi ilmu, karena saya ingin ilmu yang saya miliki sangat berguna bagi orang sekitar', '2019-04-13 08:50:09', '2019-04-14 05:16:43', 64, 'Akun Sudah Diverifikasi', NULL, NULL),
+(82, '3114011509970002', '860713999015000', 'keprof', 'alasan saya, karena ingin memberikan ilmu tentang enterpreneur kepada teman-teman di Sinau Yo', '2019-04-14 06:19:17', '2019-04-14 06:21:11', 65, 'Akun Sudah Diverifikasi', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -281,7 +335,13 @@ CREATE TABLE `teacher_files` (
 
 INSERT INTO `teacher_files` (`id`, `teacher_id`, `file`, `created_at`, `updated_at`) VALUES
 (44, 78, 'storage/Files/Screen Shot 2019-02-06 at 15.43.23.png', '2019-02-13 07:02:17', '2019-02-13 07:02:17'),
-(45, 78, 'storage/Files/Screen Shot 2019-02-10 at 21.19.49.png', '2019-02-13 07:02:26', '2019-02-13 07:02:26');
+(45, 78, 'storage/Files/Screen Shot 2019-02-10 at 21.19.49.png', '2019-02-13 07:02:26', '2019-02-13 07:02:26'),
+(46, 79, 'storage/Files/Screen Shot 2019-04-01 at 18.55.44.png', '2019-04-04 23:02:56', '2019-04-04 23:02:56'),
+(47, 79, 'storage/Files/Screen Shot 2019-03-28 at 09.52.46.png', '2019-04-04 23:03:07', '2019-04-04 23:03:07'),
+(48, 79, 'storage/Files/Screen Shot 2019-03-27 at 20.45.47.png', '2019-04-04 23:03:16', '2019-04-04 23:03:16'),
+(49, 81, 'storage/Files/Yard.png', '2019-04-14 05:16:08', '2019-04-14 05:16:08'),
+(50, 81, 'storage/Files/Field.png', '2019-04-14 05:16:20', '2019-04-14 05:16:20'),
+(51, 82, 'storage/Files/sertifikat.jpg', '2019-04-14 06:20:39', '2019-04-14 06:20:39');
 
 -- --------------------------------------------------------
 
@@ -314,33 +374,45 @@ CREATE TABLE `users` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `foto` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'img/profile.ico',
-  `phone` int(14) DEFAULT NULL,
+  `phone` decimal(30,0) DEFAULT NULL,
   `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `birthday` date DEFAULT NULL,
   `role` enum('admin','teacher','student') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'student',
-  `gender` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Male'
+  `gender` varchar(7) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Male',
+  `district` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `region` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `province` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pos_code` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nama_depan`, `nama_belakang`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `foto`, `phone`, `address`, `birthday`, `role`, `gender`) VALUES
-(38, 'Admin', 'Sinau Yo', 'admin.sinau@gmail.com', '$2y$10$NJ7rNYBLE.S3WJqaUZrn7ezlCvmaKD7gdk/Iii5rTGHhFTQ7E1oIq', 'DJmCPNUoLc6mT872mL8DRtupdSJqupIbbNpMsugaVsrXM0JBpnilXCgPdLWs', '2018-11-14 02:07:46', '2018-11-14 02:07:46', 'img/profile.ico', NULL, NULL, NULL, 'admin', 'Male'),
-(39, 'Muhammad', 'Breda Taftayani', 'taftayani123@gmail.com', '$2y$10$NntPrsBCuLocR9zVlNHQF.o7jUAHY65yXvXk0WsaGp8Tzj67RJwAW', 'izTJrPfjEdDbFWPFFHJ0yfslinosIpZsB5VyhgydG04FgLSkkIZydZX7QIye', '2018-12-09 08:13:19', '2018-12-09 08:14:01', 'storage/images/3x4 foto.jpg', 817935555, 'JL. Kampung Melayu Besar Kebon Baru Tebet', '1997-09-09', 'student', 'Male'),
-(40, 'Rangga', 'Ayesha', 'rangga.ayesha@yahoo.com', '$2y$10$kFX/JjFrWLVSIYR3KpNgvumtGZifbjnRAZnp4TbpVeHORWCD9P5F.', '4LWUus4mrWCOUMTziKzIwrhuWPzNd0pg8VlXk9cjcg9G3RFaT1UlwPnJAdmL', '2018-12-09 08:25:33', '2018-12-09 08:27:04', 'storage/images/46523761_2338316012863441_8786856566188933120_n.jpg', 2147483647, 'Jl. Mayang Sari 1 C/18', '1997-04-25', 'student', 'Male'),
-(41, 'syabatra', 'hasaid', 'syabat@mail.com', '$2y$10$WQrCfEutCS1yzbyyyILcvu8YFP45kOdT6TnmRBOZ5fMliwULCP/AW', 'gB4RtNWL1FXCYQ8lTgXWNS8HyKzetDSE18eHqOMnsx9AG967eXZXPJl0Oaua', '2018-12-10 18:50:22', '2018-12-10 18:50:51', 'storage/images/question.png', 2147483647, 'bandung', '1986-06-10', 'student', 'Male'),
-(42, 'Dewi', 'Arman', 'dewi@gmail.com', '$2y$10$tOAFIHxkxVc6cqjwFrZUnOyGg4vxk8MRzreV9ZGRgY6wjzg.U/sJ6', '4FUkjcymkFD8KmdrwHsLcwKOyJdptrJCEGixyLaPOIMyRBtBdjZpskHnaXon', '2018-12-10 19:05:57', '2018-12-10 19:06:42', 'storage/images/images (3).jpeg', 2147483647, 'JL. Haji Bardan 2, Buah Batu bandung', '2018-12-12', 'student', 'Male'),
-(43, 'Agus', 'BGUS', 'agus@gmail.com', '$2y$10$vgzKsP2meyIS0dV3qYUd3ewUykMkSm2HX62FSHA/gREQo6AaUkVNi', 'cQZwgtotgchwwe7CPHfeNEpjw6NF6GyLRxDzyeUGKEsV02eWSLeKqhlyzUwE', '2018-12-10 19:16:08', '2018-12-10 19:20:00', 'storage/images/image.png', 9292992, 'JL. Kampung Melayu Besar', '1999-07-23', 'student', 'Male'),
-(44, 'Sahrul', 'Evendi', 'sahrul@gmail.com', '$2y$10$YdBf1BEaZh2eVtEb5kMz4OQ833XA9g52Ciz6ih.nRhnU.D6bjlplK', 'jAKElmSqOUuhfzx5vBee8eUrMXSOFWOEze3bavXEna56jAgPojdCqtJRdffe', '2018-12-10 19:17:13', '2018-12-10 19:17:42', 'storage/images/coffee-beans (1).png', 2147483647, 'Jalan Sukabirus No. 5', '2004-10-13', 'student', 'Male'),
-(45, 'hafiz', 'afandi', 'afandihafiz@yahoo.co.id', '$2y$10$QIQOW7FPzD1WJaLgrKVhn.ACu8y21icQXAXLQYCweeHR3U3ckOMUW', NULL, '2018-12-11 05:37:55', '2018-12-11 05:37:55', 'img/profile.ico', 2147483647, 'sukabirus', '1996-10-20', 'student', 'Male'),
-(46, 'alwy', 'fadly', 'alwyfadly28@gmail.com', '$2y$10$Pb4BCQnyZzqVj3oqRweMeurTuJog7e/5kBQHVYp3yLK4.yjpQnvUq', 'KkFkAjcABXL87TbZWBTgIXPUG8KivdmDBpNod5CIBGJnr6Z1YHC6ckmlPcqj', '2018-12-11 05:46:23', '2018-12-11 05:46:23', 'img/profile.ico', 2147483647, 'PBB', '1997-12-28', 'student', 'Male'),
-(47, 'Satria Refdi', 'Ardiguna', 'ardiguna20@gmail.com', '$2y$10$ZDqlAq57j20D95/p5V72JOmFTowFGMnPv8W2HtygltVjfH5la/vma', NULL, '2018-12-11 05:51:14', '2018-12-11 05:51:47', 'storage/images/23346.png', 2147483647, 'Jl. Telekomunikasi No. 01', '1998-05-20', 'student', 'Male'),
-(48, 'Venessa', 'Visintry', 'vvisintry@gmail.com', '$2y$10$81YoKSd1hlJhBfkNuJS0peJiuaYB8T7x22ENTMhXx.XuhFnlqeIIa', NULL, '2018-12-11 06:00:21', '2018-12-11 06:00:21', 'img/profile.ico', 2147483647, 'Ujungbatu', '1997-03-20', 'student', 'Female'),
-(53, 'tes', 'Breda', 'tes@gmail.com', '$2y$10$GCuZFyoJO5HT8og.IMIw6OOgGNO1RgmQoxNIH/uz3Eyehed9cdyD2', 'Vf3kn1auXP8i0D3EBJK4QL5Ma1awz5I7I3wcbbrlkJW0cP0tKZE8B5nHr7yJ', '2019-02-07 06:24:27', '2019-02-13 07:00:47', 'storage/images/Screen Shot 2019-02-01 at 16.56.40.png', 9292929, 'JL. Haji Bardan 2, Buah Batu bandung', '2019-02-08', 'student', 'Male'),
-(54, 'Mbred', 'Mbrut', 'tes2@gmail.com', '$2y$10$SlR7aJu0W.FHp3wnzr.d4.8/AYCSWYf/UEvkJU9Nk0tuIGzGXJfNu', 'FpA8jyTGkNoGs4OXRB4qiAywlArvzB5Ed2ykSY0UuA7InEHTkobpbeL1UZ8b', '2019-02-13 07:04:10', '2019-02-13 07:04:37', 'storage/images/Screen Shot 2019-02-10 at 21.20.11.png', 929292992, 'JL. Haji Bardan 2, Buah Batu bandung', '2019-02-14', 'student', 'Male'),
-(55, 'Rangga', 'Ayesha', 'rangga@yahoo.co.id', '$2y$10$aHTWXtk9owcekDWJRkKaIewjXVQlf2uhiW5UbDBmQc4GAtNfx1MMS', 'U1nhu8Nl1oiDqbv9zww5EEpAECqfvLqgnQRAdqyzfzkUrl2kthgs5WO7Koao', '2019-02-24 23:51:38', '2019-02-24 23:53:59', 'storage/images/Screen Shot 2019-02-25 at 00.04.39.png', 12345, 'Jalan Sukabirus No. 5', '2019-02-04', 'student', 'Male'),
-(56, 'Sahrul', 'Evendi', 'sahrul123@gmail.com', '$2y$10$7XS.sCRbBd/ZUiOqr8KWNe4j0cSu3hBcGvb2D32W6yw4lRBXmOw4C', 'VOlJSj9NLkjnFx1ESFWhmBrYqopmzSEExt0HkYn7iVXE06bcJjNpRSQSynCi', '2019-02-28 17:15:32', '2019-02-28 17:16:10', 'storage/images/3x4 foto.jpg', 12345, 'haji bardan raya', '2019-03-02', 'student', 'Male');
+INSERT INTO `users` (`id`, `nama_depan`, `nama_belakang`, `email`, `password`, `remember_token`, `created_at`, `updated_at`, `foto`, `phone`, `address`, `birthday`, `role`, `gender`, `district`, `region`, `province`, `pos_code`) VALUES
+(38, 'Admin', 'Sinau Yo', 'admin.sinau@gmail.com', '$2y$10$NJ7rNYBLE.S3WJqaUZrn7ezlCvmaKD7gdk/Iii5rTGHhFTQ7E1oIq', 'AlCV02FCCjwCPHsNlzkAxj8PWW4JgMwbDMlAZ1FunIwJEznTybDTopc4pWce', '2018-11-14 02:07:46', '2018-11-14 02:07:46', 'img/profile.ico', NULL, NULL, NULL, 'admin', 'Male', NULL, NULL, NULL, NULL),
+(40, 'Rangga', 'Ayesha', 'rangga.ayesha@yahoo.com', '$2y$10$kFX/JjFrWLVSIYR3KpNgvumtGZifbjnRAZnp4TbpVeHORWCD9P5F.', '4LWUus4mrWCOUMTziKzIwrhuWPzNd0pg8VlXk9cjcg9G3RFaT1UlwPnJAdmL', '2018-12-09 08:25:33', '2018-12-09 08:27:04', 'storage/images/46523761_2338316012863441_8786856566188933120_n.jpg', '2147483647', 'Jl. Mayang Sari 1 C/18', '1997-04-25', 'student', 'Male', NULL, NULL, NULL, NULL),
+(41, 'syabatra', 'hasaid', 'syabat@mail.com', '$2y$10$WQrCfEutCS1yzbyyyILcvu8YFP45kOdT6TnmRBOZ5fMliwULCP/AW', 'gB4RtNWL1FXCYQ8lTgXWNS8HyKzetDSE18eHqOMnsx9AG967eXZXPJl0Oaua', '2018-12-10 18:50:22', '2018-12-10 18:50:51', 'storage/images/question.png', '2147483647', 'bandung', '1986-06-10', 'student', 'Male', NULL, NULL, NULL, NULL),
+(42, 'Dewi', 'Arman', 'dewi@gmail.com', '$2y$10$tOAFIHxkxVc6cqjwFrZUnOyGg4vxk8MRzreV9ZGRgY6wjzg.U/sJ6', '4FUkjcymkFD8KmdrwHsLcwKOyJdptrJCEGixyLaPOIMyRBtBdjZpskHnaXon', '2018-12-10 19:05:57', '2018-12-10 19:06:42', 'storage/images/images (3).jpeg', '2147483647', 'JL. Haji Bardan 2, Buah Batu bandung', '2018-12-12', 'student', 'Male', NULL, NULL, NULL, NULL),
+(43, 'Agus', 'BGUS', 'agus@gmail.com', '$2y$10$vgzKsP2meyIS0dV3qYUd3ewUykMkSm2HX62FSHA/gREQo6AaUkVNi', 'cQZwgtotgchwwe7CPHfeNEpjw6NF6GyLRxDzyeUGKEsV02eWSLeKqhlyzUwE', '2018-12-10 19:16:08', '2018-12-10 19:20:00', 'storage/images/image.png', '9292992', 'JL. Kampung Melayu Besar', '1999-07-23', 'student', 'Male', NULL, NULL, NULL, NULL),
+(44, 'Sahrul', 'Evendi', 'sahrul@gmail.com', '$2y$10$YdBf1BEaZh2eVtEb5kMz4OQ833XA9g52Ciz6ih.nRhnU.D6bjlplK', 'jAKElmSqOUuhfzx5vBee8eUrMXSOFWOEze3bavXEna56jAgPojdCqtJRdffe', '2018-12-10 19:17:13', '2018-12-10 19:17:42', 'storage/images/coffee-beans (1).png', '2147483647', 'Jalan Sukabirus No. 5', '2004-10-13', 'student', 'Male', NULL, NULL, NULL, NULL),
+(45, 'hafiz', 'afandi', 'afandihafiz@yahoo.co.id', '$2y$10$QIQOW7FPzD1WJaLgrKVhn.ACu8y21icQXAXLQYCweeHR3U3ckOMUW', NULL, '2018-12-11 05:37:55', '2018-12-11 05:37:55', 'img/profile.ico', '2147483647', 'sukabirus', '1996-10-20', 'student', 'Male', NULL, NULL, NULL, NULL),
+(46, 'alwy', 'fadly', 'alwyfadly28@gmail.com', '$2y$10$Pb4BCQnyZzqVj3oqRweMeurTuJog7e/5kBQHVYp3yLK4.yjpQnvUq', 'KkFkAjcABXL87TbZWBTgIXPUG8KivdmDBpNod5CIBGJnr6Z1YHC6ckmlPcqj', '2018-12-11 05:46:23', '2018-12-11 05:46:23', 'img/profile.ico', '2147483647', 'PBB', '1997-12-28', 'student', 'Male', NULL, NULL, NULL, NULL),
+(47, 'Satria Refdi', 'Ardiguna', 'ardiguna20@gmail.com', '$2y$10$ZDqlAq57j20D95/p5V72JOmFTowFGMnPv8W2HtygltVjfH5la/vma', NULL, '2018-12-11 05:51:14', '2018-12-11 05:51:47', 'storage/images/23346.png', '2147483647', 'Jl. Telekomunikasi No. 01', '1998-05-20', 'student', 'Male', NULL, NULL, NULL, NULL),
+(48, 'Venessa', 'Visintry', 'vvisintry@gmail.com', '$2y$10$81YoKSd1hlJhBfkNuJS0peJiuaYB8T7x22ENTMhXx.XuhFnlqeIIa', NULL, '2018-12-11 06:00:21', '2018-12-11 06:00:21', 'img/profile.ico', '2147483647', 'Ujungbatu', '1997-03-20', 'student', 'Female', NULL, NULL, NULL, NULL),
+(53, 'tes', 'Breda', 'tes@gmail.com', '$2y$10$GCuZFyoJO5HT8og.IMIw6OOgGNO1RgmQoxNIH/uz3Eyehed9cdyD2', 'mJPiAI62j00VGPSfzjqzfUN8iWwlIO7bScM2NJaBFkZ3pzc1vhp88IxtQJVj', '2019-02-07 06:24:27', '2019-02-13 07:00:47', 'storage/images/Screen Shot 2019-02-01 at 16.56.40.png', '9292929', 'JL. Haji Bardan 2, Buah Batu bandung', '2019-02-08', 'student', 'Male', NULL, NULL, NULL, NULL),
+(54, 'Mbred', 'Mbrut', 'tes2@gmail.com', '$2y$10$SlR7aJu0W.FHp3wnzr.d4.8/AYCSWYf/UEvkJU9Nk0tuIGzGXJfNu', 'pCFi12rjo5usEHNmytF7qzdNydTWrFUG72TxrMLU4u9U6x87i8NXedNxQt85', '2019-02-13 07:04:10', '2019-02-13 07:04:37', 'storage/images/Screen Shot 2019-02-10 at 21.20.11.png', '929292992', 'JL. Haji Bardan 2, Buah Batu bandung', '2019-02-14', 'student', 'Male', NULL, NULL, NULL, NULL),
+(55, 'Rangga', 'Ayesha', 'rangga@yahoo.co.id', '$2y$10$aHTWXtk9owcekDWJRkKaIewjXVQlf2uhiW5UbDBmQc4GAtNfx1MMS', 'U1nhu8Nl1oiDqbv9zww5EEpAECqfvLqgnQRAdqyzfzkUrl2kthgs5WO7Koao', '2019-02-24 23:51:38', '2019-02-24 23:53:59', 'storage/images/Screen Shot 2019-02-25 at 00.04.39.png', '12345', 'Jalan Sukabirus No. 5', '2019-02-04', 'student', 'Male', NULL, NULL, NULL, NULL),
+(56, 'Sahrul', 'Evendi', 'sahrul123@gmail.com', '$2y$10$7XS.sCRbBd/ZUiOqr8KWNe4j0cSu3hBcGvb2D32W6yw4lRBXmOw4C', 'VOlJSj9NLkjnFx1ESFWhmBrYqopmzSEExt0HkYn7iVXE06bcJjNpRSQSynCi', '2019-02-28 17:15:32', '2019-02-28 17:16:10', 'storage/images/3x4 foto.jpg', '12345', 'haji bardan raya', '2019-03-02', 'student', 'Male', NULL, NULL, NULL, NULL),
+(57, 'Adinda', 'Klausa', 'dinda@mail.com', '$2y$10$CN6E0TzZwTzIlyL8sI8Dteyq9gHIlYIee0XGU3eVnnmbjpcGpMwou', 'dcMbnY2w1rvJXm80SvgP4BYyx44sd3rLmAMpMo3oYdorpW15mPm3Wv6BNhTt', '2019-03-24 07:21:55', '2019-03-24 07:33:00', 'storage/images/Screen Shot 2019-03-22 at 19.52.19.png', '123456789', 'kampung melayu mesjid 1', '2019-03-05', 'student', 'Male', NULL, NULL, NULL, NULL),
+(58, 'Rangga', 'Ayesha', 'rang@mail.com', '$2y$10$1h766mEYD7ocgRtxPB2mFufSwSkruWg1aAYi20/Ao//AzQ8ygxidC', 'imsc2wUkBo61tSPBRM691M5yo1xvu39U6TNKJrDxsYNeAy0pPIOq9LHBF6Ws', '2019-03-25 01:17:25', '2019-04-09 03:42:21', 'storage/images/default-photo.png', '819292919', 'JL. Haji Bardan 2, Buah Batu bandung', '2019-03-25', 'student', 'Male', 'Bardan Raya', 'Buah Batu', 'Bandung', 13250),
+(59, 'Breda', 'Taftayani', 'bred@mail.com', '$2y$10$NkjJnfl3rnD0DLMTpzkHKOWJryHmU.LBAhFTmKtFcJC5HqJcv44eO', NULL, '2019-03-25 02:49:44', '2019-03-25 02:49:44', 'img/profile.ico', NULL, NULL, NULL, 'student', 'Male', NULL, NULL, NULL, NULL),
+(60, 'satria', 'Mustafa', 'sat@gmail.com', '$2y$10$fGzl6vBCThCxQgrTTiv/1u4HulsJ0L3IIqykCNoCq4Jlnl38PNRua', 'f7VSEKMJsuDsBsuppWSyKNmLq1yrnwoDpJhGJor7rr3O05pTWBwVTH4mDnwr', '2019-04-04 22:59:09', '2019-04-04 23:05:55', 'storage/images/Oval.png', '8127345', 'haji bardan raya', '1996-06-12', 'student', 'Male', NULL, NULL, NULL, NULL),
+(61, 'mia', 'angriana', 'mialana@gmail.com', '$2y$10$Viwmuw3B5kBDSnsQcT1oGehGMs6upUVFaflrqTZmdlB82AQlYFY0y', 'KDgEbX4KE6d6ANL3zTKvm54XqC9SZkvcPDYf29TblVU686wuU9sZyot2nGc5', '2019-04-04 23:40:30', '2019-04-04 23:46:13', 'storage/images/Oval.png', '817934556', 'jalan haji bardan raya', '1997-11-06', 'student', 'Male', NULL, NULL, NULL, NULL),
+(63, 'adinda', 'kirana', 'kirana@gmail.com', '$2y$10$74AijGEWFt7WcBCePeb7tOyRch5WaBatiQi.kM036.Q4VEEmsoGPO', NULL, '2019-04-09 05:19:30', '2019-04-09 05:36:34', 'storage/images/profile.png', '8192929', 'Jalan Sukabirus No. 5', '2019-04-09', 'student', 'Female', 'Buah Batu', 'Sukabirus', 'Bandung', 12054),
+(64, 'faisal', 'Aldo Thahir', 'faisal@gmail.com', '$2y$10$FUaH.IciX2QPwFGtBv.vZ.o/JkK1ZMFFXu/WtBlCPj5Q.rXU4R.rG', '4Brslp2QetTInwV5pZb9nrnQlhf6CjAR0HIjjh02nuJEL8hYEKfEHHgdWEne', '2019-04-13 08:41:59', '2019-04-13 08:49:22', 'storage/images/Picture1.png', '123456789', 'kampung melayu mesjid 1', '1997-08-15', 'student', 'Male', 'Tebet', 'Kebon Baru', 'Jakarta Selatan', 12830),
+(65, 'Ayu', 'Anandita', 'ayu@mail.com', '$2y$10$uxZFTklDDPFBUzckHCOM3./CTTZz0WHFPEmF/idYOdYy83BKamMlS', '2vW6Rx7UoZ6N24DOCvOxFdBNdKdO2OJBEbPf26wiWVbAz8XzINtB9rdoUWM9', '2019-04-14 06:00:45', '2019-06-20 23:36:02', 'storage/Images/download.jpeg', '8179357753', 'Jalan Sukabirus No. 5', '1994-11-24', 'student', 'Female', 'Sukapura', 'Kebon Baru', 'Bandung Selatan', 12890),
+(66, 'breda', 'taftayani', 'taftayani123@gmail.com', '$2y$10$2jH3T6H0yfnb22Zod0Uth.GXv3iNC8sMusAy4rZtXGyf8H2PWYZq6', 'yOEiHrg4FjGH7UAiOUoY5vkAJFuQ6AWgHOibmpho1pdlCocJK4B0UWkKtqly', '2019-06-21 00:47:36', '2019-06-21 00:47:36', 'img/profile.ico', NULL, NULL, NULL, 'student', 'Male', NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -367,6 +439,12 @@ ALTER TABLE `mata_pelajarans`
 -- Indexes for table `migrations`
 --
 ALTER TABLE `migrations`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `months`
+--
+ALTER TABLE `months`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -432,31 +510,37 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `confirms`
 --
 ALTER TABLE `confirms`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `mata_pelajarans`
 --
 ALTER TABLE `mata_pelajarans`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
+--
+-- AUTO_INCREMENT for table `months`
+--
+ALTER TABLE `months`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `shcedules`
 --
 ALTER TABLE `shcedules`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `stats`
 --
 ALTER TABLE `stats`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `surveys`
@@ -468,13 +552,13 @@ ALTER TABLE `surveys`
 -- AUTO_INCREMENT for table `teachers`
 --
 ALTER TABLE `teachers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `teacher_files`
 --
 ALTER TABLE `teacher_files`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT for table `teacher_subjects`
@@ -486,7 +570,7 @@ ALTER TABLE `teacher_subjects`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=57;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
 
 --
 -- Constraints for dumped tables
