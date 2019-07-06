@@ -3,7 +3,7 @@
 
 <div id="statistika"  style="margin-top: 100px;">
     <h5 style="color: #12BF95">Statistika</h5>
-    <div class="datastat">
+    <div class="">
     <div style="padding: 10px;">
         <h5 style="color: #12BF95">Bagian Statistik</h5>
         <hr>
