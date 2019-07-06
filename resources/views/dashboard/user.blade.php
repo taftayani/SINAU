@@ -1,14 +1,14 @@
 @extends('layouts.Dashboard')
 @section('menuDashboard')
 <h3>Data Murid</h3>
-<div class="datastat">
+<div class="">
         <h6>Total Murid</h6>
         <p class="total">{{$user->count()}}</p>
 
         <input type="text" id="search_name_student" onkeyup="filter_name_student()" placeholder="Search student names" style="width: 50%; float: right;"/>
 
         <div class="row" style="margin-top: 100px;">
-            <div class="col-2">
+            <div class="col l12">
                 <div class="sidenav-filter">
                     <strong><p>Gender</p></strong>
                     <button id="all_student" class="filter-btn filter-active">All</button>
