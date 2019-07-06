@@ -3,7 +3,7 @@
 
 <div id="guru"  style="margin-top: 100px;">
     <h3>Guru</h3>
-    <div class="datastat">
+    <div class="">
             <h6>Total Guru</h6>
             <p class="total">{{$teacher->count()}}</p>
 
