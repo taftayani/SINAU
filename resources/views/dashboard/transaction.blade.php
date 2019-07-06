@@ -2,8 +2,8 @@
 @section('menuDashboard')
 
 <div id="pesanan" style="margin-top: 100px;">
-        <h3>Mata Pesanan</h3>
-        <div class="datastat">
+        <h3>Pesanan</h3>
+        <div class="">
                 <h6>Total Pesanan</h6>
                 <p class="total">{{$confirmSee->count()}}</p>
 
