@@ -41,9 +41,8 @@
             </div>
           </div>
             
-          <p style="color: #FFFFFF; opacity: 0.65; margin: 22px;">Dashboard</p>
-
           <ul class="" style="height: 200px;">
+          <li id="nv-murid" class="nav-ver"><a href="{{route('home_dashboard')}}" style="color: #fff;">Dashboard</a></li>
             <li id="nv-murid" class="nav-ver"><a href="/home" style="color: #fff;">Data Murid</a></li>
             <li id="nv-guru" class="nav-ver"><a href="/home/teacher" style="color: #fff;">Data Guru</a></li>
             <!-- <li class="tab"><a href="#matpel">Data Mata Pelajaran</a></li> -->

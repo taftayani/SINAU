@@ -133,4 +133,30 @@ class HomeController extends Controller
        $confirm-> save();
        return redirect(route('home'));
    }
+
+   public function dashboard(){
+       $teacher_choosed = DB::select('SELECT teacher_id, count(teacher_id) as teacher FROM `shcedules` GROUP BY teacher_id');
+       $contract = DB::select('SELECT count(day) FROM `shcedules` GROUP BY month(created_at)');
+
+        $mata_pelajaran_fav = DB::table('mata_pelajarans as a')
+        ->select('a.mata_pelajaran as nama', DB::raw('count(*) as jumlah'))
+        ->join('confirms as b', 'a.id' , '=', 'b.subject_id')
+        ->groupBy('a.mata_pelajaran')
+        ->get();
+        $paket_belajar_favorit = DB::table('confirms')
+        ->select('packet as nama', DB::raw('count(*) as jumlah'))
+        ->groupBy('packet')
+        ->get();
+        $guru_fav = DB::table('teachers as a')
+        ->select('a.ktp as nama', DB::raw('count(*) as jumlah'))
+        ->join('confirms as b', 'a.id' , '=', 'b.teacher_id')
+        ->groupBy('a.ktp')
+        ->get();
+        $months = DB::table('months as a')->select('a.name', DB::raw('count(b.created_at) as jumlah'))
+        ->leftJoin('confirms as b', DB::raw('MONTH(b.created_at)'), '=', 'a.id')
+        ->groupBy('a.name')
+        ->orderBy('a.id', 'asc')
+        ->get();
+        return view('dashboard.index',compact(['mata_pelajaran_fav', 'paket_belajar_favorit', 'guru_fav', 'months']));
+    }
 }

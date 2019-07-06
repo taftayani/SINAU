@@ -77,6 +77,8 @@ Route::get('/home/user','HomeController@User');
 Route::get('/home/teacher', 'HomeController@teacher');
 Route::get('/home/transaction', 'HomeController@transaction')->name('home_transaction');
 Route::get('/home/statistics', 'HomeController@statistics');
+
+Route::get('/home/dashbaord', 'HomeController@dashboard')->name('home_dashboard');
 //feedback guru
 Route::put('PendapatPengajaran/{confirm}','ConfirmController@FeedbackTeacher')->name('feedback_teacher');
 
