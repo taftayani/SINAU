@@ -371,7 +371,7 @@
   margin-bottom: 100px;
   margin-top: -20px; }
 
-.heading-green-fourth, .list-subject, #list-subject, .header-matpel-card, .heading-warn-success {
+.heading-green-fourth, .first-header-sinauoff-second, .list-subject, #list-subject, .header-matpel-card, .heading-warn-success {
   color: #12BF95;
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
@@ -449,7 +449,7 @@
   letter-spacing: 7%;
   line-height: 32px; }
 
-.heading-content-grey-first, .edit-data, .header-name, .header-teach-contract, .heading-step-teacher, .heading-detail-les, .heading-friend-taken {
+.heading-content-grey-first, .first-header-sinauoff, .edit-data, .header-name, .header-teach-contract, .heading-step-teacher, .heading-detail-les, .heading-friend-taken {
   font-family: "Roboto Slab", serif;
   letter-spacing: 0.04em;
   font-size: 30px;
@@ -497,7 +497,7 @@
   letter-spacing: 0.02em;
   text-align: justify; }
 
-.paragraph-profile, .paragraph-step-teacher, .paragraph-info-teacher, .paragraph-extend-info {
+.paragraph-profile, .sinaubook-p, .paragraph-step-teacher, .paragraph-info-teacher, .paragraph-extend-info {
   font-family: "Roboto Slab", serif;
   color: #696969;
   font-weight: 300;
@@ -687,7 +687,7 @@
   padding-bottom: 10px;
   padding-right: 20px; }
 
-.list-first, .list-schedule, .list-student-name {
+.list-first, .list-sinauoffline, .list-schedule, .list-student-name {
   font-family: "Roboto Slab", serif;
   font-style: normal;
   font-weight: normal;
@@ -1053,6 +1053,23 @@
 @media only screen and (max-width: 1000px) {
   .log-user-header {
     display: none; } }
+.second-layout-new {
+  padding-top: 20px; }
+
+.first-header-sinauoff {
+  text-align: center; }
+
+.list-sinauoffline {
+  text-align: left;
+  font-size: 14px;
+  color: #404F76; }
+
+.sinaubook-p {
+  text-align: center; }
+
+.second-layout {
+  padding-top: 20px; }
+
 @media only screen and (max-width: 1000px) {
   .first-section {
     display: none; } }

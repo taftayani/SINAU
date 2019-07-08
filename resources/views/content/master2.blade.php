@@ -45,10 +45,10 @@
               <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                   @guest
                   <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo"> </a>
-                    <ul class="right hide-on-med-and-down">
-                      <li><a class="" href="{{ route('login') }}" >Masuk</a></li>
-                      <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Daftar<i class="material-icons right">arrow_drop_down</i></a></li>
-                    </ul>
+                  <ul class="right hide-on-med-and-down navbar-section-second">
+                    <li><a class="login-btn" href="{{ route('login') }}" >Masuk</a></li>  
+                    <li><a class="" href="{{ route('register') }}">Daftar</a></li>
+                </ul>
                     <ul class="side-nav" id="mobile-demo">
                       <li><a href="">Daftar Sebagai Guru</a></li>
                       <li><a href="{{ route('register') }}">Daftar Sebagai Murid</a></li>

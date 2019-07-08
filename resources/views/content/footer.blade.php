@@ -4,7 +4,7 @@
           <div class="row">
             <div class="col l12 s12 center">
                 <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo"></a>
-                <p><a href=""  class="link-footer">SINAU OFFLINE</a>  - <a href="{{route('faq')}}"  class="link-footer"> FAQ </a>  - <a href=""  class="link-footer">SINAU ONNLINE</a> - <a href=""  class="link-footer">PERATURAN</a></p>
+                <p><a href={{route('product_offline')}}  class="link-footer">SINAU OFFLINE</a>  - <a href="{{route('faq')}}"  class="link-footer"> FAQ </a>  - <a a href={{route('product_book')}}   class="link-footer">SINAU BOOK</a></p>
             </div>
             <div class="col l12 s12 center">
                 <h5 class="white-text">Ikuti Kami di</h5>

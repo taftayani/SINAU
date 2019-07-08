@@ -28,6 +28,14 @@ Route::get('profile','UserController@profile')->name('layouts.profile');
 Route::get('beranda','UserController@dashboard')->name('beranda');
 Route::get('sinau.offline','Pruduct@index')->name('sinau_offline');
 
+//product
+Route::get('sinauoffline',function(){
+return view('layouts.SinauOffContent');
+})->name('product_offline');
+
+Route::get('sinaubook',function(){
+    return view('layouts.SinauBookContent');
+    })->name('product_book');
 
 //guru
 Route::get('pengajar','TeacherController@index')->name('guru');

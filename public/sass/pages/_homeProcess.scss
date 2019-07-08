@@ -43,7 +43,28 @@
         @extend .heading-content-second;
     }
 }
+.second-layout-new{
+    padding-top: 20px;
+}
+.first-header-sinauoff{
+    @extend .heading-content-grey-first;
+    text-align: center;  
+}
+.first-header-sinauoff-second{
+    @extend .heading-green-fourth;
+}
+.list-sinauoffline{
+   @extend .list-first;
+   text-align: left;
+   font-size: 14px;
+   color: #404F76;
+}
+.sinaubook-p{
+    @extend .paragraph-profile;
+    text-align: center;
+}
 .second-layout{
+    padding-top: 20px;
     @extend .second-layout-home;
      .first-header{
          @extend .heading-big;
