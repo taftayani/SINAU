@@ -17,8 +17,8 @@
                 </ul>
 
                 <div class="tab-content" style="padding: 20px; border-right: 1px solid #E9E9E9; border-left: 1px solid #E9E9E9; border-bottom: 1px solid #E9E9E9;">
-                    <div id="transaksi-pemesanan" role="tabpanel" class="tab-pane active">
-                        <table class="center" id="table-transaksi-pemesanan">
+                    <div id="" role="tabpanel" class="tab-pane active">
+                        <table class="center" id="example">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -90,51 +90,10 @@
                                 </tbody>
                             @endforeach
                         </table>
-                        <div class="row" style="margin-top: -40px;">
-                            <div class="col-1">
-                                <span>Showing </span>
-                            </div>
-                            <div class="col-1" style="margin-top: -15px;">
-                                <select name="" id="perPage" onchange="pagination()">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                </select>
-                            </div>
-                        </div>
-                        <script>
-                            $(document).ready(function() {
-                                var page = document.getElementById('perPage').value;
-                                $("#table-transaksi-pemesanan").fancyTable({
-                                    pagination: true,
-                                    searchable: false,
-                                    sortable: true,
-                                    paginationClass: "Page navigation example",
-                                    paginationClassActive: "pageactive",
-                                    perPage: page,
-                                    pagClosest: 3,
-                                });		
-                            });
-                            function pagination(){
-                                var page = document.getElementById('perPage').value;
-                                $(document).ready(function() {
-                                    $("#table-transaksi-pemesanan").fancyTable({
-                                        pagination: true,
-                                        searchable: false,
-                                        sortable: true,
-                                        paginationClass: "Page navigation example",
-                                        paginationClassActive: "pageactive",
-                                        perPage: page,
-                                        pagClosest: 3,
-                                    });		
-                                });
-                            }
-                            
-                            
-                        </script>     
                     </div>
 
                     <div id="transaksi-pembelajaran" role="tabpanel" class="tab-pane">
-                        <table id="transaksi_pembelajaran">
+                        <table id="example" class="display">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -161,13 +120,6 @@
                                         @else
                                         <a href="{{$tp->link_video}}" target="_blank">Link Video</a>
                                         @endif
-                                        
-                                        {{-- <form action="{{route('last_process',['confirm'=>$tp->id])}}" method="post">
-                                            {{ csrf_field() }}
-                                            {{ method_field('put') }}  
-                                            <input type="number" name="score" id="" placeholder="Masukan Score" required> 
-                                            <input type="submit" value="Kirim">
-                                        </form> --}}
                                     </td>
                                     <td class="td">
                                         <form action="{{route('last_process',['confirm'=>$tp->id])}}"  enctype="multipart/form-data" method="post" style="width: 70%; margin-left: auto; margin-right: auto; margin-left: 50px;">
@@ -208,18 +160,6 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="row" style="margin-top: -40px;">
-                            <div class="col-1">
-                                <span>Showing </span>
-                            </div>
-                            <div class="col-1" style="margin-top: -15px;">
-                                <select name="" id="pages" onchange="pagination()">
-                                    <option value="5">5</option>
-                                    <option value="10">10</option>
-                                </select>
-                            </div>
-                        </div>
-                        
                     </div>
                 </div>
         </div>
@@ -282,7 +222,14 @@
 </div>
 @endforeach
 
-
+<script>
+    $(document).ready(function() {
+        $('#example').DataTable( {
+            "scrollY":        "200px",
+            "scrollCollapse": true,
+        } );
+    } );
+</script>
 <script>
     $(document).ready(function() {
         var pages = document.getElementById('pages').value;
