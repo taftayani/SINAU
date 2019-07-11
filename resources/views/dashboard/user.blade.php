@@ -4,8 +4,35 @@
 <div class="">
         <h6>Total Murid</h6>
         <p class="total">{{$user->count()}}</p>
-
-        <input type="text" id="search_name_student" onkeyup="filter_name_student()" placeholder="Search student names" style="width: 50%; float: right;"/>
+        <table id="example" class="display" style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nama depan</th>
+                    <th>Nama Belakang</th>
+                    <th>email</th>
+                    <th>No telp</th>
+                    <th>Tanggal kelahiran</th>
+                    <th>alamat</th>
+                    <th>jenis kelamin</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($user as $key => $users)
+                <tr>
+                    <td class="td">{{++$key}}</td>
+                    <td class="td">{{$users->nama_depan}}</td>
+                    <td class="td">{{$users->nama_belakang}}</td>
+                    <td class="td">{{$users->email}}</td>
+                    <td class="td">{{$users->phone}}</td>
+                    <td class="td">{{$users->birthday}}</td>
+                    <td class="td">{{$users->address}}</td>
+                    <td class="td">{{$users->gender}}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        {{-- <input type="text" id="search_name_student" onkeyup="filter_name_student()" placeholder="Search student names" style="width: 50%; float: right;"/>
 
         <div class="row" style="margin-top: 100px;">
             <div class="col l12">
@@ -128,10 +155,10 @@
                             <option value="10">10</option>
                         </select>
                     </div>
-                </div>
+                </div> --}}
                 
                 
-                <script>
+                {{-- <script>
                     $(document).ready(function() {
                         var page = document.getElementById('perPage').value;
                         $("#student_table").fancyTable({
@@ -160,10 +187,19 @@
                     }
                     
                     
-                </script>
+                </script> --}}
 
             </div>
         </div>
     </div>
+    <script>
+        $(document).ready(function() {
+            $('#example').DataTable( {
+                "scrollY":        "200px",
+                "scrollCollapse": true,
+                "paging":         false
+            } );
+        } );
+    </script>
 </div>
 @endsection('menuDashboard')
