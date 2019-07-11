@@ -8,32 +8,42 @@
             <div class="col l5">
                 <div class="card">
                     <b>Total Kontrak Belajar</b>
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <canvas id="myChart" width="400" height="250"></canvas>
                 </div>
                 <div class="card">
                     <b>Paket Belajar Favorit</b>
-                    <canvas id="myChart2" width="400" height="400"></canvas>
+                    <canvas id="myChart2" width="400" height="250"></canvas>
                 </div>
             </div>
             <div class="col l5">
                 <div class="card">
                     <b>Guru Pilihan</b>
-                    <canvas id="myChart3" width="400" height="400"></canvas>
+                    <canvas id="myChart3" width="400" height="250"></canvas>
                 </div>
                 <div class="card">
                     <b>Mata Pelajaran Favorit</b>
-                    <canvas id="myChart4" width="400" height="400"></canvas>
+                    <canvas id="myChart4" width="400" height="250"></canvas>
                 </div>
             </div>
             <div class="col l2">
                 <div class="card center">
-                    <h3>12</h3>
-                    <b>Konfirmasi Pembayaran</b>
+                    <h5>12</h5>
+                    <p>Konfirmasi Pembayaran</p>
                 </div>
                 <div class="card center">
-                    <h3>8</h3>
-                    <b>Penutup & Pembayaran</b>
+                    <h5>8</h5>
+                    <p>Penutup & Pembayaran</p>
                 </div>
+                <div class="card center">
+                    <h5>3</h5>
+                    <p>Persiapan Soal</p>
+                </div>
+                <div class="card center">
+                    <h5>20</h5>
+                    <p>Verifikasi Guru</p>
+                </div>
+            </div>
+            {{-- <div class="col l1">
                 <div class="card center">
                     <h3>3</h3>
                     <b>Persiapan Soal</b>
@@ -42,7 +52,7 @@
                     <h3>20</h3>
                     <b>Verifikasi Guru</b>
                 </div>
-            </div>
+            </div> --}}
         </div>
     </div>
     <script src="https://cdnjs.com/libraries/Chart.js"></script>
