@@ -94,9 +94,9 @@ class HomeController extends Controller
         ->groupBy('packet')
         ->get();
         $guru_fav = DB::table('teachers as a')
-        ->select('a.ktp as nama', DB::raw('count(*) as jumlah'))
+        ->select('a.user_id as nama', DB::raw('count(*) as jumlah'))
         ->join('confirms as b', 'a.id' , '=', 'b.teacher_id')
-        ->groupBy('a.ktp')
+        ->groupBy('a.user_id')
         ->get();
         $months = DB::table('months as a')->select('a.name', DB::raw('count(b.created_at) as jumlah'))
         ->leftJoin('confirms as b', DB::raw('MONTH(b.created_at)'), '=', 'a.id')
