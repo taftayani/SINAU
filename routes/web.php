@@ -21,12 +21,15 @@ Route::resource('survey','SurveyController');
 Route::post('/survey', 'SurveyController@survey')->name('survey');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('user','UserController@edit')->name('user');
-Route::put('edit/{user}','UserController@update')->name('edit');
-Route::put('edit/photo/{user}','UserController@PhotoEdit')->name('change_photo');
-Route::put('edit/password/{user}','UserController@ChangePass')->name('change_password');
 Route::get('profile','UserController@profile')->name('layouts.profile');
 Route::get('beranda','UserController@dashboard')->name('beranda');
 Route::get('sinau.offline','Pruduct@index')->name('sinau_offline');
+
+//edit data
+Route::put('edit/{user}','UserController@update')->name('edit');
+Route::put('edit/photo/{user}','UserController@PhotoEdit')->name('change_photo');
+Route::put('edit/password/{user}','UserController@ChangePass')->name('change_password');
+Route::put('edit/rekening bank/{user}','UserController@RekBank')->name('rek_bank');
 
 //product
 Route::get('sinauoffline',function(){
@@ -36,6 +39,14 @@ return view('layouts.SinauOffContent');
 Route::get('sinaubook',function(){
     return view('layouts.SinauBookContent');
     })->name('product_book');
+
+Route::get('/sinau off',function(){
+    return view('layouts.SinauOfflineLogin');
+    })->name('product_offline_login');
+        
+Route::get('/sinau book',function(){
+    return view('layouts.SinauBookLogin');
+    })->name('product_book_login');
 
 //guru
 Route::get('pengajar','TeacherController@index')->name('guru');

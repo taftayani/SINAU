@@ -117,6 +117,14 @@ class UserController extends Controller
       $user->save();
       return redirect(route('layouts.profile'));
     }
+    public function RekBank(Request $request,User $user)
+    {
+      $user-> name_bank=$request->name_bank;
+      $user-> no_rek=$request->no_rek;
+      $user-> name_of_rek=$request->name_of_rek;
+      $user->save();
+      return redirect(route('layouts.profile'));
+    }
     public function ChangePass(Request $request,User $user)
     {
       $user-> password = bcrypt($request->password);

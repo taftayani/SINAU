@@ -57,8 +57,8 @@
                 </ul>
               @else
                   <ul class="center hide-on-med-and-down log-user-header">
-                    <li><a href="">SINAU OFFLINE</a></li>
-                    <li><a href="">SINAU BOOK</a></li>
+                    <li><a href={{route('product_offline_login')}}>SINAU OFFLINE</a></li>
+                    <li><a href={{route('product_book_login')}}>SINAU BOOK</a></li>
                     <li><a href="{{ route('beranda') }}">Halaman Murid ?</a></li>
                    </ul>
                 
