@@ -27,32 +27,22 @@
             </div>
             <div class="col l1" style="position:relative;left:4rem">
                 <div class="card center">
-                    <h5>12</h5>
+                    <h5>{{count($confirm)}}</h5>
                     <p>Konfirmasi Pembayaran</p>
                 </div>
                 <div class="card center">
-                    <h5>8</h5>
+                    <h5>{{count($pay)}}</h5>
                     <p>Penutup & Pembayaran</p>
                 </div>
                 <div class="card center">
-                    <h5>3</h5>
+                    <h5>{{count($question)}}</h5>
                     <p>Persiapan Soal</p>
                 </div>
                 <div class="card center">
-                    <h5>20</h5>
+                    <h5>{{count($teacher)}}</h5>
                     <p>Verifikasi Guru</p>
                 </div>
             </div>
-            {{-- <div class="col l1">
-                <div class="card center">
-                    <h3>3</h3>
-                    <b>Persiapan Soal</b>
-                </div>
-                <div class="card center">
-                    <h3>20</h3>
-                    <b>Verifikasi Guru</b>
-                </div>
-            </div> --}}
         </div>
     </div>
     <script src="https://cdnjs.com/libraries/Chart.js"></script>

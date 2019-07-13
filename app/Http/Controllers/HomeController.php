@@ -157,6 +157,11 @@ class HomeController extends Controller
         ->groupBy('a.name')
         ->orderBy('a.id', 'asc')
         ->get();
-        return view('dashboard.index',compact(['mata_pelajaran_fav', 'paket_belajar_favorit', 'guru_fav', 'months']));
+
+        $confirm = Confirm::where('pay', 'Belum Dibayar')->get();
+        $pay = Confirm::where('stat_pay', 'Pembayaran Sudah Diterima')->get();
+        $teacher = Teacher::where('verifikasi', 'Akun Sudah Diverifikasi')->get();
+        $question = Confirm::where('test_file','!=', 'nul')->get();
+        return view('dashboard.index',compact(['mata_pelajaran_fav', 'paket_belajar_favorit', 'guru_fav', 'months', 'confirm', 'teacher', 'pay', 'question']));
     }
 }
