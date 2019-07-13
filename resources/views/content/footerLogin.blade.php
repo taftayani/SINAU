@@ -8,7 +8,7 @@
                 <div class="row">
                   <div class="col l12 s12 center">
                       <a href="{{ route('survey.index') }}" class="brand-logo" > <img src="../img/Logo/logo.png" alt=""class="logo"></a>
-                      <p class="white-text"><a href="" class="link-footer">SINAU OFFLINE</a> - <a href="{{route('faq_log')}}" class="link-footer">FAQ</a>  - <a href="" class="link-footer">SINAU BOOK</a></p>
+                      <p class="white-text"><a href={{route('product_offline_login')}} class="link-footer">SINAU OFFLINE</a> - <a href="{{route('faq_log')}}" class="link-footer">FAQ</a>  - <a href={{route('product_book_login')}} class="link-footer">SINAU BOOK</a></p>
                   </div>
                   <div class="col l12 s12 center">
                       <h5 class="white-text heading-footer">Ikuti Kami di</h5>

@@ -46,7 +46,7 @@
             </form> 
       </div>
       <!-- edit profile-->
-      <h1 class="edit-data">Edit Data Diri</h1>
+    <h1 class="edit-data">Edit Data Diri</h1>
     <form class="col s12 m12 center" action="{{ route('edit',['user'=>Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
       {{ csrf_field() }}
       {{ method_field('put') }}
@@ -105,6 +105,27 @@
      
     <button type="submit" name="button" class="btn grey darken-3" id="button" >Edit Data Diri<i class="material-icons">create</i></button>
     </form>
+    {{-- bank rek --}}
+    <h1 class="edit-data" style="margin-top:10px">Masukan Rekening Anda (Dapat dilewatkan)</h1>
+    <div class="col m12 s12 center">
+        <form  action="{{ route('rek_bank',['user'=>Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            {{ method_field('put') }}
+            <div class="row">
+                <div class="input-field col s6">
+                  <input id="input-form" placeholder="Nama Bank" name="name_bank" type="text" value="{{ Auth::user()->name_bank}}" required>
+                </div>
+                <div class="input-field col s6">
+                  <input id="input-form" placeholder="No Rekening Bank" name="no_rek" type="number" value="{{ Auth::user()->no_rek}}" required>
+                </div>
+                <div class="input-field col s12">
+                  <input id="input-form" placeholder="Nama Pemilik Rekening" name="name_of_rek" value="{{ Auth::user()->name_of_rek}}" type="text" required>
+                </div>
+            </div>
+              <button type="submit" name="button" class="btn grey darken-3" id="button" >Edit Data Bank<i class="material-icons">create</i></button>
+        </form>
+    </div>
+
     <h1 class="edit-data">Ubah Password</h1>
     <div class="col m12 s12 center">
         <form  action="{{ route('change_password',['user'=>Auth::user()->id]) }}" method="post" enctype="multipart/form-data">
