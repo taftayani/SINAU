@@ -8,9 +8,7 @@
       <link rel="stylesheet" href="{{asset('cssSinauyo/master.css')}}">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     
-      
-
+      <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
       <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700" rel="stylesheet">
       <link rel="stylesheet" href="/font-awesome-4.7.0/font-awesome-4.7.0/css/font-awesome.min.css">
       <link rel="shortcut icon" href="{{asset('favicon.ico')}}"/>
@@ -150,7 +148,7 @@
       <script type="text/javascript" src="{{asset('js/materialize.min.js')}}"></script>
       
       <script src="{{asset('js/fancytable/src/fancyTable.js')}}"></script>
-
+      <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
       <script type="text/javascript">
       // $( document ).ready(function(){$(".button-collapse").sideNav()});
       </script>

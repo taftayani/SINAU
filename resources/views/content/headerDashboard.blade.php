@@ -3,7 +3,7 @@
       <li><a href="">Daftar Sebagai Murid</a></li>
       <li><a href="{{ route('guru') }}">Daftar Sebagai Guru</a></li>
     </ul> --}}
-    @extends('content.apps')
+    @extends('content.appsDashboard')
     <div style="position: absolute; height: 70px; top: 0px; width: 100%; left: 0px; background:  #6A7BA9;">
     <ul class="right hide-on-med-and-down navbar-section-second">
             <li style="padding: 20px; margin-right: 20px;">
