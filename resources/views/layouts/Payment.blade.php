@@ -39,8 +39,8 @@
             <div class="col xl12">
                     @if ($confirm->pay == 'Belum Dibayar')
                         <h1 class="heading-payment-second">Batas waktu pembayaran 30 menit setelah pemesanan di konfirmasi oleh pengajar</h1>
-                        <a href="" class="link-pay">Lihat alur pembayaran Sinau Offline</a>
-            
+                        <p class="link-pay">Alur pembayaran Sinau Offline</p>
+                        <img src="{{asset('img/Product/Alur Pembayaran.svg')}}" alt="">
                    
                         <form action="{{route('payment_input',['confirm'=>$confirm->id])}}" method="POST" enctype="multipart/form-data">
                             {{ csrf_field() }}

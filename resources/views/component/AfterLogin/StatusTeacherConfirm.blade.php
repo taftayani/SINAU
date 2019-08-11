@@ -6,7 +6,7 @@
         </div>
         <div class="row">
                 @foreach ($confirm as $confirms)
-                <div class="col xl4 ">
+                <div class="col xl4">
                         <div class="center " id="column-profile-teach">
                                 @if ($confirms->teacher_id == $confirms->teacher_id)
                                        <img src="{{$confirms->TeacherOrder->SeeTeacher->foto}}" class="img-profile-teach">

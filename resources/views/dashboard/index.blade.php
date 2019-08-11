@@ -26,22 +26,30 @@
                 </div>
             </div>
             <div class="col l1" style="position:relative;left:4rem">
-                <div class="card center">
-                    <h5>{{count($confirm)}}</h5>
-                    <p>Konfirmasi Pembayaran</p>
-                </div>
-                <div class="card center">
-                    <h5>{{count($pay)}}</h5>
-                    <p>Penutup & Pembayaran</p>
-                </div>
-                <div class="card center">
-                    <h5>{{count($question)}}</h5>
-                    <p>Persiapan Soal</p>
-                </div>
-                <div class="card center">
-                    <h5>{{count($teacher)}}</h5>
-                    <p>Verifikasi Guru</p>
-                </div>
+                <a href="/home/transaction">
+                    <div class="card center">
+                        <h5>{{count($confirm)}}</h5>
+                        <p>Konfirmasi Pembayaran</p>
+                    </div>
+                </a>
+                <a href="/home/transaction">
+                    <div class="card center">
+                        <h5>{{count($pay)}}</h5>
+                        <p>Penutup & Pembayaran</p>
+                    </div>
+                </a>
+                <a href="/home/transaction">
+                    <div class="card center">
+                        <h5>{{count($question)}}</h5>
+                        <p>Persiapan Soal</p>
+                    </div>
+                 </a>
+                 <a href="/home/teacher">
+                    <div class="card center">
+                        <h5>{{count($teacher)}}</h5>
+                        <p>Verifikasi Guru</p>
+                    </div>
+                </a>
             </div>
         </div>
     </div>
@@ -275,7 +283,7 @@ var namapaket;
 var labelsguru = new Array();
 var datasguru = new Array();
 @foreach($guru_fav as $gf)
-    labelsguru.push('{{$gf->nama}}');
+    labelsguru.push('{{$gf->nama_lengkap}}');
     datasguru.push('{{$gf->jumlah}}');
 @endforeach
 </script>

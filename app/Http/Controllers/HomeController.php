@@ -40,9 +40,10 @@ class HomeController extends Controller
         $user=User::all();
         $teacher=Teacher::all();
         $matpel=mata_pelajaran::all();
-        
+        $user = User::paginate(10);
         //transaksi
         $confirmSee=Confirm::all();
+        
         return view('layouts.beranda',[
             'user'=> $user,
             'teacher'=> $teacher,
@@ -56,11 +57,13 @@ class HomeController extends Controller
     public function User()
     {
         $user = User::all();
+        
         return view('dashboard.user', compact(['user','stat']));
     }
     //Teacher
     public function teacher(){
         $teacher=Teacher::all();
+        $teacher=Teacher::paginate(5);
         return view('dashboard.teacher',compact(['teacher']));
     }
 
@@ -75,7 +78,8 @@ class HomeController extends Controller
 
 
         $confirmSee=Confirm::all();
-
+        $confirmSee=Confirm::paginate(5);
+        $transaksi_pembelajaran=Confirm::paginate(5);
         // dd($transaksi_pembelajaran);
         // return $transaksi_pembelajaran;
         
@@ -93,11 +97,16 @@ class HomeController extends Controller
         ->select('packet as nama', DB::raw('count(*) as jumlah'))
         ->groupBy('packet')
         ->get();
+        
         $guru_fav = DB::table('teachers as a')
-        ->select('a.user_id as nama', DB::raw('count(*) as jumlah'))
+        ->select('a.id', DB::raw('count(*) as jumlah, CONCAT(c.nama_depan," ",c.nama_belakang) AS nama_lengkap'))
         ->join('confirms as b', 'a.id' , '=', 'b.teacher_id')
-        ->groupBy('a.user_id')
+        ->join('users as c', 'a.user_id', '=', 'c.id')
+        ->groupBy('a.id', 'c.nama_depan', 'c.nama_belakang')
+        ->orderBy('jumlah', 'DESC')
+        ->limit(3)
         ->get();
+
         $months = DB::table('months as a')->select('a.name', DB::raw('count(b.created_at) as jumlah'))
         ->leftJoin('confirms as b', DB::raw('MONTH(b.created_at)'), '=', 'a.id')
         ->groupBy('a.name')
@@ -143,15 +152,21 @@ class HomeController extends Controller
         ->join('confirms as b', 'a.id' , '=', 'b.subject_id')
         ->groupBy('a.mata_pelajaran')
         ->get();
+        
         $paket_belajar_favorit = DB::table('confirms')
         ->select('packet as nama', DB::raw('count(*) as jumlah'))
         ->groupBy('packet')
         ->get();
+       
         $guru_fav = DB::table('teachers as a')
-        ->select('a.ktp as nama', DB::raw('count(*) as jumlah'))
+        ->select('a.id', DB::raw('count(*) as jumlah, CONCAT(c.nama_depan," ",c.nama_belakang) AS nama_lengkap'))
         ->join('confirms as b', 'a.id' , '=', 'b.teacher_id')
-        ->groupBy('a.ktp')
+        ->join('users as c', 'a.user_id', '=', 'c.id')
+        ->groupBy('a.id', 'c.nama_depan', 'c.nama_belakang')
+        ->orderBy('jumlah', 'DESC')
+        ->limit(3)
         ->get();
+
         $months = DB::table('months as a')->select('a.name', DB::raw('count(b.created_at) as jumlah'))
         ->leftJoin('confirms as b', DB::raw('MONTH(b.created_at)'), '=', 'a.id')
         ->groupBy('a.name')
@@ -160,8 +175,11 @@ class HomeController extends Controller
 
         $confirm = Confirm::where('pay', 'Belum Dibayar')->get();
         $pay = Confirm::where('stat_pay', 'Pembayaran Sudah Diterima')->get();
-        $teacher = Teacher::where('verifikasi', 'Akun Sudah Diverifikasi')->get();
+        $teacher = Teacher::where('verifikasi', 'Belum Verifikasi')->get();
         $question = Confirm::where('test_file','!=', 'nul')->get();
+
+
+        
         return view('dashboard.index',compact(['mata_pelajaran_fav', 'paket_belajar_favorit', 'guru_fav', 'months', 'confirm', 'teacher', 'pay', 'question']));
     }
 }

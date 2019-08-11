@@ -50,8 +50,8 @@
                     <li><a class="" href="{{ route('register') }}">Daftar</a></li>
                 </ul>
                     <ul class="side-nav" id="mobile-demo">
-                      <li><a href="">Daftar Sebagai Guru</a></li>
-                      <li><a href="{{ route('register') }}">Daftar Sebagai Murid</a></li>
+                   
+                      <li><a href="{{ route('register') }}">Daftar</a></li>
                       <li><a href="{{ route('login') }}">Masuk</a></li>
                     </ul>
                   @else

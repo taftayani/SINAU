@@ -17,8 +17,8 @@
                 </ul>
 
                 <div class="tab-content" style="padding: 20px; border-right: 1px solid #E9E9E9; border-left: 1px solid #E9E9E9; border-bottom: 1px solid #E9E9E9;">
-                    <div id="" role="tabpanel" class="tab-pane active">
-                        <table class="center" id="example">
+                    <div id="transaksi-pemesanan" role="tabpanel" class="tab-pane active">
+                        <table class="center" id="table-transaksi-pemesanan">
                             <thead>
                                 <tr>
                                     <th>No</th>
@@ -70,7 +70,7 @@
                                                 {{ csrf_field() }}
                                                 {{ method_field('put') }}  
                                                 <button type="submit" style="color: white; font-size: 12px; background-color:#26a69a;" name="stat_pay" value="Pembayaran Sudah Diterima">Konfirmasi Pembayaran</button>
-                                                <button type="submit" style="color: white; font-size: 12px; width: 190px; margin-top: 10px;  background-color:#26a69a;" name="stat_pay" value="Pembayaran Ditolak">Tolak Pembayaran</button>
+                                                <!--<button type="submit" style="color: white; font-size: 12px; width: 190px; margin-top: 10px;  background-color:#26a69a;" name="stat_pay" value="Pembayaran Ditolak">Tolak Pembayaran</button>-->
                                                 
                                             </form>
                                             @endif
@@ -88,19 +88,63 @@
                                         </td>   
                                     </tr>
                                 </tbody>
+                                
                             @endforeach
                         </table>
+                        {{$confirmSee->links()}}
+                        {{-- <div class="row" style="margin-top: -40px;">
+                            <div class="col-1">
+                                <span>Showing </span>
+                            </div>
+                            <div class="col-1" style="margin-top: -15px;">
+                                <select name="" id="perPage" onchange="pagination()">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div> --}}
+
+                        <script>
+                            $(document).ready(function() {
+                                var page = document.getElementById('perPage').value;
+                                $("#table-transaksi-pemesanan").fancyTable({
+                                    pagination: true,
+                                    searchable: false,
+                                    sortable: true,
+                                    paginationClass: "Page navigation example",
+                                    paginationClassActive: "pageactive",
+                                    perPage: page,
+                                    pagClosest: 3,
+                                });		
+                            });
+                            function pagination(){
+                                var page = document.getElementById('perPage').value;
+                                $(document).ready(function() {
+                                    $("#table-transaksi-pemesanan").fancyTable({
+                                        pagination: true,
+                                        searchable: false,
+                                        sortable: true,
+                                        paginationClass: "Page navigation example",
+                                        paginationClassActive: "pageactive",
+                                        perPage: page,
+                                        pagClosest: 3,
+                                    });		
+                                });
+                            }
+                            
+                            
+                        </script>     
                     </div>
 
                     <div id="transaksi-pembelajaran" role="tabpanel" class="tab-pane">
-                        <table id="example" class="display">
+                        <table id="transaksi_pembelajaran">
                             <thead>
                                 <tr>
                                     <th>No</th>
                                     <th>Nama Guru</th>
                                     <th>Nama Murid</th>
                                     <th>Status Les</th>
-                                    <th>Pemberian Nilai</th>
+                                    <th>Hasil Belajar</th>
                                     <th>Pembayaran Ke Guru</th>
                                     <th>Detail</th>
                                 </tr>
@@ -118,8 +162,18 @@
                                         @if ($tp->link_video == 'nul')
                                             <p>Belum Mengirim Link</p>              
                                         @else
-                                        <a href="{{$tp->link_video}}" target="_blank">Link Video</a>
+                                        <a href="{{$tp->link_video}}" target="_blank">Link Video</a></br>
                                         @endif
+                                        
+                                        {{-- <form action="{{route('last_process',['confirm'=>$tp->id])}}" method="post">
+                                            {{ csrf_field() }}
+                                            {{ method_field('put') }}  
+                                            <input type="number" name="score" id="" placeholder="Masukan Score" required> 
+                                            <input type="submit" value="Kirim">
+                                        </form> --}}
+                                        <b>Penilaian Pengajaran</b> : {{$tp->score_teaching}}</br>
+                                        <b>Feedback Pengajaran</b>: {{$tp->feedback_teaching}}</br>
+                                         <b>Jawaban</b> : {{$tp->answer_test_student}}
                                     </td>
                                     <td class="td">
                                         <form action="{{route('last_process',['confirm'=>$tp->id])}}"  enctype="multipart/form-data" method="post" style="width: 70%; margin-left: auto; margin-right: auto; margin-left: 50px;">
@@ -160,6 +214,19 @@
                                 @endforeach
                             </tbody>
                         </table>
+                    <div>{{$transaksi_pembelajaran->links()}}</div>
+                        {{-- <div class="row" style="margin-top: -40px;">
+                            <div class="col-1">
+                                <span>Showing </span>
+                            </div>
+                            <div class="col-1" style="margin-top: -15px;">
+                                <select name="" id="pages" onchange="pagination()">
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                        </div> --}}
+                        
                     </div>
                 </div>
         </div>
@@ -197,10 +264,11 @@
         <table class="tb-data " style="margin-top: 20px;">
             <thead class="head-tb-data">
                 <tr class="center">
-                    <th>Tanggal Les</th>
+                     <th>Tanggal Les</th>
                     <th>Nama Murid</th>
                     <th>Keterangan Les</th>
-                    <th>Foto Pembelajaran</th>
+                    <th>Kehadiran</th>
+                    <th>Konfirmasi Murid</th>
                 </tr>
             </thead>
             <tbody class="list-tb-data">
@@ -208,28 +276,38 @@
                 @foreach ($tpmodal->SeeStat as $key => $stats)  
                     <tr>                              
                         <td class="td">{{$stats->date_les}}</td>
-                        <td class="td">{{$tpmodal->UserOrder->nama_depan}} {{$tpmodal->UserOrder->nama_belakang}}</td>
+                         <td class="td">
+                            {{$tpmodal->UserOrder->nama_depan}} {{$tpmodal->UserOrder->nama_belakang}}<br>
+                            {{$tpmodal->friends}}<br>
+                            {{$tpmodal->friends2}}<br>
+                            {{$tpmodal->friends3}}<br>
+                            {{$tpmodal->friends4}}<br>
+                        </td>
                         <td class="td">{{$stats->mention}}</td>
-                        <td class="td"><img src="{{asset($stats->prove)}}" alt="" class="materialboxed pay-stat-img"></td>
+                         <td class="td">
+                            {{$stats->student_stat}}<br>
+                            {{$stats->friends_stat}}<br>
+                            {{$stats->friends2_stat}}<br>
+                            {{$stats->friends3_stat}}<br>
+                            {{$stats->friends4_stat}}<br>
+                        </td>
+                        <td class="td">
+                            {{$stats->confirm_student}}
+                        </td>
                     </tr>
                 @endforeach
                 @else
-                    <tr><td colspan="4"><p align="center">No Records Available</p></td></tr>
+                 
                 @endif
             </tbody>
+            
         </table>
+        <tr><td colspan="4"><p align="center">No Records Available</p></td></tr>
     </div>
 </div>
 @endforeach
 
-<script>
-    $(document).ready(function() {
-        $('#example').DataTable( {
-            "scrollY":        "200px",
-            "scrollCollapse": true,
-        } );
-    } );
-</script>
+
 <script>
     $(document).ready(function() {
         var pages = document.getElementById('pages').value;

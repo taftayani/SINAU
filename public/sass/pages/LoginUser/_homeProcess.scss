@@ -46,6 +46,8 @@
 }
 #column-profile-teach{
     @extend .column-profile-choose-teacher;
+    height: 26rem;
+    margin-bottom: 20px;
 }
 .rows-third-profile{
     @extend .third-layout-login;

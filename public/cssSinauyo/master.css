@@ -1109,6 +1109,10 @@
   color: white;
   font-weight: bold; }
 
+#column-profile-teach {
+  height: 26rem;
+  margin-bottom: 20px; }
+
 .paragraph-title-educate-second {
   color: #F06491;
   text-transform: capitalize;

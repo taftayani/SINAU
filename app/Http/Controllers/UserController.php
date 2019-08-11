@@ -7,8 +7,9 @@ use App\Confirm;
 use Illuminate\Http\Request;
 // use Storage;
 use Illuminate\Http\File;
-
+use Mail;
 use Auth;
+use Illuminate\Auth\Notifications\ResetPassword as ResetPasswordNotification;
 use Illuminate\Support\Facades\Storage;
 // use Illuminate\Support\Facades\Storage;
 
@@ -161,4 +162,13 @@ class UserController extends Controller
     {
        return view('layouts.FAQAfterLogin');
     }
+
+    public function email($email){
+      $this->email = $email;
+      Mail::raw('Apakah anda ingin mengubah password anda ? silahkah akses sinauyo.com/password/reset/?=token', function ($message) {
+        $message->from('admin@sinauyo.com')
+        ->to($this->email)->subject('test mail');
+      });
+      return 'email sent to '.$email;
+  }
 }

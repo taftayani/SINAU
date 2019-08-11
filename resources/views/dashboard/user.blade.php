@@ -32,11 +32,12 @@
             @endforeach
         </tbody>
     </table>
+    {{$user->links()}}
 </div>
 <script>
     $(document).ready(function() {
         $('#example').DataTable( {
-            "scrollY":        "200px",
+            "scrollY":        "1000px",
             "scrollCollapse": true,
             "paging":         false
         } );

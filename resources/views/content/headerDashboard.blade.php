@@ -42,7 +42,7 @@
           </div>
             
           <ul class="" style="height: 200px;">
-          <li id="nv-murid" class="nav-ver"><a href="{{route('home_dashboard')}}" style="color: #fff;">Dashboard</a></li>
+          <li id="nv-dashboard" class="nav-ver"><a href="{{route('home_dashboard')}}" style="color: #fff;">Dashboard</a></li>
             <li id="nv-murid" class="nav-ver"><a href="/home" style="color: #fff;">Data Murid</a></li>
             <li id="nv-guru" class="nav-ver"><a href="/home/teacher" style="color: #fff;">Data Guru</a></li>
             <!-- <li class="tab"><a href="#matpel">Data Mata Pelajaran</a></li> -->
@@ -54,6 +54,11 @@
               <script>
                 $('.nav-ver').removeClass('navactive');
                 $('#nv-murid').addClass('navactive')
+              </script>
+          @elseif(Request::url() === url(route('home_dashboard')))
+              <script>
+                $('.nav-ver').removeClass('navactive');
+                $('#nv-dashboard').addClass('navactive')
               </script>
           @elseif(Request::url() === url('/home/teacher'))
               <script>

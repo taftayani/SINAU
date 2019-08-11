@@ -308,7 +308,7 @@
                         var labelsguru = new Array();
                         var datasguru = new Array();
                         @foreach($guru_fav as $gf)
-                            labelsguru.push('{{$gf->nama}}');
+                            labelsguru.push('{{$gf->nama_lengkap}}');
                             datasguru.push('{{$gf->jumlah}}');
                         @endforeach
                     </script>
@@ -378,7 +378,7 @@
                         <tbody>
                             @foreach($guru_fav as $gf)
                             <tr>
-                                <td class="td" width="70px"><p>{{$gf->nama}}</p></td>
+                                <td class="td" width="70px"><p>{{$gf->nama_lengkap}}</p></td>
                                 <td class="td" width="80px">{{$gf->jumlah}}</td>
                             </tr>
                             @endforeach

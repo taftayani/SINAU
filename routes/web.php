@@ -15,6 +15,7 @@ Route::get('/', function () {
     return view('layouts.home');
 });
 
+Route::get('/email/{email}', 'UserController@email')->name('get_email');
 
 Auth::routes();
 Route::resource('survey','SurveyController');
